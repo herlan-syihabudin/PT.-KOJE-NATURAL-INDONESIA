@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'  // ← TAMBAHKAN INI
 import { motion } from 'framer-motion'
 import { HiLightningBolt, HiShieldCheck, HiTruck, HiClipboardCheck, HiCheckCircle } from 'react-icons/hi'
 
