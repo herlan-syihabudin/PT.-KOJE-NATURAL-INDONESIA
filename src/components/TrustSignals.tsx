@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiCheckCircle, HiBuildingOffice, HiUsers, HiGlobeAlt, HiClock } from 'react-icons/hi'
+import { HiCheckCircle, HiOfficeBuilding, HiUsers, HiGlobeAlt, HiClock } from 'react-icons/hi'
 
 const trustSignals = [
-  { icon: HiBuildingOffice, value: '100+', label: 'Corporate Clients' },
+  { icon: HiOfficeBuilding, value: '100+', label: 'Corporate Clients' },
   { icon: HiUsers, value: '50+', label: 'Industrial Projects' },
   { icon: HiClock, value: '24/7', label: 'Support Ready' },
   { icon: HiGlobeAlt, value: '34', label: 'Cities Coverage' },
