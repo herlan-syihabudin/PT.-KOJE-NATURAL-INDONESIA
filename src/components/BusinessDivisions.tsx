@@ -1,112 +1,78 @@
-'use client'
-
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { HiArrowRight, HiOfficeBuilding, HiCube } from 'react-icons/hi'
+import { HiOfficeBuilding, HiCube } from 'react-icons/hi'
 
 const capabilities = [
   {
     title: 'Industrial Supply & Procurement',
-    subtitle: 'General Trading Division',
     description:
-      'Menyediakan kebutuhan industrial supply, MRO, packaging, dan material pendukung operasional perusahaan secara terintegrasi.',
-    icon: HiOfficeBuilding,
-    items: [
-      'Industrial Supply',
-      'MRO & Sparepart',
-      'Packaging Material',
-      'Procurement Support',
-    ],
-    href: '/capabilities/general-supply',
+      'PT KOJE Natural Indonesia provides industrial supply, MRO, packaging materials, and procurement support for manufacturing operations across Indonesia.',
+    items:
+      'Industrial supply, MRO spareparts, packaging materials, procurement support, logistics coordination.',
   },
   {
-    title: 'Beverage Manufacturing',
-    subtitle: 'F&B Production Unit',
+    title: 'Manufacturing & Distribution',
     description:
-      'Produksi minuman kesehatan dan produk F&B dengan standar kualitas dan distribusi yang terkontrol.',
-    icon: HiCube,
-    items: [
-      'Beverage Production',
-      'Private Label',
-      'Distribution',
-      'Corporate Supply',
-    ],
-    href: '/capabilities/beverage',
+      'Production and distribution of beverage products under controlled quality standards for commercial and corporate supply.',
+    items:
+      'Beverage production, private label manufacturing, distribution network, corporate supply.',
   },
 ]
 
-export default function Capabilities() {
+export default function UltraCorporateCapabilities() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container-custom">
+    <section className="bg-white py-24">
+      <div className="max-w-5xl mx-auto px-6">
 
-        {/* HEADER */}
-        <div className="text-center mb-14">
-          <p className="text-xs tracking-[0.3em] text-gray-400 uppercase">
-            Capabilities
+        {/* HEADER - DOCUMENT STYLE */}
+        <div className="mb-16">
+          <p className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+            Capabilities Statement
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-light mt-4">
-            Integrated Supply &
-            <span className="block font-semibold">Manufacturing Solutions</span>
+          <h2 className="text-3xl font-light mt-4 text-gray-900">
+            Supply & Manufacturing Overview
           </h2>
 
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            PT KOJE Natural Indonesia operates as a procurement and manufacturing partner supporting industrial and consumer supply chains.
+          <p className="text-gray-500 mt-4 text-sm leading-relaxed max-w-2xl">
+            PT KOJE Natural Indonesia operates as a procurement and manufacturing partner supporting industrial supply chains and distribution networks in Indonesia.
           </p>
         </div>
 
-        {/* GRID */}
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* LIST STYLE (NO CARD, NO SHADOW) */}
+        <div className="space-y-12">
 
-          {capabilities.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="border border-gray-100 p-8"
-            >
+          {capabilities.map((item, i) => (
+            <div key={i} className="border-b border-gray-200 pb-10">
 
-              {/* ICON */}
-              <div className="w-12 h-12 flex items-center justify-center border border-gray-200 mb-6">
-                <item.icon className="text-xl text-gray-700" />
-              </div>
-
-              {/* TEXT */}
-              <h3 className="text-xl font-medium text-gray-900">
+              <h3 className="text-lg font-medium text-gray-900">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-gray-400 mt-1">
-                {item.subtitle}
-              </p>
-
-              <p className="text-gray-500 mt-4 leading-relaxed text-sm">
+              <p className="text-sm text-gray-500 mt-3 leading-relaxed">
                 {item.description}
               </p>
 
-              {/* ITEMS */}
-              <div className="mt-6 space-y-2">
-                {item.items.map((i) => (
-                  <div key={i} className="text-sm text-gray-600">
-                    • {i}
-                  </div>
-                ))}
-              </div>
+              <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                {item.items}
+              </p>
 
-              {/* CTA */}
-              <Link
-                href={item.href}
-                className="inline-flex items-center gap-2 mt-6 text-sm text-black hover:gap-3 transition"
-              >
-                Learn more <HiArrowRight />
-              </Link>
-
-            </motion.div>
+            </div>
           ))}
 
+        </div>
+
+        {/* SIMPLE CONTACT CTA */}
+        <div className="mt-16">
+          <p className="text-xs text-gray-400 tracking-[0.2em] uppercase">
+            Procurement Inquiry
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-block mt-3 text-sm text-gray-900 border-b border-gray-300 pb-1"
+          >
+            Submit RFQ →
+          </Link>
         </div>
 
       </div>
