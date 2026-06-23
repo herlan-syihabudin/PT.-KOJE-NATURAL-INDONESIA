@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
   { href: '/about', label: 'Tentang' },
-  { href: '/capabilities', label: 'Capabilities' },   // ← GANTI dari /divisions
+  { href: '/capabilities', label: 'Capabilities' },
   { href: '/projects', label: 'Proyek' },
   { href: '/contact', label: 'Kontak' },
 ]
@@ -40,7 +40,9 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = 'unset'
     }
-    return () => { document.body.style.overflow = 'unset' }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   }, [isMobileMenuOpen])
 
   useEffect(() => {
@@ -53,18 +55,16 @@ export default function Navbar() {
   if (!mounted) {
     return (
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-2">
-        <div className="container-custom flex justify-between items-center py-1">
-          <Link href="/" className="shrink-0">
-            <div className="relative w-24 h-16 sm:w-28 sm:h-20">
-              <Image 
-                src="/images/logo/koje_16_jun_-removebg-preview.png"
-                alt="KOJE Natural Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
+        <div className="container-custom flex justify-between items-center">
+          <div className="relative w-12 h-12">
+            <Image
+              src="/images/logo/koje_16_jun_-removebg-preview.png"
+              alt="KOJE Natural Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </nav>
     )
@@ -72,21 +72,21 @@ export default function Navbar() {
 
   return (
     <>
-      <nav 
+      <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isWhite 
-            ? 'bg-white/80 backdrop-blur-md border-b border-gray-100/50 shadow-sm' 
+          isWhite
+            ? 'bg-white/80 backdrop-blur-md border-b border-gray-100/50 shadow-sm'
             : 'bg-transparent'
         }`}
         style={{
           backgroundColor: isWhite ? 'rgba(255,255,255,0.8)' : 'transparent',
         }}
       >
-        <div className="container-custom flex justify-between items-center py-1.5 md:py-2">
+        <div className="container-custom flex justify-between items-center py-3 md:py-4">
           {/* Logo */}
           <Link href="/" className="shrink-0 group">
-            <div className="relative w-24 h-16 sm:w-28 sm:h-20 transition-transform duration-300 group-hover:scale-105">
-              <Image 
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+              <Image
                 src="/images/logo/koje_16_jun_-removebg-preview.png"
                 alt="KOJE Natural Logo"
                 fill
@@ -120,10 +120,10 @@ export default function Navbar() {
                 </Link>
               )
             })}
-            
+
             <div className="flex items-center gap-4 ml-2 pl-4 border-l border-gray-200/50">
-              <a 
-                href="tel:+6281234567890" 
+              <a
+                href="tel:+6281234567890"
                 className={`flex items-center gap-2 text-sm font-medium transition-colors tracking-wide ${
                   isWhite ? 'text-gray-500 hover:text-primary' : 'text-white/70 hover:text-white'
                 }`}
@@ -132,12 +132,12 @@ export default function Navbar() {
                 <span className="hidden lg:inline">+62 812 3456 7890</span>
               </a>
             </div>
-            
-            <Link 
-              href="/contact" 
-              className={`px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
-                isWhite 
-                  ? 'bg-primary text-white shadow-md shadow-primary/30 hover:bg-primary-dark' 
+
+            <Link
+              href="/contact"
+              className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
+                isWhite
+                  ? 'bg-primary text-white shadow-md shadow-primary/30 hover:bg-primary-dark'
                   : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
               }`}
             >
@@ -168,7 +168,7 @@ export default function Navbar() {
               className="fixed inset-0 bg-black/60 backdrop-blur-md z-[998]"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            
+
             <motion.div
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
@@ -182,16 +182,14 @@ export default function Navbar() {
 
               <div className="px-5 pt-2 pb-4 border-b border-gray-100">
                 <div className="flex items-center justify-between">
-                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="shrink-0">
-                    <div className="relative w-24 h-16">
-                      <Image 
-                        src="/images/logo/koje_16_jun_-removebg-preview.png"
-                        alt="KOJE Natural Logo"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </Link>
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/images/logo/koje_16_jun_-removebg-preview.png"
+                      alt="KOJE Natural Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center active:bg-gray-200 transition"
@@ -202,9 +200,8 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Phone Number */}
               <div className="px-5 py-4">
-                <a 
+                <a
                   href="tel:+6281234567890"
                   className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/10 active:bg-primary/10 transition group"
                 >
@@ -223,7 +220,6 @@ export default function Navbar() {
                 </a>
               </div>
 
-              {/* Navigation Menu */}
               <div className="px-3 py-2">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href
@@ -232,9 +228,9 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center justify-between py-3.5 px-3 rounded-xl font-medium transition-all duration-200 text-base ${
-                        isActive 
-                          ? 'bg-primary text-white shadow-md shadow-primary/20' 
+                      className={`flex items-center justify-between py-4 px-3 rounded-xl font-medium transition-all duration-200 text-base ${
+                        isActive
+                          ? 'bg-primary text-white shadow-md shadow-primary/20'
                           : 'text-gray-700 active:bg-gray-50'
                       }`}
                     >
@@ -247,7 +243,6 @@ export default function Navbar() {
                 })}
               </div>
 
-              {/* CTA Section */}
               <div className="px-5 pt-2 pb-6">
                 <Link
                   href="/contact"
@@ -264,19 +259,13 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {/* Footer Logo Section */}
-              <div className="px-5 pb-6 pt-2 flex justify-center border-t border-gray-50">
-                <div className="relative w-24 h-12 opacity-50 mt-2">
-                  <Image 
-                    src="/images/logo/koje_16_jun_-removebg-preview.png"
-                    alt="KOJE Natural Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+              <div className="px-5 pb-6 pt-2 text-center border-t border-gray-50">
+                <p className="text-[8px] text-gray-400">
+                  © {new Date().getFullYear()} PT Koje Natural Indonesia
+                </p>
               </div>
             </motion.div>
-          </v>
+          </>
         )}
       </AnimatePresence>
     </>
