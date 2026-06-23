@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background dengan Image component */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-bg.jpg"
+          src="/images/hero/industrial-supplies-and-hardware.jpg"
           alt="Industrial procurement and supply solutions"
           fill
           priority
