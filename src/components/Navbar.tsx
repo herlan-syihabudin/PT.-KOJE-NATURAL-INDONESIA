@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
   { href: '/about', label: 'Tentang' },
-  { href: '/capabilities', label: 'Capabilities' },
+  { href: '/capabilities', label: 'Capabilities' },   // ← GANTI dari /divisions
   { href: '/projects', label: 'Proyek' },
   { href: '/contact', label: 'Kontak' },
 ]
@@ -52,16 +52,22 @@ export default function Navbar() {
 
   if (!mounted) {
     return (
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-2">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-1.5">
         <div className="container-custom flex justify-between items-center">
-          <div className="relative w-12 h-12">
-            <Image 
-              src="/images/logo/koje_16_jun_-removebg-preview.png"
-              alt="KOJE Natural Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="flex items-center gap-3">
+            <div className="relative w-11 h-11">
+              <Image 
+                src="/images/logo/koje_16_jun_-removebg-preview.png"
+                alt="KOJE Natural Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div>
+              <span className="font-poppins font-bold text-base text-primary tracking-tight block leading-none">KOJE Natural</span>
+              <p className="text-[10px] text-gray-400 mt-0.5 font-medium tracking-wide">Indonesia</p>
+            </div>
           </div>
         </div>
       </nav>
@@ -80,17 +86,31 @@ export default function Navbar() {
           backgroundColor: isWhite ? 'rgba(255,255,255,0.8)' : 'transparent',
         }}
       >
-        <div className="container-custom flex justify-between items-center py-3 md:py-4">
-          {/* Logo - Gede, tanpa teks */}
+        <div className="container-custom flex justify-between items-center py-2.5 md:py-3">
+          {/* Logo */}
           <Link href="/" className="shrink-0 group">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
-              <Image 
-                src="/images/logo/koje_16_jun_-removebg-preview.png"
-                alt="KOJE Natural Logo"
-                fill
-                className="object-contain"
-                priority
-              />
+            <div className="flex items-center gap-3">
+              <div className="relative w-11 h-11 transition-transform duration-300 group-hover:scale-105">
+                <Image 
+                  src="/images/logo/koje_16_jun_-removebg-preview.png"
+                  alt="KOJE Natural Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div>
+                <span className={`font-poppins font-bold text-base sm:text-lg tracking-tight block leading-none ${
+                  isWhite ? 'text-primary' : 'text-white'
+                }`}>
+                  KOJE Natural
+                </span>
+                <p className={`text-[10px] font-medium tracking-wide mt-0.5 leading-tight ${
+                  isWhite ? 'text-gray-400' : 'text-white/60'
+                }`}>
+                  Indonesia
+                </p>
+              </div>
             </div>
           </Link>
 
@@ -133,7 +153,7 @@ export default function Navbar() {
             
             <Link 
               href="/contact" 
-              className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
                 isWhite 
                   ? 'bg-primary text-white shadow-md shadow-primary/30 hover:bg-primary-dark' 
                   : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
@@ -178,16 +198,21 @@ export default function Navbar() {
                 <div className="w-12 h-1 bg-gray-200 rounded-full" />
               </div>
 
-              {/* Header - Logo saja tanpa teks */}
               <div className="px-5 pt-2 pb-4 border-b border-gray-100">
                 <div className="flex items-center justify-between">
-                  <div className="relative w-10 h-10">
-                    <Image 
-                      src="/images/logo/koje_16_jun_-removebg-preview.png"
-                      alt="KOJE Natural Logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10">
+                      <Image 
+                        src="/images/logo/koje_16_jun_-removebg-preview.png"
+                        alt="KOJE Natural Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <span className="font-poppins font-bold text-base text-primary block leading-none">KOJE Natural</span>
+                      <p className="text-[10px] text-gray-400 mt-0.5 font-medium tracking-wide">Indonesia</p>
+                    </div>
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -229,7 +254,7 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center justify-between py-4 px-3 rounded-xl font-medium transition-all duration-200 text-base ${
+                      className={`flex items-center justify-between py-3.5 px-3 rounded-xl font-medium transition-all duration-200 text-base ${
                         isActive 
                           ? 'bg-primary text-white shadow-md shadow-primary/20' 
                           : 'text-gray-700 active:bg-gray-50'
@@ -262,7 +287,7 @@ export default function Navbar() {
               </div>
 
               <div className="px-5 pb-6 pt-2 text-center border-t border-gray-50">
-                <p className="text-[8px] text-gray-400">
+                <p className="text-[10px] text-gray-400 font-medium">
                   © {new Date().getFullYear()} PT Koje Natural Indonesia
                 </p>
               </div>
