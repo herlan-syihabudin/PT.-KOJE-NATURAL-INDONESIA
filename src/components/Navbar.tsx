@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <div className="relative w-9 h-9 transition-transform duration-300 group-hover:scale-105">
                 <Image 
-                  src="/images/logo/koje-logo.png"
+                  src="/images/logo/koje_16_jun_-removebg-preview.png"
                   alt="KOJE Natural Logo"
                   fill
                   className="object-contain"
