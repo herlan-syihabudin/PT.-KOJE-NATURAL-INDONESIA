@@ -23,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => setMounted(true), [])
 
-  const handleScroll = useCallback(() => {
+  const handleScroll handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 20)
   }, [])
 
@@ -286,10 +286,16 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              <div className="px-5 pb-6 pt-2 text-center border-t border-gray-50">
-                <p className="text-[10px] text-gray-400 font-medium">
-                  © {new Date().getFullYear()} PT Koje Natural Indonesia
-                </p>
+              {/* Footer Logo Section */}
+              <div className="px-5 pb-6 pt-2 flex justify-center border-t border-gray-50">
+                <div className="relative w-16 h-10 opacity-50 mt-2">
+                  <Image 
+                    src="/images/logo/koje_16_jun_-removebg-preview.png"
+                    alt="KOJE Natural Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </motion.div>
           </>
