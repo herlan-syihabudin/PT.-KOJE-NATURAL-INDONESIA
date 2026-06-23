@@ -81,10 +81,10 @@ export default function Navbar() {
           backgroundColor: isWhite ? 'rgba(255,255,255,0.8)' : 'transparent',
         }}
       >
-        <div className="container-custom flex justify-between items-center py-3 md:py-4">
+        <div className="container-custom flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="shrink-0 group">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-12 h-12 md:w-14 md:h-14 transition-transform duration-300 group-hover:scale-105">
               <Image 
                 src="/images/logo/koje_16_jun_-removebg-preview.png"
                 alt="KOJE Natural Logo"
