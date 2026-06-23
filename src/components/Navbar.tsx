@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
   { href: '/about', label: 'Tentang' },
-  { href: '/divisions', label: 'Divisi Usaha' },
+  { href: '/capabilities', label: 'Capabilities' },   // ← GANTI dari /divisions
   { href: '/projects', label: 'Proyek' },
   { href: '/contact', label: 'Kontak' },
 ]
@@ -23,7 +23,6 @@ export default function Navbar() {
 
   useEffect(() => setMounted(true), [])
 
-  // Optimized scroll handler with useCallback
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 20)
   }, [])
@@ -48,7 +47,6 @@ export default function Navbar() {
     setIsMobileMenuOpen(false)
   }, [pathname])
 
-  // Memoize active state untuk performance
   const isHomePage = useMemo(() => pathname === '/', [pathname])
   const isWhite = useMemo(() => isHomePage ? isScrolled || isMobileMenuOpen : true, [isHomePage, isScrolled, isMobileMenuOpen])
 
@@ -89,7 +87,7 @@ export default function Navbar() {
         }}
       >
         <div className="container-custom flex justify-between items-center py-3 md:py-4">
-          {/* Logo - Dengan Gambar Asli */}
+          {/* Logo */}
           <Link href="/" className="shrink-0 group">
             <div className="flex items-center gap-2">
               <div className="relative w-9 h-9 transition-transform duration-300 group-hover:scale-105">
@@ -129,13 +127,11 @@ export default function Navbar() {
                   } ${isActive ? (isWhite ? 'text-primary' : 'text-white') : ''}`}
                 >
                   {item.label}
-                  {/* Active Indicator - Elegant dot style */}
                   {isActive && (
                     <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
                       isWhite ? 'bg-primary' : 'bg-white'
                     }`} />
                   )}
-                  {/* Hover underline effect */}
                   <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 transition-all duration-300 group-hover:w-6 ${
                     isWhite ? 'bg-primary' : 'bg-white'
                   } ${isActive ? 'opacity-0' : ''}`} />
@@ -143,7 +139,6 @@ export default function Navbar() {
               )
             })}
             
-            {/* Divider & Phone */}
             <div className="flex items-center gap-4 ml-2 pl-4 border-l border-gray-200/50">
               <a 
                 href="tel:+6281234567890" 
@@ -156,7 +151,6 @@ export default function Navbar() {
               </a>
             </div>
             
-            {/* CTA Button */}
             <Link 
               href="/contact" 
               className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
@@ -180,7 +174,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu - Premium Bottom Sheet */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -200,12 +194,10 @@ export default function Navbar() {
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
               className="fixed bottom-0 left-0 right-0 z-[999] bg-white rounded-t-3xl shadow-2xl overflow-hidden"
             >
-              {/* Handle Bar */}
               <div className="flex justify-center pt-3 pb-1">
                 <div className="w-12 h-1 bg-gray-200 rounded-full" />
               </div>
 
-              {/* Header */}
               <div className="px-5 pt-2 pb-4 border-b border-gray-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -232,7 +224,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Phone Number - Premium Card */}
+              {/* Phone Number */}
               <div className="px-5 py-4">
                 <a 
                   href="tel:+6281234567890"
@@ -253,7 +245,7 @@ export default function Navbar() {
                 </a>
               </div>
 
-              {/* Navigation Menu - Lebih lega */}
+              {/* Navigation Menu */}
               <div className="px-3 py-2">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href
@@ -277,7 +269,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              {/* CTA Section - Lebih dominan */}
+              {/* CTA Section */}
               <div className="px-5 pt-2 pb-6">
                 <Link
                   href="/contact"
@@ -294,7 +286,6 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {/* Footer */}
               <div className="px-5 pb-6 pt-2 text-center border-t border-gray-50">
                 <p className="text-[8px] text-gray-400">
                   © {new Date().getFullYear()} PT Koje Natural Indonesia
