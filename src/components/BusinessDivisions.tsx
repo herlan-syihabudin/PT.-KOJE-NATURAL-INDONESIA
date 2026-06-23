@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { HiOfficeBuilding, HiCube } from 'react-icons/hi'
+import { HiChevronRight } from 'react-icons/hi'
 
 const capabilities = [
   {
@@ -8,6 +8,7 @@ const capabilities = [
       'PT KOJE Natural Indonesia provides industrial supply, MRO, packaging materials, and procurement support for manufacturing operations across Indonesia.',
     items:
       'Industrial supply, MRO spareparts, packaging materials, procurement support, logistics coordination.',
+    href: '/capabilities/industrial-supply',
   },
   {
     title: 'Manufacturing & Distribution',
@@ -15,6 +16,7 @@ const capabilities = [
       'Production and distribution of beverage products under controlled quality standards for commercial and corporate supply.',
     items:
       'Beverage production, private label manufacturing, distribution network, corporate supply.',
+    href: '/capabilities/manufacturing',
   },
 ]
 
@@ -25,7 +27,6 @@ export default function UltraCorporateCapabilities() {
 
         {/* HEADER - Document Style */}
         <div className="mb-16">
-          {/* Badge with lines */}
           <div className="flex items-center gap-3">
             <span className="w-8 h-px bg-gray-300" />
             <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
@@ -44,33 +45,44 @@ export default function UltraCorporateCapabilities() {
           </p>
         </div>
 
-        {/* LIST STYLE - Clean, No Card */}
-        <div className="space-y-12">
+        {/* LIST - Clickable Rows */}
+        <div className="space-y-1">
 
           {capabilities.map((item, i) => (
-            <div key={i} className="border-b border-gray-200 pb-12 last:border-0 last:pb-0">
-
-              {/* Title with subtle indicator */}
+            <Link
+              key={i}
+              href={item.href}
+              className="group block border-b border-gray-100 py-6 last:border-0 hover:bg-gray-50/50 transition-colors -mx-6 px-6"
+            >
               <div className="flex items-start gap-4">
-                <span className="text-sm font-medium text-gray-300 mt-0.5">
+
+                {/* Number */}
+                <span className="text-sm font-medium text-gray-300 mt-0.5 group-hover:text-gray-400 transition-colors">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900">
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-medium text-gray-900 group-hover:text-black transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-gray-500 mt-3 leading-relaxed">
+                  <p className="text-sm text-gray-500 mt-2 leading-relaxed group-hover:text-gray-600 transition-colors">
                     {item.description}
                   </p>
 
-                  <p className="text-sm text-gray-400 mt-4 leading-relaxed">
+                  <p className="text-sm text-gray-400 mt-2 leading-relaxed group-hover:text-gray-500 transition-colors">
                     {item.items}
                   </p>
                 </div>
-              </div>
 
-            </div>
+                {/* Arrow - Subtle */}
+                <div className="ml-auto flex items-center text-gray-300 group-hover:text-gray-500 transition-colors">
+                  <HiChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+
+              </div>
+            </Link>
           ))}
 
         </div>
