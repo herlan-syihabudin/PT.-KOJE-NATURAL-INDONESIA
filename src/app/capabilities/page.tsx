@@ -74,9 +74,9 @@ description:
 
 export default function CapabilitiesPage() {
 return (
-<> <Navbar />
+<>
+  <Navbar />
 
-```
   <section className="bg-white py-24">
     <div className="max-w-5xl mx-auto px-6">
 
@@ -187,7 +187,5 @@ return (
 
   <Footer />
 </>
-```
-
 )
 }
