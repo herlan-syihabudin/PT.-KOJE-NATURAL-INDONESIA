@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { HiArrowRight, HiDocumentText } from 'react-icons/hi'
 
@@ -8,9 +9,17 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Background */}
+      {/* Background dengan Image component */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070')] bg-cover bg-center" />
+        <Image
+          src="/images/hero/hero-bg.jpg"
+          alt="Industrial procurement and supply solutions"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          quality={90}
+        />
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
