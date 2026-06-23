@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
   { href: '/about', label: 'Tentang' },
-  { href: '/capabilities', label: 'Capabilities' },   // ← GANTI dari /divisions
+  { href: '/capabilities', label: 'Capabilities' },
   { href: '/projects', label: 'Proyek' },
   { href: '/contact', label: 'Kontak' },
 ]
@@ -54,20 +54,14 @@ export default function Navbar() {
     return (
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-2">
         <div className="container-custom flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="relative w-8 h-8">
-              <Image 
-                src="/images/logo/koje_16_jun_-removebg-preview.png"
-                alt="KOJE Natural Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div>
-              <span className="font-poppins font-bold text-sm text-primary tracking-tight">KOJE Natural</span>
-              <p className="text-[8px] text-gray-400 -mt-0.5">Indonesia</p>
-            </div>
+          <div className="relative w-12 h-12">
+            <Image 
+              src="/images/logo/koje_16_jun_-removebg-preview.png"
+              alt="KOJE Natural Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
       </nav>
@@ -87,30 +81,16 @@ export default function Navbar() {
         }}
       >
         <div className="container-custom flex justify-between items-center py-3 md:py-4">
-          {/* Logo */}
+          {/* Logo - Gede, tanpa teks */}
           <Link href="/" className="shrink-0 group">
-            <div className="flex items-center gap-2">
-              <div className="relative w-9 h-9 transition-transform duration-300 group-hover:scale-105">
-                <Image 
-                  src="/images/logo/koje_16_jun_-removebg-preview.png"
-                  alt="KOJE Natural Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <div>
-                <span className={`font-poppins font-bold text-sm sm:text-base tracking-tight ${
-                  isWhite ? 'text-primary' : 'text-white'
-                }`}>
-                  KOJE Natural
-                </span>
-                <p className={`text-[8px] leading-tight -mt-0.5 ${
-                  isWhite ? 'text-gray-400' : 'text-white/60'
-                }`}>
-                  Indonesia
-                </p>
-              </div>
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+              <Image 
+                src="/images/logo/koje_16_jun_-removebg-preview.png"
+                alt="KOJE Natural Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -198,21 +178,16 @@ export default function Navbar() {
                 <div className="w-12 h-1 bg-gray-200 rounded-full" />
               </div>
 
+              {/* Header - Logo saja tanpa teks */}
               <div className="px-5 pt-2 pb-4 border-b border-gray-100">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="relative w-8 h-8">
-                      <Image 
-                        src="/images/logo/koje-logo.png"
-                        alt="KOJE Natural Logo"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <div>
-                      <span className="font-poppins font-bold text-sm text-primary">KOJE Natural</span>
-                      <p className="text-[8px] text-gray-400 -mt-0.5">Indonesia</p>
-                    </div>
+                  <div className="relative w-10 h-10">
+                    <Image 
+                      src="/images/logo/koje_16_jun_-removebg-preview.png"
+                      alt="KOJE Natural Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
