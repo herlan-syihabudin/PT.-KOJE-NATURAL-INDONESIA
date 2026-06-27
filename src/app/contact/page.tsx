@@ -13,7 +13,8 @@ import {
   HiOfficeBuilding,
   HiUser,
   HiChat,
-  HiMap
+  HiMap,
+  HiDocumentText
 } from 'react-icons/hi'
 import { FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
@@ -86,58 +87,52 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0A0F1A] to-[#1A1F2E] pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-accent/10 rounded-full blur-3xl" />
-        </div>
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
+      {/* HEADER - SAMA dengan Capabilities */}
+      <section className="bg-white pt-24 pb-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-10 h-px bg-primary/50" />
-              <span className="text-xs tracking-[0.25em] text-primary/70 uppercase">
+              <span className="w-10 h-px bg-gray-300" />
+              <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
                 Hubungi Kami
               </span>
+              <span className="w-10 h-px bg-gray-300" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
-              Mari Bekerja Sama
+
+            <h1 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+              Hubungi Tim <span className="text-primary">KOJE</span>
             </h1>
-            <p className="text-gray-400 text-base md:text-lg mt-4 max-w-xl leading-relaxed">
+
+            <p className="mt-5 text-gray-500 text-sm leading-relaxed max-w-2xl">
               Tim kami siap membantu kebutuhan supply chain dan procurement Anda. 
-              Hubungi kami untuk konsultasi gratis.
+              Hubungi kami untuk konsultasi gratis dan solusi terbaik untuk bisnis Anda.
             </p>
+
             <div className="flex flex-wrap gap-4 mt-6">
               <a
                 href="https://wa.me/6281234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-[#20BD5A] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#25D366]/30"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#20BD5A] transition-all hover:-translate-y-0.5 shadow-lg shadow-[#25D366]/30"
               >
                 <FaWhatsapp className="text-base" />
                 Chat via WhatsApp
               </a>
               <a
                 href="tel:+6281234567890"
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-white/20 transition-all border border-white/20"
+                className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all hover:-translate-y-0.5"
               >
                 <HiPhone className="text-base" />
                 Call Now
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="bg-white py-16">
-        <div className="container-custom">
+      {/* MAIN CONTENT - SAMA dengan Capabilities grid */}
+      <section className="bg-white pb-20">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form - 3 columns */}
             <div className="lg:col-span-3">
@@ -147,18 +142,12 @@ export default function ContactPage() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-6">
                   <span className="w-8 h-px bg-gray-300" />
                   <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
                     Kirim Pesan
                   </span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-2">
-                  Kirimkan Pesan Anda
-                </h2>
-                <p className="text-sm text-gray-500 mb-8">
-                  Isi form di bawah dan tim kami akan menghubungi Anda dalam waktu 24 jam.
-                </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
@@ -281,7 +270,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={isSubmitting}
                     className={`
-                      w-full sm:w-auto px-8 py-3.5 bg-primary text-white text-sm font-medium rounded-lg 
+                      w-full sm:w-auto px-8 py-3 bg-primary text-white text-sm font-medium 
                       transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-primary/30
                       ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-primary-dark'}
                     `}
@@ -313,7 +302,7 @@ export default function ContactPage() {
               </motion.div>
             </div>
 
-            {/* Contact Info - 2 columns */}
+            {/* Contact Info - 2 columns - SAMA dengan card style capabilities */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -321,92 +310,90 @@ export default function ContactPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="w-8 h-px bg-gray-300" />
-                    <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
-                      Informasi Kontak
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-light text-gray-900 mb-6">
-                    Hubungi Kami
-                  </h3>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="w-8 h-px bg-gray-300" />
+                  <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+                    Informasi Kontak
+                  </span>
+                </div>
 
-                  <div className="space-y-5">
-                    {contactInfo.map((info, idx) => (
-                      <motion.a
-                        key={idx}
-                        href={info.href}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
-                      >
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                          <info.icon className="text-primary text-base" />
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-400 uppercase tracking-wider">{info.label}</p>
-                          <p className="text-sm font-medium text-gray-900">{info.value}</p>
-                          <p className="text-xs text-gray-400 mt-0.5">{info.description}</p>
-                        </div>
-                        <HiChevronRight className="text-gray-300 text-sm ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </motion.a>
-                    ))}
-                  </div>
+                <div className="space-y-4">
+                  {contactInfo.map((info, idx) => (
+                    <motion.a
+                      key={idx}
+                      href={info.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                      className="group flex items-start gap-4 p-5 border border-gray-100 hover:border-gray-300 bg-white hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <div className="mt-0.5">
+                        <info.icon className="text-gray-400 group-hover:text-gray-700 transition text-lg" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-400 uppercase tracking-wider">{info.label}</p>
+                        <p className="text-sm font-medium text-gray-900">{info.value}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{info.description}</p>
+                      </div>
+                      <HiChevronRight className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </motion.a>
+                  ))}
+                </div>
 
-                  {/* Social Media */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">Ikuti Kami</p>
-                    <div className="flex gap-3">
-                      <a
-                        href="#"
-                        className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300 group"
-                      >
-                        <FaLinkedin className="text-gray-600 text-sm group-hover:text-white transition" />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gradient-to-tr from-[#E4405F] to-[#F56040] hover:text-white hover:border-[#E4405F] transition-all duration-300 group"
-                      >
-                        <FaInstagram className="text-gray-600 text-sm group-hover:text-white transition" />
-                      </a>
-                      <a
-                        href="https://wa.me/6281234567890"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300 group"
-                      >
-                        <FaWhatsapp className="text-gray-600 text-sm group-hover:text-white transition" />
-                      </a>
-                    </div>
+                {/* Social Media - SAMA dengan capabilities style */}
+                <div className="mt-8 pt-8 border-t border-gray-100">
+                  <p className="text-xs text-gray-400 uppercase tracking-[0.2em] mb-4">Ikuti Kami</p>
+                  <div className="flex gap-3">
+                    <a
+                      href="#"
+                      className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300 group"
+                    >
+                      <FaLinkedin className="text-gray-400 text-sm group-hover:text-white transition" />
+                    </a>
+                    <a
+                      href="#"
+                      className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gradient-to-tr from-[#E4405F] to-[#F56040] hover:text-white hover:border-[#E4405F] transition-all duration-300 group"
+                    >
+                      <FaInstagram className="text-gray-400 text-sm group-hover:text-white transition" />
+                    </a>
+                    <a
+                      href="https://wa.me/6281234567890"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300 group"
+                    >
+                      <FaWhatsapp className="text-gray-400 text-sm group-hover:text-white transition" />
+                    </a>
                   </div>
                 </div>
 
-                {/* Quick Response Badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-5 text-center"
-                >
-                  <div className="flex items-center justify-center gap-2 text-primary">
-                    <HiClock className="text-lg" />
-                    <span className="text-sm font-medium">Respons Cepat &lt; 24 Jam</span>
+                {/* RFQ Strip - SAMA PERSIS dengan capabilities */}
+                <div className="mt-8 border border-gray-100 bg-gray-50 p-6">
+                  <div className="flex items-center gap-2 text-xs text-gray-400 uppercase tracking-[0.2em]">
+                    <HiDocumentText className="w-4 h-4" />
+                    Procurement Inquiry
                   </div>
-                  <p className="text-xs text-gray-500 mt-1">Tim kami siap membantu kebutuhan Anda</p>
-                </motion.div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Butuh penawaran khusus? Hubungi tim procurement kami.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 mt-3 text-sm text-gray-900 border-b border-gray-300 pb-1 hover:border-gray-900 transition"
+                  >
+                    Submit RFQ
+                    <HiChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map / Location Section */}
+      {/* MAP SECTION - SAMA dengan capabilities strip style */}
       <section className="bg-gray-50 py-16 border-t border-gray-100">
-        <div className="container-custom">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -421,7 +408,7 @@ export default function ContactPage() {
               </span>
               <span className="w-8 h-px bg-gray-300" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900">
+            <h2 className="text-2xl font-light text-gray-900">
               Temukan <span className="text-primary">Kami</span>
             </h2>
           </motion.div>
@@ -431,7 +418,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+            className="bg-white border border-gray-100 overflow-hidden"
           >
             <div className="aspect-[16/6] bg-gray-200 relative flex items-center justify-center">
               <div className="text-center">
@@ -450,7 +437,7 @@ export default function ContactPage() {
               </div>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-dark font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-gray-900 border-b border-gray-300 pb-1 hover:border-gray-900 transition"
               >
                 Buka di Google Maps
                 <HiChevronRight className="text-sm" />
