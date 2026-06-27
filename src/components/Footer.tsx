@@ -31,7 +31,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-3">
               <div className="relative w-20 h-20 sm:w-24 sm:h-24 transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="/images/logo/koje_16_jun_-removebg-preview.png"
+                  src="/images/logo/koje_putih-removebg-preview.png"
                   alt="KOJE Natural Logo"
                   fill
                   className="object-contain"
