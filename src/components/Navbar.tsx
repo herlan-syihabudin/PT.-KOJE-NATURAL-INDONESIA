@@ -54,9 +54,9 @@ export default function Navbar() {
 
   if (!mounted) {
     return (
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-2">
-        <div className="container-custom flex justify-between items-center">
-          <div className="relative w-12 h-12">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="container-custom flex justify-between items-center py-1 md:py-0.5">
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 -my-7 sm:-my-9 md:-my-11">
             <Image
               src="/images/logo/koje_16_jun_-removebg-preview.png"
               alt="KOJE Natural Logo"
@@ -82,14 +82,15 @@ export default function Navbar() {
           backgroundColor: isWhite ? 'rgba(255,255,255,0.8)' : 'transparent',
         }}
       >
-        <div className="container-custom flex justify-between items-center py-3 md:py-4">
-          {/* Logo */}
-          <Link href="/" className="shrink-0 group">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+        <div className="container-custom flex justify-between items-center py-1 md:py-0.5 transition-all duration-300">
+          {/* Logo - Sekarang besar seperti Cassindo */}
+          <Link href="/" className="shrink-0 group relative z-10">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 -my-7 sm:-my-9 md:-my-11 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/images/logo/koje_16_jun_-removebg-preview.png"
                 alt="KOJE Natural Logo"
                 fill
+                sizes="(max-width: 768px) 112px, 144px"
                 className="object-contain"
                 priority
               />
@@ -97,34 +98,34 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-7 lg:gap-9">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {NAV_ITEMS.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative font-medium transition-all duration-300 py-1 group text-sm tracking-wide ${
+                  className={`relative font-medium transition-all duration-300 py-1 group text-sm ${
                     isWhite ? 'text-gray-600 hover:text-primary' : 'text-white/80 hover:text-white'
                   } ${isActive ? (isWhite ? 'text-primary' : 'text-white') : ''}`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
+                    <span className={`absolute -bottom-0.5 left-0 w-full h-0.5 ${
                       isWhite ? 'bg-primary' : 'bg-white'
                     }`} />
                   )}
-                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 transition-all duration-300 group-hover:w-6 ${
+                  <span className={`absolute -bottom-0.5 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
                     isWhite ? 'bg-primary' : 'bg-white'
                   } ${isActive ? 'opacity-0' : ''}`} />
                 </Link>
               )
             })}
 
-            <div className="flex items-center gap-4 ml-2 pl-4 border-l border-gray-200/50">
+            <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gray-200/50">
               <a
                 href="tel:+6281234567890"
-                className={`flex items-center gap-2 text-sm font-medium transition-colors tracking-wide ${
+                className={`flex items-center gap-2 text-sm font-medium transition-colors ${
                   isWhite ? 'text-gray-500 hover:text-primary' : 'text-white/70 hover:text-white'
                 }`}
               >
@@ -135,7 +136,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`px-4 py-1.5 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
                 isWhite
                   ? 'bg-primary text-white shadow-md shadow-primary/30 hover:bg-primary-dark'
                   : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
@@ -148,10 +149,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 bg-white/10 backdrop-blur-sm border border-white/20 active:scale-95"
+            className="md:hidden w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 bg-white/10 backdrop-blur-sm border border-white/20 active:scale-95"
             aria-label="Open menu"
           >
-            <HiMenu size={20} className="text-primary" />
+            <HiMenu size={18} className="text-primary" />
           </button>
         </div>
       </nav>
@@ -182,45 +183,51 @@ export default function Navbar() {
 
               <div className="px-5 pt-2 pb-4 border-b border-gray-100">
                 <div className="flex items-center justify-between">
-                  <div className="relative w-10 h-10">
-                    <Image
-                      src="/images/logo/koje_16_jun_-removebg-preview.png"
-                      alt="KOJE Natural Logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-8 h-8">
+                      <Image
+                        src="/images/logo/koje_16_jun_-removebg-preview.png"
+                        alt="KOJE Natural Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <span className="font-poppins font-bold text-sm text-primary">KOJE</span>
+                      <p className="text-[7px] text-gray-400 -mt-0.5">PT Koje Natural Indonesia</p>
+                    </div>
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center active:bg-gray-200 transition"
+                    className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 active:bg-gray-200 transition"
                     aria-label="Close menu"
                   >
-                    <HiX className="text-sm text-gray-500" />
+                    <HiX className="text-sm" />
                   </button>
                 </div>
               </div>
 
-              <div className="px-5 py-4">
+              <div className="px-5 py-3 border-b border-gray-50">
                 <a
                   href="tel:+6281234567890"
-                  className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/10 active:bg-primary/10 transition group"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/10 active:bg-primary/10 transition group"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center group-hover:scale-110 transition">
-                      <HiPhone className="text-primary text-base" />
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center group-hover:scale-110 transition">
+                      <HiPhone className="text-primary text-sm" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">Call us now</p>
-                      <p className="text-sm font-semibold text-gray-900">+62 812 3456 7890</p>
+                      <p className="text-[10px] text-gray-500">Call us now</p>
+                      <p className="text-xs font-semibold text-gray-900">+62 812 3456 7890</p>
                     </div>
                   </div>
-                  <svg className="text-primary text-sm opacity-60 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="text-primary text-xs opacity-60 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
               </div>
 
-              <div className="px-3 py-2">
+              <div className="px-5 py-1">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href
                   return (
@@ -228,7 +235,7 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center justify-between py-4 px-3 rounded-xl font-medium transition-all duration-200 text-base ${
+                      className={`flex items-center justify-between py-2.5 px-2 rounded-xl font-medium transition-all duration-200 text-sm ${
                         isActive
                           ? 'bg-primary text-white shadow-md shadow-primary/20'
                           : 'text-gray-700 active:bg-gray-50'
@@ -243,23 +250,23 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="px-5 pt-2 pb-6">
+              <div className="px-5 pt-2 pb-5">
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex flex-col gap-2 w-full p-4 bg-gradient-to-r from-primary to-primary-dark rounded-xl text-white shadow-lg shadow-primary/30 active:scale-[0.98] transition-all"
+                  className="flex flex-col gap-1.5 w-full p-3 bg-gradient-to-r from-primary to-primary-dark rounded-xl text-white shadow-lg shadow-primary/30 active:scale-[0.98] transition-all"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-base">Request Quote</span>
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <span className="font-semibold text-sm">Request Quote</span>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </div>
-                  <p className="text-xs text-white/70">Dapatkan penawaran dalam &lt; 24 jam</p>
+                  <p className="text-[10px] text-white/70">Dapatkan penawaran dalam &lt; 24 jam</p>
                 </Link>
               </div>
 
-              <div className="px-5 pb-6 pt-2 text-center border-t border-gray-50">
+              <div className="px-5 pb-5 pt-1 text-center border-t border-gray-50">
                 <p className="text-[8px] text-gray-400">
                   © {new Date().getFullYear()} PT Koje Natural Indonesia
                 </p>
