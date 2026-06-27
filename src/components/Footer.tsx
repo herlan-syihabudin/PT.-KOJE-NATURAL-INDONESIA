@@ -27,9 +27,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Kolom 1: Logo & Deskripsi */}
           <div>
-            {/* Logo - Sama dengan header */}
-            <Link href="/" className="inline-block mb-3">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 transition-transform duration-300 hover:scale-105">
+            {/* Logo - Diperbesar */}
+            <Link href="/" className="inline-block mb-4">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 transition-transform duration-300 hover:scale-105">
                 <Image
                   src="/images/logo/koje_putih-removebg-preview.png"
                   alt="KOJE Natural Logo"
@@ -40,7 +40,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-              PT Koje Natural Indonesia - General Supplier & Premium Beverage Partner
+              PT Koje Natural Indonesia - Industrial Procurement & Supply Solutions
             </p>
             <div className="flex gap-3">
               <a 
