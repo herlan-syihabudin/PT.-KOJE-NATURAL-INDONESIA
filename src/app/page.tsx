@@ -5,7 +5,6 @@ import TrustSignals from '@/components/TrustSignals'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import ProjectGallery from '@/components/ProjectGallery'
 import CTASection from '@/components/CTASection'
-import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <WhyChooseUs />
       <ProjectGallery />
       <CTASection />
-      <Footer />
     </main>
   )
 }
