@@ -10,12 +10,10 @@ import {
   HiClock, 
   HiChevronRight,
   HiCheckCircle,
-  HiBuildingOffice,
-  HiEnvelope,
+  HiOfficeBuilding,
   HiUser,
-  HiChatBubbleLeftRight,
-  HiMapPin,
-  HiGlobeAlt
+  HiChat,
+  HiMap
 } from 'react-icons/hi'
 import { FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
@@ -40,7 +38,6 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate submission
     setTimeout(() => {
       setIsSubmitting(false)
       setIsSubmitted(true)
@@ -188,7 +185,7 @@ export default function ContactPage() {
                         Email <span className="text-primary">*</span>
                       </label>
                       <div className="relative">
-                        <HiEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
+                        <HiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
                         <input
                           type="email"
                           id="email"
@@ -226,7 +223,7 @@ export default function ContactPage() {
                         Perusahaan
                       </label>
                       <div className="relative">
-                        <HiBuildingOffice className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
+                        <HiOfficeBuilding className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
                         <input
                           type="text"
                           id="company"
@@ -245,7 +242,7 @@ export default function ContactPage() {
                       Subjek <span className="text-primary">*</span>
                     </label>
                     <div className="relative">
-                      <HiChatBubbleLeftRight className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
+                      <HiChat className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
                       <select
                         id="subject"
                         name="subject"
@@ -438,7 +435,7 @@ export default function ContactPage() {
           >
             <div className="aspect-[16/6] bg-gray-200 relative flex items-center justify-center">
               <div className="text-center">
-                <HiMapPin className="text-4xl text-primary/40 mx-auto mb-2" />
+                <HiMap className="text-4xl text-primary/40 mx-auto mb-2" />
                 <p className="text-sm text-gray-500">Google Maps Integration</p>
                 <p className="text-xs text-gray-400">Jakarta, Indonesia</p>
               </div>
