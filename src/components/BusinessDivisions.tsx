@@ -1,5 +1,10 @@
 import Link from 'next/link'
-import { HiChevronRight, HiOfficeBuilding, HiCube } from 'react-icons/hi'
+import {
+  HiChevronRight,
+  HiOfficeBuilding,
+  HiCube,
+  HiTruck,
+} from 'react-icons/hi'
 
 const capabilities = [
   {
@@ -9,9 +14,9 @@ const capabilities = [
       'Integrated procurement services covering industrial supply, MRO, packaging materials, vendor coordination, and logistics support for manufacturing operations.',
     items: [
       'Industrial supply & distribution',
-      'MRO spareparts & consumables',
+      'MRO spare parts & consumables',
       'Packaging materials procurement',
-      'Vendor management',
+      'Vendor sourcing & coordination',
       'Logistics coordination',
     ],
     icon: HiOfficeBuilding,
@@ -19,17 +24,32 @@ const capabilities = [
   },
   {
     id: '02',
-    title: 'Manufacturing & Distribution',
+    title: 'Engineering & Technical Support',
     description:
-      'Controlled manufacturing and distribution of beverage and FMCG products for commercial, retail, and corporate supply chains.',
+      'Technical sourcing and engineering support for industrial requirements, project specifications, equipment, materials, and operational needs.',
+    items: [
+      'Engineering support',
+      'Technical sourcing',
+      'Project requirements',
+      'Equipment & materials',
+      'Specification support',
+    ],
+    icon: HiCube,
+    href: '/capabilities/engineering',
+  },
+  {
+    id: '03',
+    title: 'FMCG Manufacturing & Distribution',
+    description:
+      'Controlled manufacturing and distribution of beverage and FMCG products for commercial, retail, corporate, and private label supply chains.',
     items: [
       'Beverage production',
       'Private label manufacturing',
-      'FMCG distribution network',
+      'FMCG distribution',
       'Corporate supply',
       'Packaging solutions',
     ],
-    icon: HiCube,
+    icon: HiTruck,
     href: '/capabilities/manufacturing',
   },
 ]
@@ -43,23 +63,26 @@ export default function UltraCorporateCapabilities() {
         <div className="mb-14 max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-10 h-px bg-gray-300" />
+
             <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
               Capabilities Statement
             </span>
+
             <span className="w-10 h-px bg-gray-300" />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-            Supply & Manufacturing Solutions
+            Procurement, Supply & Manufacturing Solutions
           </h2>
 
           <p className="text-sm text-gray-500 mt-5 leading-relaxed">
-            PT KOJE Natural Indonesia operates as a procurement and manufacturing partner supporting
-            industrial supply chains and FMCG distribution networks across Indonesia.
+            PT KOJE Natural Indonesia operates as a procurement, supply, and
+            manufacturing partner supporting industrial operations and FMCG
+            supply chains across Indonesia.
           </p>
         </div>
 
-        {/* LIST */}
+        {/* CAPABILITIES LIST */}
         <div className="space-y-1">
 
           {capabilities.map((item) => (
@@ -68,7 +91,6 @@ export default function UltraCorporateCapabilities() {
               href={item.href}
               className="group block border-b border-gray-100 py-7 hover:bg-gray-50/40 transition-colors -mx-6 px-6"
             >
-
               <div className="flex items-start gap-5">
 
                 {/* ID */}
@@ -88,7 +110,7 @@ export default function UltraCorporateCapabilities() {
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                  <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-3xl">
                     {item.description}
                   </p>
 
@@ -116,7 +138,7 @@ export default function UltraCorporateCapabilities() {
 
         </div>
 
-        {/* RFQ STRIP (MATCH SYSTEM) */}
+        {/* RFQ STRIP */}
         <div className="mt-20 border border-gray-100 bg-gray-50 p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
 
           <div>
@@ -125,11 +147,11 @@ export default function UltraCorporateCapabilities() {
             </p>
 
             <h3 className="text-lg font-medium text-gray-900 mt-2">
-              Submit RFQ for industrial procurement needs
+              Submit an RFQ for industrial procurement needs
             </h3>
 
             <p className="text-sm text-gray-500 mt-1">
-              Response within 24 hours from procurement team
+              Our procurement team will review your requirements and respond promptly.
             </p>
           </div>
 
@@ -137,7 +159,7 @@ export default function UltraCorporateCapabilities() {
             href="/contact"
             className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 text-sm hover:bg-gray-800 transition"
           >
-            Submit RFQ
+            Submit an RFQ
             <HiChevronRight className="w-4 h-4" />
           </Link>
 
