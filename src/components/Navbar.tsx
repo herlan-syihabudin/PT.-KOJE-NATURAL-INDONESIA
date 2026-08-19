@@ -375,8 +375,6 @@ export default function Navbar() {
       ========================================= */}
 
       <AnimatePresence>
-
-      <AnimatePresence>
         {isMobileMenuOpen && (
           <>
             {/* BACKDROP */}
