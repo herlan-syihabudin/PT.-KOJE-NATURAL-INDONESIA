@@ -9,8 +9,6 @@ import {
   HiClipboardCheck,
   HiWrench,
 } from 'react-icons/hi'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Engineering & Technical Support | PT KOJE Natural Indonesia',
