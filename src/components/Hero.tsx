@@ -43,7 +43,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light">
-            Procurement, engineering support, and distribution solutions for industrial operations and FMCG supply chains across Indonesia.
+            Supporting manufacturing, construction, industrial operations, and FMCG businesses with reliable procurement, sourcing, engineering support, and nationwide distribution services.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -55,11 +55,13 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/company-profile"
-              className="px-8 py-4 border border-white/20 text-white hover:bg-white/10 rounded-sm transition flex items-center gap-2"
-            >
-              <HiDocumentText /> Company Profile
-            </Link>
+  href="/company-profile/PT-KOJE-NATURAL-INDONESIA-Company-Profile.pdf"
+  target="_blank"
+  className="px-8 py-4 border border-white/20 text-white hover:bg-white/10 rounded-sm transition flex items-center gap-2"
+>
+  <HiDocumentText />
+  Company Profile
+</Link>
           </div>
 
         </motion.div>
