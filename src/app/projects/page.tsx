@@ -12,122 +12,147 @@ import {
   HiBeaker,
   HiClipboardCheck,
   HiCube,
+  HiDocumentText,
+  HiLightningBolt,
 } from 'react-icons/hi'
 
-const projectCategories = [
+const projectApplications = [
   {
+    number: '01',
     icon: HiOfficeBuilding,
-    title: 'Industrial Supply & Procurement',
-    description:
-      'Procurement support for industrial materials, equipment, components, and operational requirements based on project specifications.',
-    items: [
-      'Material sourcing',
-      'Equipment procurement',
-      'Vendor coordination',
-      'Project-based purchasing',
-    ],
-    href: '/capabilities/industrial-supply',
+    title: 'Industrial Procurement',
+    industry: 'Manufacturing & Industrial',
+    requirement:
+      'Industrial materials, components, MRO products, consumables, and operational supplies.',
+    scope:
+      'Specification-based sourcing, procurement, supplier coordination, and delivery.',
+    solution:
+      'KOJE reviews the requirement, identifies suitable products and suppliers, coordinates quotations, and supports procurement through delivery.',
+    tags: ['Industrial Supply', 'MRO', 'Procurement'],
   },
   {
+    number: '02',
     icon: HiCog,
-    title: 'Engineering Support',
-    description:
-      'Technical and engineering support to help clients coordinate requirements, specifications, materials, and implementation needs.',
-    items: [
-      'Technical coordination',
-      'Material specification',
-      'Engineering support',
-      'Project documentation',
-    ],
-    href: '/capabilities/engineering-support',
+    title: 'Engineering & MEP Supply',
+    industry: 'Engineering, Construction & MEP',
+    requirement:
+      'Electrical, mechanical, technical equipment, spare parts, and project-specific materials.',
+    scope:
+      'Technical sourcing, specification review, equipment procurement, and project coordination.',
+    solution:
+      'Requirements are reviewed against technical specifications before suitable products, brands, suppliers, and commercial options are coordinated.',
+    tags: ['Engineering', 'MEP', 'Technical Supply'],
   },
   {
+    number: '03',
+    icon: HiCube,
+    title: 'Factory & MRO Supply',
+    industry: 'Manufacturing Operations',
+    requirement:
+      'Maintenance parts, production consumables, operational materials, and replacement components.',
+    scope:
+      'Recurring supply, sourcing, vendor coordination, and material delivery.',
+    solution:
+      'KOJE can coordinate multiple product categories and suppliers to support ongoing factory and operational requirements.',
+    tags: ['Factory', 'MRO', 'Consumables'],
+  },
+  {
+    number: '04',
     icon: HiBeaker,
-    title: 'FMCG Manufacturing',
-    description:
-      'Manufacturing support for beverage and FMCG products with a focus on quality, consistency, and scalable production requirements.',
-    items: [
-      'Beverage production',
-      'Product development',
-      'Private label support',
-      'Production coordination',
-    ],
-    href: '/capabilities/manufacturing-fmcg',
+    title: 'FMCG & Beverage Supply',
+    industry: 'FMCG, Food & Beverage',
+    requirement:
+      'Beverage products, private label requirements, corporate orders, and FMCG supply.',
+    scope:
+      'Manufacturing coordination, packaging, production planning, and B2B supply.',
+    solution:
+      'KOJE supports beverage and FMCG requirements from product specification and production coordination through packaging and delivery.',
+    tags: ['FMCG', 'Beverage', 'Private Label'],
   },
   {
+    number: '05',
     icon: HiTruck,
-    title: 'FMCG Distribution',
-    description:
-      'Supply and distribution support designed to connect products with business, retail, corporate, and institutional requirements.',
-    items: [
-      'Product distribution',
-      'B2B supply',
-      'Corporate orders',
-      'Supply coordination',
-    ],
-    href: '/capabilities/project-logistics',
+    title: 'Corporate & Institutional Supply',
+    industry: 'Corporate & Institutional',
+    requirement:
+      'Products and supplies required by offices, institutions, businesses, and organizational procurement.',
+    scope:
+      'Product sourcing, quotation coordination, bulk purchasing, and delivery.',
+    solution:
+      'KOJE provides a single coordination point for different product requirements, helping simplify purchasing and supply arrangements.',
+    tags: ['Corporate', 'B2B', 'Bulk Supply'],
+  },
+  {
+    number: '06',
+    icon: HiClipboardCheck,
+    title: 'Project Material & Logistics',
+    industry: 'Construction & Project Operations',
+    requirement:
+      'Project-specific materials requiring scheduled procurement and delivery.',
+    scope:
+      'Material sourcing, supplier coordination, purchasing, scheduling, and logistics.',
+    solution:
+      'KOJE coordinates procurement activities with project requirements, delivery locations, quantities, and operational timelines.',
+    tags: ['Project Supply', 'Logistics', 'Delivery'],
   },
 ]
 
-const workflow = [
+const processSteps = [
   {
     number: '01',
     title: 'Requirement',
     description:
-      'We review your project requirements, specifications, quantities, timeline, and delivery expectations.',
+      'We receive the product specification, quantity, application, preferred brand, project scope, and delivery requirements.',
   },
   {
     number: '02',
-    title: 'Sourcing',
+    title: 'Review',
     description:
-      'Our team identifies suitable products, materials, suppliers, or production solutions based on the requirement.',
+      'Our team reviews the requirement and determines the appropriate sourcing, procurement, manufacturing, or supply approach.',
   },
   {
     number: '03',
-    title: 'Coordination',
+    title: 'Sourcing',
     description:
-      'We coordinate technical details, commercial requirements, availability, production, and logistics.',
+      'Suitable products, suppliers, production options, and commercial alternatives are identified based on the requirement.',
   },
   {
     number: '04',
+    title: 'Coordination',
+    description:
+      'We coordinate quotations, availability, specifications, purchasing requirements, production, and logistics.',
+  },
+  {
+    number: '05',
     title: 'Delivery',
     description:
-      'The approved solution is prepared and delivered according to the agreed project requirements.',
+      'The approved products or materials are prepared and delivered according to the agreed requirements and schedule.',
   },
 ]
 
-const operationalItems = [
-  {
-    icon: HiCube,
-    title: 'Supply',
-    text: 'Product and material sourcing based on requirements.',
-  },
-  {
-    icon: HiCog,
-    title: 'Technical',
-    text: 'Coordination and engineering support where required.',
-  },
-  {
-    icon: HiBeaker,
-    title: 'Manufacturing',
-    text: 'FMCG and beverage production support.',
-  },
-  {
-    icon: HiTruck,
-    title: 'Distribution',
-    text: 'Product supply and delivery coordination.',
-  },
+const industries = [
+  'Manufacturing',
+  'Construction',
+  'Engineering & MEP',
+  'Industrial Operations',
+  'FMCG',
+  'Food & Beverage',
+  'Corporate',
+  'Commercial Facilities',
 ]
 
 export default function ProjectsPage() {
   return (
     <main id="top" className="bg-white text-gray-900">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section className="relative overflow-hidden bg-[#0A0F14] pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#0FA3A8]/10 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#0FA3A8]/5 blur-3xl" />
+          <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#0FA3A8]/10 blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-[#0FA3A8]/5 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6">
@@ -135,13 +160,20 @@ export default function ProjectsPage() {
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
-            className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-6"
+            className="mb-8 flex flex-wrap items-center gap-2 text-sm text-gray-400"
           >
-            <Link href="/" className="hover:text-white transition">
+            <Link
+              href="/"
+              className="transition hover:text-white"
+            >
               Home
             </Link>
+
             <span>/</span>
-            <span className="text-white">Projects</span>
+
+            <span className="text-white">
+              Projects
+            </span>
           </nav>
 
           <motion.div
@@ -150,22 +182,29 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
+
             <div className="mb-6 inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-gray-300">
               <HiClipboardCheck className="text-[#0FA3A8]" />
-              Projects & Operations
+              Projects & Supply Applications
             </div>
 
             <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
-              Supporting Business Requirements
+              From Business Requirements
               <span className="block text-[#0FA3A8]">
-                From Procurement to Delivery
+                to Practical Solutions
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-gray-400 md:text-lg">
-              PT KOJE Natural Indonesia provides integrated procurement,
-              engineering support, manufacturing, and distribution solutions
-              for industrial and FMCG business requirements.
+            <p className="mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg">
+              PT KOJE Natural Indonesia supports industrial, commercial,
+              engineering, manufacturing, and FMCG requirements through
+              procurement, supply, manufacturing, and project coordination.
+            </p>
+
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-gray-500 md:text-base">
+              Explore the types of project applications and business
+              requirements that can be supported through KOJE&apos;s
+              integrated supply and operational capabilities.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -173,7 +212,7 @@ export default function ProjectsPage() {
                 href="/contact"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 bg-[#0FA3A8] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0C8A8E]"
               >
-                Discuss Your Requirement
+                Discuss Your Project
                 <HiArrowRight />
               </Link>
 
@@ -181,55 +220,69 @@ export default function ProjectsPage() {
                 href="/capabilities"
                 className="inline-flex min-h-[48px] items-center justify-center border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
-                Explore Capabilities
+                View Capabilities
               </Link>
             </div>
+
           </motion.div>
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center"
+            className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center"
           >
+
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
-                Our Operations
+                Project Applications
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
-                One partner for multiple business requirements.
+                Different requirements.
+                <span className="block text-gray-400">
+                  One coordinated partner.
+                </span>
               </h2>
             </div>
 
             <div className="space-y-5 text-base leading-8 text-gray-600">
               <p>
-                Every project has different requirements. From sourcing
-                industrial materials and coordinating technical specifications
-                to manufacturing and distributing FMCG products, KOJE works
-                as a flexible supply and operational partner.
+                Every business requirement has different specifications,
+                quantities, timelines, and purchasing structures. KOJE
+                supports these requirements by coordinating the right
+                products, suppliers, production resources, and delivery
+                arrangements.
               </p>
 
               <p>
-                Our approach is built around understanding the requirement
-                first, coordinating the right resources, and delivering a
-                practical solution aligned with the client&apos;s operational
-                needs.
+                The applications below represent the types of industrial,
+                commercial, project, and FMCG requirements that can be
+                supported through our operational capabilities.
               </p>
             </div>
+
           </motion.div>
         </div>
       </section>
 
-      {/* CATEGORIES */}
+      {/* =====================================================
+          PROJECT APPLICATIONS
+      ===================================================== */}
+
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -237,125 +290,186 @@ export default function ProjectsPage() {
             viewport={{ once: true }}
             className="mx-auto max-w-3xl text-center"
           >
+
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
-              Project Scope
+              Selected Applications
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold text-gray-900 md:text-4xl">
-              Areas We Support
+              Where KOJE Can Support
             </h2>
 
             <p className="mt-5 text-base leading-7 text-gray-600">
-              Our operational scope covers procurement, technical support,
-              manufacturing, and distribution requirements.
+              Examples of business and project requirements that can be
+              supported through our procurement, supply, manufacturing,
+              and logistics capabilities.
             </p>
+
           </motion.div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {projectCategories.map((category, index) => {
-              const Icon = category.icon
+            {projectApplications.map((project, index) => {
+              const Icon = project.icon
 
               return (
                 <motion.article
-                  key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={project.number}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.05,
+                  }}
                   viewport={{ once: true }}
                   className="group border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-[#0FA3A8]/30 hover:shadow-xl md:p-8"
                 >
+
+                  {/* Header */}
                   <div className="flex items-start justify-between gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0FA3A8]/10 text-2xl text-[#0FA3A8]">
-                      <Icon />
+
+                    <div className="flex items-center gap-4">
+
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0FA3A8]/10 text-2xl text-[#0FA3A8]">
+                        <Icon />
+                      </div>
+
+                      <div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                          Project Application
+                        </div>
+
+                        <div className="mt-1 text-xs font-medium text-[#0FA3A8]">
+                          {project.number}
+                        </div>
+                      </div>
+
                     </div>
 
-                    <span className="text-xs font-medium uppercase tracking-[0.15em] text-gray-400">
-                      KOJE
-                    </span>
+                    <HiArrowRight className="mt-1 text-gray-300 transition duration-300 group-hover:translate-x-1 group-hover:text-[#0FA3A8]" />
+
                   </div>
 
+                  {/* Title */}
                   <h3 className="mt-7 text-xl font-semibold text-gray-900">
-                    {category.title}
+                    {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-gray-600">
-                    {category.description}
-                  </p>
+                  {/* Industry */}
+                  <div className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-gray-400">
+                    {project.industry}
+                  </div>
 
-                  <ul className="mt-6 space-y-3">
-                    {category.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-sm text-gray-600"
+                  {/* Requirement */}
+                  <div className="mt-7">
+                    <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                      Requirement
+                    </div>
+
+                    <p className="mt-2 text-sm leading-7 text-gray-600">
+                      {project.requirement}
+                    </p>
+                  </div>
+
+                  {/* Scope */}
+                  <div className="mt-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                      Scope
+                    </div>
+
+                    <p className="mt-2 text-sm leading-7 text-gray-600">
+                      {project.scope}
+                    </p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="mt-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                      KOJE Solution
+                    </div>
+
+                    <p className="mt-2 text-sm leading-7 text-gray-600">
+                      {project.solution}
+                    </p>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="mt-7 flex flex-wrap gap-2 border-t border-gray-100 pt-5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs text-gray-500"
                       >
-                        <HiCheckCircle className="mt-0.5 shrink-0 text-[#0FA3A8]" />
-                        <span>{item}</span>
-                      </li>
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
 
-                  <Link
-                    href={category.href}
-                    className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition group-hover:text-[#0FA3A8]"
-                  >
-                    Explore capability
-                    <HiArrowRight className="transition-transform group-hover:translate-x-1" />
-                  </Link>
                 </motion.article>
               )
             })}
           </div>
+
         </div>
       </section>
 
-      {/* PROJECT APPROACH */}
+      {/* =====================================================
+          PROJECT PROCESS
+      ===================================================== */}
+
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]"
+            className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr]"
           >
+
             <div>
+
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
-                How We Work
+                Project Workflow
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-                Structured process.
+              <h2 className="mt-4 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+                From requirement
                 <span className="block text-gray-400">
-                  Practical execution.
+                  to delivery.
                 </span>
               </h2>
 
               <p className="mt-6 max-w-md text-base leading-8 text-gray-600">
-                We aim to make procurement and supply coordination simpler by
-                maintaining clear communication from initial requirement
-                through delivery.
+                Our process is designed to keep procurement, sourcing,
+                manufacturing, and delivery requirements coordinated
+                from the beginning of an engagement through completion.
               </p>
 
               <Link
                 href="/contact"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-[#0FA3A8]"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition hover:text-[#0FA3A8]"
               >
-                Start a discussion
+                Start a project discussion
                 <HiArrowRight />
               </Link>
+
             </div>
 
             <div className="divide-y divide-gray-200 border-y border-gray-200">
-              {workflow.map((step) => (
+
+              {processSteps.map((step) => (
                 <div
                   key={step.number}
                   className="grid gap-5 py-7 sm:grid-cols-[80px_1fr]"
                 >
+
                   <div className="text-sm font-semibold tracking-[0.15em] text-[#0FA3A8]">
                     {step.number}
                   </div>
 
                   <div>
+
                     <h3 className="text-lg font-semibold text-gray-900">
                       {step.title}
                     </h3>
@@ -363,119 +477,236 @@ export default function ProjectsPage() {
                     <p className="mt-2 text-sm leading-7 text-gray-600">
                       {step.description}
                     </p>
+
                   </div>
+
                 </div>
               ))}
+
             </div>
+
           </motion.div>
         </div>
       </section>
 
-      {/* OPERATIONAL VALUE */}
-      <section className="bg-[#0A0F14] py-20 text-white md:py-24">
+      {/* =====================================================
+          INDUSTRIES
+      ===================================================== */}
+
+      <section className="border-y border-gray-100 bg-[#F8FAFC] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="grid gap-12 lg:grid-cols-2 lg:items-center"
+            className="max-w-3xl"
           >
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
-                Operational Support
-              </p>
 
-              <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-                Built for business requirements that need flexibility.
-              </h2>
-
-              <p className="mt-6 max-w-xl text-base leading-8 text-gray-400">
-                Whether the requirement involves industrial procurement,
-                technical coordination, beverage manufacturing, or product
-                distribution, KOJE can support the process based on the scope
-                and specifications of each engagement.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {operationalItems.map((item) => {
-                const Icon = item.icon
-
-                return (
-                  <div
-                    key={item.title}
-                    className="border border-white/10 bg-white/[0.03] p-6"
-                  >
-                    <Icon className="text-2xl text-[#0FA3A8]" />
-
-                    <h3 className="mt-5 font-semibold">{item.title}</h3>
-
-                    <p className="mt-2 text-sm leading-6 text-gray-500">
-                      {item.text}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="border border-gray-200 bg-gray-50 px-6 py-12 text-center md:px-12 md:py-16"
-          >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
-              Start a Project
+              Industries & Applications
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold text-gray-900 md:text-4xl">
-              Have a procurement or supply requirement?
+              Supporting different
+              <span className="text-gray-400">
+                {' '}operational environments.
+              </span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600">
-              Share your requirements with our team. We can review the scope,
-              specifications, quantity, and timeline to determine the right
-              approach.
+            <p className="mt-5 text-base leading-7 text-gray-600">
+              Our project applications can be adapted to different
+              industries, purchasing structures, operational requirements,
+              and project environments.
             </p>
 
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          </motion.div>
+
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.04,
+                }}
+                viewport={{ once: true }}
+                className="border border-gray-200 bg-white px-5 py-5 transition duration-300 hover:-translate-y-1 hover:border-[#0FA3A8]/30"
+              >
+                <div className="flex items-center gap-3">
+
+                  <HiCheckCircle className="shrink-0 text-[#0FA3A8]" />
+
+                  <span className="text-sm text-gray-600">
+                    {industry}
+                  </span>
+
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* =====================================================
+          PROJECT TYPES
+      ===================================================== */}
+
+      <section className="py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+
+          <div className="grid gap-6 md:grid-cols-3">
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className="border border-gray-200 bg-white p-7"
+            >
+
+              <HiDocumentText className="text-2xl text-[#0FA3A8]" />
+
+              <h3 className="mt-5 text-lg font-semibold">
+                Specification-Based Projects
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-gray-600">
+                Suitable for requirements where products, materials,
+                equipment, brands, quantities, or technical specifications
+                have already been defined.
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.08 }}
+              viewport={{ once: true }}
+              className="border border-gray-200 bg-white p-7"
+            >
+
+              <HiLightningBolt className="text-2xl text-[#0FA3A8]" />
+
+              <h3 className="mt-5 text-lg font-semibold">
+                Sourcing Projects
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-gray-600">
+                Suitable when clients need assistance identifying
+                products, suppliers, alternatives, availability,
+                or procurement options.
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.16 }}
+              viewport={{ once: true }}
+              className="border border-gray-200 bg-white p-7"
+            >
+
+              <HiTruck className="text-2xl text-[#0FA3A8]" />
+
+              <h3 className="mt-5 text-lg font-semibold">
+                Supply & Delivery Projects
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-gray-600">
+                Suitable for project requirements involving purchasing,
+                production, material coordination, scheduled delivery,
+                and ongoing supply.
+              </p>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section className="bg-[#0A0F14] py-20 text-white md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center"
+          >
+
+            <div>
+
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0FA3A8]">
+                Start a Project
+              </p>
+
+              <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
+                Have a project or supply requirement?
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-base leading-7 text-gray-400">
+                Send us your product specification, quantity, preferred
+                brand, equipment requirement, project scope, or delivery
+                requirement. Our team will review the request and determine
+                the appropriate support approach.
+              </p>
+
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+
               <Link
                 href="/contact"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 bg-[#0FA3A8] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0C8A8E]"
               >
-                Request an RFQ
+                Submit RFQ
                 <HiArrowRight />
               </Link>
 
               <Link
                 href="/products"
-                className="inline-flex min-h-[48px] items-center justify-center border border-gray-300 bg-white px-7 py-3 text-sm font-semibold text-gray-900 transition hover:border-gray-400"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 border border-white/15 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
                 View Products
               </Link>
+
             </div>
+
           </motion.div>
+
         </div>
       </section>
 
-      {/* BACK TO TOP */}
+      {/* =====================================================
+          BACK TO TOP
+      ===================================================== */}
+
       <div className="border-t border-gray-100 py-6">
         <div className="mx-auto max-w-7xl px-6 text-center">
+
           <Link
             href="#top"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 transition hover:text-gray-700"
           >
-            <HiArrowUp className="w-4 h-4" />
+            <HiArrowUp className="h-4 w-4" />
             Back to Top
           </Link>
+
         </div>
       </div>
 
