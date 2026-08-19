@@ -17,6 +17,7 @@ const categories = [
   {
     id: '01',
     title: 'Industrial Products',
+    href: '/products/industrial-products',
     description:
       'Industrial components, equipment, materials, and operational supplies for manufacturing and industrial facilities.',
     icon: HiOfficeBuilding,
@@ -30,6 +31,7 @@ const categories = [
   {
     id: '02',
     title: 'MRO & Consumables',
+    href: '/products/mro-consumables',
     description:
       'Maintenance, repair, and operational supplies supporting continuous industrial operations.',
     icon: HiCog,
@@ -43,6 +45,7 @@ const categories = [
   {
     id: '03',
     title: 'Packaging Materials',
+    href: '/products/packaging-materials',
     description:
       'Packaging materials and supporting products for industrial, FMCG, food, and beverage operations.',
     icon: HiCube,
@@ -56,6 +59,7 @@ const categories = [
   {
     id: '04',
     title: 'Chemical & Processing Supplies',
+    href: '/products/chemical-processing',
     description:
       'Selected materials and processing supplies for manufacturing and production requirements.',
     icon: HiBeaker,
@@ -69,6 +73,7 @@ const categories = [
   {
     id: '05',
     title: 'FMCG Products',
+    href: '/products/fmcg',
     description:
       'Beverage and FMCG products supplied for corporate, retail, commercial, and distribution channels.',
     icon: HiCollection,
@@ -82,6 +87,7 @@ const categories = [
   {
     id: '06',
     title: 'Custom & Sourcing',
+    href: '/products/custom-sourcing',
     description:
       'Sourcing solutions for products and materials that require specific specifications, brands, or procurement requirements.',
     icon: HiTruck,
@@ -271,17 +277,78 @@ export default function ProductsPage() {
               const Icon = category.icon
 
               return (
-                <motion.div
-                  key={category.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
-                  }}
-                  viewport={{ once: true }}
-                  className="group bg-white p-7 md:p-9 hover:bg-gray-50 transition-colors"
-                >
+  <motion.div
+    key={category.id}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{
+      duration: 0.4,
+      delay: index * 0.05,
+    }}
+    viewport={{ once: true }}
+  >
+    <Link
+      href={category.href}
+      className="group block bg-white p-7 md:p-9 hover:bg-gray-50 transition-colors h-full"
+    >
+
+      <div className="flex items-start gap-5">
+
+        <div className="shrink-0">
+          <div className="w-11 h-11 border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#0FA3A8] group-hover:border-[#0FA3A8]/30 transition">
+            <Icon className="w-5 h-5" />
+          </div>
+        </div>
+
+        <div className="flex-1">
+
+          <div className="flex items-start justify-between gap-4">
+
+            <div>
+              <span className="text-[10px] tracking-[0.2em] text-gray-300">
+                {category.id}
+              </span>
+
+              <h3 className="text-lg font-medium text-gray-900 mt-1">
+                {category.title}
+              </h3>
+            </div>
+
+            <HiChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#0FA3A8] group-hover:translate-x-1 transition-all shrink-0" />
+
+          </div>
+
+          <p className="text-sm text-gray-500 leading-relaxed mt-3">
+            {category.description}
+          </p>
+
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-5">
+
+            {category.items.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 text-xs text-gray-400"
+              >
+                <span className="w-1 h-1 bg-gray-300 rounded-full shrink-0" />
+                {item}
+              </div>
+            ))}
+
+          </div>
+
+          {/* VIEW CATEGORY */}
+          <div className="mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] transition">
+            View Products
+            <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </div>
+
+        </div>
+
+      </div>
+
+    </Link>
+  </motion.div>
+)
 
                   <div className="flex items-start gap-5">
 
