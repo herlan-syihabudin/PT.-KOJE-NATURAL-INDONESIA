@@ -7,8 +7,6 @@ import {
   HiOfficeBuilding,
 } from 'react-icons/hi'
 
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Engineering & Technical Support | PT KOJE Natural Indonesia',
@@ -27,8 +25,6 @@ const capabilities = [
 
 export default function EngineeringSupportPage() {
   return (
-    <>
-      <Navbar />
 
       <main className="pt-24 pb-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
@@ -234,8 +230,5 @@ export default function EngineeringSupportPage() {
 
         </div>
       </main>
-
-      <Footer />
-    </>
   )
 }
