@@ -369,3 +369,91 @@
     scroll-behavior: auto !important;
   }
 }
+
+@layer base {
+  /* =========================================
+     FOCUS VISIBLE (Accessibility)
+  ========================================= */
+  *:focus-visible {
+    outline: 2px solid #0FA3A8;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* =========================================
+     SELECTION COLOR
+  ========================================= */
+  ::selection {
+    background: #0FA3A8;
+    color: white;
+  }
+
+  /* =========================================
+     SCROLLBAR (Opsional)
+  ========================================= */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+@layer utilities {
+  /* =========================================
+     RESPONSIVE GRID
+  ========================================= */
+  .grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1.5rem;
+  }
+
+  .grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.5rem;
+  }
+
+  /* =========================================
+     RESPONSIVE GAPS
+  ========================================= */
+  .gap-responsive {
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  /* =========================================
+     LINE CLAMP
+  ========================================= */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
