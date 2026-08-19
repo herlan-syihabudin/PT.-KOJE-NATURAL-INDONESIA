@@ -49,11 +49,6 @@ const contactInfo = [
   },
 ]
 
-export const metadata = {
-  title: 'Contact | PT KOJE Natural Indonesia',
-  description:
-    'Contact PT KOJE Natural Indonesia for industrial procurement, supply chain, engineering support, safety solutions, project logistics, and manufacturing requirements across Indonesia.',
-}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
