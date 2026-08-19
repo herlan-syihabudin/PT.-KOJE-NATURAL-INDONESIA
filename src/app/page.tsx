@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import BusinessDivisions from '@/components/BusinessDivisions'
 import TrustSignals from '@/components/TrustSignals'
@@ -8,14 +7,13 @@ import CTASection from '@/components/CTASection'
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
+    <>
       <Hero />
       <BusinessDivisions />
       <TrustSignals />
       <WhyChooseUs />
       <ProjectGallery />
       <CTASection />
-    </main>
+    </>
   )
 }
