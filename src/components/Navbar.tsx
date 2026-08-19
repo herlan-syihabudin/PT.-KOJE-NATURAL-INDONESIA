@@ -9,11 +9,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
-  { href: '/about', label: 'Tentang' },
-  { href: '/capabilities', label: 'Capabilities' },
   { href: '/products', label: 'Products' },
-  { href: '/projects', label: 'Proyek' },
+  { href: '/capabilities', label: 'Capabilities' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'Tentang' },
   { href: '/contact', label: 'Kontak' },
+  { href: '/search', label: 'Search' },
 ]
 
 const LOGO_SRC = '/images/logo/koje_16_jun_-removebg-preview.png'
@@ -242,7 +243,7 @@ export default function Navbar() {
                 </a>
               </div>
 
-              {/* REQUEST QUOTE */}
+              {/* Request RFQ */}
 
               <Link
                 href="/contact"
