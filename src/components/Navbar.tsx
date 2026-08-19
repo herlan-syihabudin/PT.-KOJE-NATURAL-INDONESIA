@@ -75,10 +75,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* =========================================
-          DESKTOP / GLOBAL NAVBAR
-      ========================================= */}
-
       <nav
         className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${
           isWhite
@@ -89,10 +85,6 @@ export default function Navbar() {
       >
         <div className="container-custom">
           <div className="flex min-h-[64px] items-center justify-between md:min-h-[72px]">
-
-            {/* =====================================
-                LOGO
-            ===================================== */}
 
             <Link
               href="/"
@@ -131,12 +123,7 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* =====================================
-                DESKTOP MENU
-            ===================================== */}
-
             <div className="hidden md:flex md:items-center md:gap-5 lg:gap-7 xl:gap-8">
-
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href
 
@@ -196,38 +183,35 @@ export default function Navbar() {
                   </Link>
                 )
               })}
-              {/* SEARCH DESKTOP */}
 
-<Link
-  href="/search"
-  aria-label="Search products"
-  className={`
-    hidden
-    lg:flex
-    h-10
-    w-44
-    xl:w-52
-    items-center
-    rounded-lg
-    border
-    px-3
-    text-sm
-    transition-all
-    duration-200
+              <Link
+                href="/search"
+                aria-label="Search products"
+                className={`
+                  hidden
+                  lg:flex
+                  h-10
+                  w-44
+                  xl:w-52
+                  items-center
+                  rounded-lg
+                  border
+                  px-3
+                  text-sm
+                  transition-all
+                  duration-200
 
-    ${
-      isWhite
-        ? 'border-gray-200 bg-white text-gray-400 hover:border-primary hover:text-gray-600'
-        : 'border-white/20 bg-white/10 text-white/60 backdrop-blur-sm hover:border-white/40 hover:text-white'
-    }
-  `}
->
-  <span className="truncate">
-    Search products...
-  </span>
-</Link>
-
-              {/* PHONE */}
+                  ${
+                    isWhite
+                      ? 'border-gray-200 bg-white text-gray-400 hover:border-primary hover:text-gray-600'
+                      : 'border-white/20 bg-white/10 text-white/60 backdrop-blur-sm hover:border-white/40 hover:text-white'
+                  }
+                `}
+              >
+                <span className="truncate">
+                  Search products...
+                </span>
+              </Link>
 
               <div
                 className={`
@@ -265,14 +249,11 @@ export default function Navbar() {
                   `}
                 >
                   <HiPhone className="shrink-0 text-base" />
-
                   <span className="hidden xl:inline">
                     {PHONE_DISPLAY}
                   </span>
                 </a>
               </div>
-
-              {/* Request RFQ */}
 
               <Link
                 href="/contact"
@@ -302,83 +283,68 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* =====================================
-    MOBILE ACTIONS
-===================================== */}
+            <div className="flex items-center gap-2 md:hidden">
+              <Link
+                href="/search"
+                aria-label="Search products"
+                className={`
+                  flex
+                  h-11
+                  w-11
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  transition-all
+                  duration-200
 
-<div className="flex items-center gap-2 md:hidden">
+                  ${
+                    isWhite
+                      ? 'border-gray-200 bg-white text-gray-700 shadow-sm'
+                      : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
+                  }
+                `}
+              >
+                <HiSearch className="text-xl" />
+              </Link>
 
-  {/* SEARCH */}
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(true)}
+                className={`
+                  flex
+                  h-11
+                  w-11
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  transition-all
+                  duration-200
+                  active:scale-95
 
-  <Link
-    href="/search"
-    aria-label="Search products"
-    className={`
-      flex
-      h-11
-      w-11
-      shrink-0
-      items-center
-      justify-center
-      rounded-full
-      border
-      transition-all
-      duration-200
-
-      ${
-        isWhite
-          ? 'border-gray-200 bg-white text-gray-700 shadow-sm'
-          : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
-      }
-    `}
-  >
-    <HiSearch className="text-xl" />
-  </Link>
-
-  {/* MENU */}
-
-  <button
-    type="button"
-    onClick={() => setIsMobileMenuOpen(true)}
-    className={`
-      flex
-      h-11
-      w-11
-      shrink-0
-      items-center
-      justify-center
-      rounded-full
-      border
-      transition-all
-      duration-200
-      active:scale-95
-
-      ${
-        isWhite
-          ? 'border-gray-200 bg-white text-gray-800 shadow-sm'
-          : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
-      }
-    `}
-    aria-label="Buka menu"
-    aria-expanded={isMobileMenuOpen}
-    aria-controls="mobile-navigation"
-  >
-    <HiMenu className="text-xl" />
-  </button>
-
+                  ${
+                    isWhite
+                      ? 'border-gray-200 bg-white text-gray-800 shadow-sm'
+                      : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
+                  }
+                `}
+                aria-label="Buka menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
+              >
+                <HiMenu className="text-xl" />
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* =========================================
-          MOBILE MENU
-      ========================================= */}
-
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* BACKDROP */}
-
             <motion.button
               type="button"
               aria-label="Tutup menu"
@@ -389,8 +355,6 @@ export default function Navbar() {
               className="fixed inset-0 z-[998] cursor-default bg-black/60 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-
-            {/* MENU SHEET */}
 
             <motion.div
               id="mobile-navigation"
@@ -418,9 +382,6 @@ export default function Navbar() {
                 shadow-2xl
               "
             >
-
-              {/* HANDLE */}
-
               <div className="flex justify-center px-5 pb-1 pt-3">
                 <div
                   className="h-1 w-12 rounded-full bg-gray-200"
@@ -428,11 +389,8 @@ export default function Navbar() {
                 />
               </div>
 
-              {/* HEADER */}
-
               <div className="border-b border-gray-100 px-5 pb-4 pt-3">
                 <div className="flex items-center justify-between">
-
                   <Link
                     href="/"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -452,7 +410,6 @@ export default function Navbar() {
                       <span className="font-poppins text-sm font-bold text-primary">
                         KOJE
                       </span>
-
                       <p className="truncate text-[8px] text-gray-400">
                         PT Koje Natural Indonesia
                       </p>
@@ -482,8 +439,6 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* PHONE */}
-
               <div className="border-b border-gray-50 px-5 py-3">
                 <a
                   href={`tel:${PHONE_NUMBER}`}
@@ -504,7 +459,6 @@ export default function Navbar() {
                   "
                 >
                   <div className="flex min-w-0 items-center gap-3">
-
                     <div className="
                       flex
                       h-9
@@ -522,7 +476,6 @@ export default function Navbar() {
                       <p className="text-[10px] text-gray-500">
                         Call us
                       </p>
-
                       <p className="truncate text-xs font-semibold text-gray-900">
                         {PHONE_DISPLAY}
                       </p>
@@ -538,12 +491,8 @@ export default function Navbar() {
                 </a>
               </div>
 
-              {/* NAVIGATION */}
-
               <nav className="px-5 py-3" aria-label="Mobile navigation">
-
                 <div className="space-y-1">
-
                   {NAV_ITEMS.map((item) => {
                     const isActive = pathname === item.href
 
@@ -582,11 +531,8 @@ export default function Navbar() {
                       </Link>
                     )
                   })}
-
                 </div>
               </nav>
-
-              {/* CTA */}
 
               <div className="px-5 pb-4 pt-1">
                 <Link
@@ -614,7 +560,6 @@ export default function Navbar() {
                     <span className="block text-sm font-semibold">
                       Request Quote
                     </span>
-
                     <span className="mt-0.5 block text-[10px] text-white/70">
                       Dapatkan penawaran dalam &lt; 24 jam
                     </span>
@@ -628,8 +573,6 @@ export default function Navbar() {
                   </span>
                 </Link>
               </div>
-
-              {/* COPYRIGHT */}
 
               <div className="border-t border-gray-50 px-5 pb-5 pt-3 text-center">
                 <p className="text-[8px] text-gray-400">
