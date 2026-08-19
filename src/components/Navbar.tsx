@@ -269,7 +269,7 @@ export default function Navbar() {
                   }
                 `}
               >
-                Request Quote
+                Request RFQ
               </Link>
             </div>
 
