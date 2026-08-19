@@ -1,126 +1,125 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiCheckCircle, HiOfficeBuilding, HiUsers, HiGlobeAlt, HiClock, HiTruck, HiBadgeCheck } from 'react-icons/hi'
-import { FaAward, FaHandshake } from 'react-icons/fa'
+import {
+  HiOfficeBuilding,
+  HiCog,
+  HiGlobeAlt,
+  HiClock,
+} from 'react-icons/hi'
 
 const trustSignals = [
-  { 
-    icon: HiOfficeBuilding, 
-    value: '100+', 
-    label: 'Corporate Clients',
-    description: 'Perusahaan terpercaya'
+  {
+    icon: HiOfficeBuilding,
+    title: 'Industrial Supply',
+    description:
+      'Supporting industrial operations with procurement, MRO supplies, materials, and consumables.',
   },
-  { 
-    icon: HiUsers, 
-    value: '50+', 
-    label: 'Industrial Projects',
-    description: 'Proyek berhasil diselesaikan'
+  {
+    icon: HiCog,
+    title: 'Technical Support',
+    description:
+      'Supporting project and operational requirements through technical sourcing and engineering coordination.',
   },
-  { 
-    icon: HiClock, 
-    value: '24/7', 
-    label: 'Support Ready',
-    description: 'Layanan pelanggan aktif'
+  {
+    icon: HiGlobeAlt,
+    title: 'Nationwide Coverage',
+    description:
+      'Supply and distribution support for businesses and operations across Indonesia.',
   },
-  { 
-    icon: HiGlobeAlt, 
-    value: '34', 
-    label: 'Cities Coverage',
-    description: 'Jangkauan nasional'
+  {
+    icon: HiClock,
+    title: 'Responsive Support',
+    description:
+      'Procurement and customer support focused on clear communication and timely response.',
   },
 ]
 
 export default function TrustSignals() {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50/80">
-      <div className="container-custom">
-        {/* Header Section - Unilever Style */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <span className="w-8 h-0.5 bg-primary/40"></span>
-              <span className="text-xs font-medium text-primary/70 uppercase tracking-[0.2em]">Trusted Partner</span>
-              <span className="w-8 h-0.5 bg-primary/40"></span>
-            </div>
-            <h2 className="font-poppins text-2xl md:text-3xl font-bold text-dark mb-2">
-              Mitra Terpercaya untuk <span className="text-primary">Bisnis Anda</span>
-            </h2>
-            <p className="text-gray-500 text-sm max-w-2xl mx-auto">
-              Didukung oleh pengalaman dan komitmen untuk memberikan layanan terbaik
-            </p>
-          </motion.div>
+    <section className="bg-gray-50 border-y border-gray-100 py-20">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="max-w-3xl mb-14">
+
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-10 h-px bg-gray-300" />
+
+            <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+              Trust & Capability
+            </span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+            Built for Reliable
+            <span className="block font-medium">
+              Business Operations
+            </span>
+          </h2>
+
+          <p className="text-sm md:text-base text-gray-500 mt-5 leading-relaxed max-w-2xl">
+            PT KOJE Natural Indonesia combines procurement, technical support,
+            supply coordination, and FMCG manufacturing capabilities to support
+            businesses across Indonesia.
+          </p>
+
         </div>
 
-        {/* Trust Signals Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* TRUST SIGNALS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-gray-200">
+
           {trustSignals.map((signal, idx) => (
             <motion.div
-              key={signal.label}
-              initial={{ opacity: 0, y: 30 }}
+              key={signal.title}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: idx * 0.08,
+              }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-gray-100/50 hover:border-primary/20"
+              className="
+                group
+                py-8
+                pr-8
+                border-b
+                lg:border-b-0
+                border-gray-200
+                lg:border-r
+                lg:last:border-r-0
+                lg:pl-8
+                first:lg:pl-0
+              "
             >
-              {/* Decorative Line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-1/2"></div>
-              
-              {/* Icon with Circle Background */}
-              <div className="relative mb-4">
-                <div className="w-14 h-14 mx-auto bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-primary/20">
-                  <signal.icon className="text-primary text-2xl" />
-                </div>
+
+              {/* ICON */}
+              <div className="mb-5">
+                <signal.icon
+                  className="
+                    w-5 h-5
+                    text-gray-400
+                    group-hover:text-gray-700
+                    transition-colors
+                  "
+                />
               </div>
 
-              {/* Value */}
-              <p className="text-2xl md:text-3xl font-bold text-dark mb-1">
-                {signal.value}
-              </p>
-              
-              {/* Label */}
-              <p className="text-sm font-semibold text-gray-800 mb-0.5">
-                {signal.label}
-              </p>
-              
-              {/* Description */}
-              <p className="text-xs text-gray-400">
+              {/* TITLE */}
+              <h3 className="text-base font-medium text-gray-900 mb-2">
+                {signal.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p className="text-sm text-gray-500 leading-relaxed">
                 {signal.description}
               </p>
+
             </motion.div>
           ))}
+
         </div>
 
-        {/* Bottom Trust Badge - Unilever Style */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-10 text-center"
-        >
-          <div className="flex items-center gap-2">
-            <FaAward className="text-primary/60 text-lg" />
-            <span className="text-xs text-gray-500">ISO 9001 Certified</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaHandshake className="text-primary/60 text-lg" />
-            <span className="text-xs text-gray-500">100% Customer Satisfaction</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <HiBadgeCheck className="text-primary/60 text-lg" />
-            <span className="text-xs text-gray-500">Premium Quality Products</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <HiTruck className="text-primary/60 text-lg" />
-            <span className="text-xs text-gray-500">Nationwide Delivery</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
