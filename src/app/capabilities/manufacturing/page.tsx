@@ -9,8 +9,7 @@ import {
   HiCog,
   HiOfficeBuilding,
   HiCube,
-  HiTruck,
-  HiShieldCheck,
+  HiChevronRight,
 } from 'react-icons/hi'
 
 const capabilities = [
