@@ -5,13 +5,11 @@ import { motion } from 'framer-motion'
 import {
   HiArrowLeft,
   HiArrowRight,
+  HiChevronRight,
   HiCheckCircle,
-  HiOfficeBuilding,
   HiCog,
+  HiOfficeBuilding,
   HiCube,
-  HiTruck,
-  HiShieldCheck,
-  HiDocumentText,
 } from 'react-icons/hi'
 
 const capabilities = [
