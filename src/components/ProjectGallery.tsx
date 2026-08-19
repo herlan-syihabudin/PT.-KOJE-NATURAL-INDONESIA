@@ -1,12 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   HiCalendar,
   HiLocationMarker,
   HiEye,
   HiChevronRight,
+  HiX,
 } from 'react-icons/hi'
 
 const projects = [
@@ -17,7 +19,7 @@ const projects = [
     date: 'Jan 2026',
     location: 'Jakarta',
     image:
-      'https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1200',
+      'https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1200&q=80',
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ const projects = [
     date: 'Feb 2026',
     location: 'Surabaya',
     image:
-      'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200',
+      'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&q=80',
   },
   {
     id: 3,
@@ -35,149 +37,420 @@ const projects = [
     date: 'Mar 2026',
     location: 'Jakarta',
     image:
-      'https://images.unsplash.com/photo-1581090464777-f3222bbe8b2b?w=1200',
+      'https://images.unsplash.com/photo-1581090464777-f3222bbe8b2b?w=1200&q=80',
   },
 ]
 
 export default function ProjectGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const shouldReduceMotion = useReducedMotion()
 
   return (
-    <section className="bg-gray-50 border-t border-gray-100 py-24">
-      <div className="max-w-6xl mx-auto px-6">
+    <section
+      className="
+        border-t
+        border-gray-100
+        bg-gray-50
+        py-16
 
-        {/* HEADER */}
+        sm:py-20
+        md:py-24
+        lg:py-28
+      "
+    >
+      <div className="container-custom">
+
+        {/* =========================================
+            HEADER
+        ========================================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mb-14"
+          initial={
+            shouldReduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 15,
+                }
+          }
+          whileInView={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  opacity: 1,
+                  y: 0,
+                }
+          }
+          transition={{
+            duration: 0.5,
+          }}
+          viewport={{
+            once: true,
+            margin: '-50px',
+          }}
+          className="
+            mb-10
+            max-w-3xl
+
+            sm:mb-12
+            md:mb-14
+          "
         >
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-10 h-px bg-gray-300" />
+          {/* EYEBROW */}
 
-            <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
-              Projects & Operations
+          <div className="mb-4 flex items-center gap-2.5 sm:gap-3">
+
+            <span
+              className="h-px w-7 bg-gray-300 sm:w-10"
+              aria-hidden="true"
+            />
+
+            <span
+              className="
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.2em]
+                text-gray-400
+
+                sm:text-xs
+                sm:tracking-[0.25em]
+              "
+            >
+              Projects &amp; Operations
             </span>
+
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+
+          {/* HEADING */}
+
+          <h2
+            className="
+              text-[1.875rem]
+              font-light
+              leading-[1.15]
+              tracking-[-0.02em]
+              text-gray-900
+
+              min-[375px]:text-[2rem]
+              sm:text-4xl
+              md:text-5xl
+            "
+          >
             Selected Supply
+
             <span className="block font-medium">
-              Operations & Activities
+              Operations &amp; Activities
             </span>
           </h2>
 
-          <p className="text-sm md:text-base text-gray-500 mt-5 leading-relaxed max-w-2xl">
+
+          {/* DESCRIPTION */}
+
+          <p
+            className="
+              mt-4
+              max-w-2xl
+              text-sm
+              leading-6
+              text-gray-500
+
+              sm:mt-5
+              sm:text-base
+              sm:leading-relaxed
+            "
+          >
             Selected activities and supply operations supporting industrial,
             commercial, and FMCG requirements across Indonesia.
           </p>
 
         </motion.div>
 
-        {/* PROJECT GRID */}
-        <div className="grid md:grid-cols-3 border-t border-gray-200">
+
+        {/* =========================================
+            PROJECT GRID
+        ========================================= */}
+
+        <div
+          className="
+            grid
+            grid-cols-1
+            border-t
+            border-gray-200
+
+            md:grid-cols-2
+
+            lg:grid-cols-3
+          "
+        >
 
           {projects.map((project, idx) => (
             <motion.article
               key={project.id}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: idx * 0.08,
+              initial={
+                shouldReduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 15,
+                    }
+              }
+              whileInView={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      opacity: 1,
+                      y: 0,
+                    }
+              }
+              transition={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      duration: 0.5,
+                      delay: idx * 0.08,
+                    }
+              }
+              viewport={{
+                once: true,
+                margin: '-50px',
               }}
-              viewport={{ once: true }}
               className="
                 group
-                border-b
-                md:border-b-0
-                md:border-r
-                md:last:border-r-0
-                border-gray-200
                 cursor-pointer
+                border-b
+                border-gray-200
+
+                md:border-r
+                md:[&:nth-child(2n)]:border-r-0
+
+                lg:border-r
+                lg:border-b-0
+                lg:[&:nth-child(2n)]:border-r
+                lg:last:border-r-0
               "
               onClick={() => setSelectedImage(project.image)}
             >
 
-              {/* IMAGE */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              {/* =================================
+                  IMAGE
+              ================================= */}
 
-                <img
+              <div
+                className="
+                  relative
+                  aspect-[4/3]
+                  w-full
+                  overflow-hidden
+                  bg-gray-100
+                "
+              >
+
+                <Image
                   src={project.image}
                   alt={`${project.title} - PT KOJE Natural Indonesia`}
+                  fill
+                  sizes="
+                    (max-width: 767px) 100vw,
+                    (max-width: 1023px) 50vw,
+                    33vw
+                  "
                   className="
-                    w-full
-                    h-full
                     object-cover
                     grayscale
-                    group-hover:grayscale-0
-                    group-hover:scale-[1.02]
                     transition-all
                     duration-700
+
+                    group-hover:scale-[1.03]
+                    group-hover:grayscale-0
                   "
                 />
 
-                {/* VIEW */}
+                {/* IMAGE OVERLAY */}
+
                 <div
                   className="
                     absolute
-                    top-4
-                    right-4
-                    w-9
-                    h-9
-                    bg-black/50
+                    inset-0
+                    bg-black/0
+                    transition-colors
+                    duration-500
+
+                    group-hover:bg-black/5
+                  "
+                  aria-hidden="true"
+                />
+
+                {/* VIEW BUTTON */}
+
+                <div
+                  className="
+                    absolute
+                    right-3
+                    top-3
                     flex
+                    h-9
+                    w-9
                     items-center
                     justify-center
-                    opacity-0
-                    group-hover:opacity-100
+                    bg-black/50
+                    opacity-100
                     transition-opacity
+
+                    sm:right-4
+                    sm:top-4
+
+                    md:opacity-0
+                    md:group-hover:opacity-100
                   "
                 >
-                  <HiEye className="text-white text-sm" />
+                  <HiEye
+                    className="text-sm text-white"
+                    aria-hidden="true"
+                  />
                 </div>
 
               </div>
 
-              {/* CONTENT */}
-              <div className="p-6">
 
-                <div className="flex items-center justify-between gap-4 mb-3">
+              {/* =================================
+                  CONTENT
+              ================================= */}
 
-                  <span className="text-[11px] tracking-[0.15em] uppercase text-gray-400">
+              <div
+                className="
+                  p-5
+
+                  sm:p-6
+                "
+              >
+
+                {/* CATEGORY + NUMBER */}
+
+                <div
+                  className="
+                    mb-3
+                    flex
+                    items-center
+                    justify-between
+                    gap-3
+                  "
+                >
+
+                  <span
+                    className="
+                      min-w-0
+                      truncate
+                      text-[9px]
+                      font-medium
+                      uppercase
+                      tracking-[0.14em]
+                      text-gray-400
+
+                      sm:text-[11px]
+                      sm:tracking-[0.15em]
+                    "
+                  >
                     {project.category}
                   </span>
 
-                  <span className="text-xs text-gray-300">
+                  <span
+                    className="
+                      shrink-0
+                      text-[10px]
+                      text-gray-300
+
+                      sm:text-xs
+                    "
+                  >
                     0{project.id}
                   </span>
 
                 </div>
 
-                <h3 className="text-lg font-medium text-gray-900 mb-4">
+
+                {/* TITLE */}
+
+                <h3
+                  className="
+                    mb-4
+                    text-base
+                    font-medium
+                    leading-6
+                    text-gray-900
+
+                    sm:text-lg
+                  "
+                >
                   {project.title}
                 </h3>
 
-                <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-gray-400">
+
+                {/* META */}
+
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-x-4
+                    gap-y-2
+                    text-[10px]
+                    text-gray-400
+
+                    sm:text-xs
+                  "
+                >
 
                   <span className="flex items-center gap-1.5">
-                    <HiCalendar className="w-3.5 h-3.5" />
+                    <HiCalendar
+                      className="h-3.5 w-3.5 shrink-0"
+                      aria-hidden="true"
+                    />
+
                     {project.date}
                   </span>
 
                   <span className="flex items-center gap-1.5">
-                    <HiLocationMarker className="w-3.5 h-3.5" />
+                    <HiLocationMarker
+                      className="h-3.5 w-3.5 shrink-0"
+                      aria-hidden="true"
+                    />
+
                     {project.location}
                   </span>
 
                 </div>
 
-                <div className="mt-5 flex items-center gap-1 text-xs text-gray-400 group-hover:text-gray-700 transition-colors">
+
+                {/* VIEW ACTIVITY */}
+
+                <div
+                  className="
+                    mt-5
+                    flex
+                    items-center
+                    gap-1
+                    text-xs
+                    text-gray-400
+                    transition-colors
+
+                    group-hover:text-gray-700
+                  "
+                >
                   View activity
-                  <HiChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+
+                  <HiChevronRight
+                    className="
+                      h-4
+                      w-4
+                      transition-transform
+
+                      group-hover:translate-x-1
+                    "
+                    aria-hidden="true"
+                  />
                 </div>
 
               </div>
@@ -187,60 +460,160 @@ export default function ProjectGallery() {
 
         </div>
 
-        {/* NOTE / CTA */}
-        <div className="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-5 border-t border-gray-200 pt-8">
 
-          <p className="text-xs text-gray-400 max-w-xl leading-relaxed">
+        {/* =========================================
+            NOTE / CTA
+        ========================================= */}
+
+        <div
+          className="
+            mt-10
+            flex
+            flex-col
+            gap-5
+            border-t
+            border-gray-200
+            pt-6
+
+            sm:mt-12
+            sm:pt-8
+
+            md:flex-row
+            md:items-center
+            md:justify-between
+          "
+        >
+
+          <p
+            className="
+              max-w-xl
+              text-[10px]
+              leading-5
+              text-gray-400
+
+              sm:text-xs
+              sm:leading-relaxed
+            "
+          >
             Project documentation may be subject to client confidentiality
             and commercial restrictions.
           </p>
 
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-gray-600 transition"
+            className="
+              inline-flex
+              min-h-[44px]
+              w-full
+              items-center
+              justify-center
+              gap-2
+              text-sm
+              font-medium
+              text-gray-900
+              transition-colors
+              hover:text-gray-600
+
+              md:w-auto
+              md:justify-start
+            "
           >
             Discuss your requirements
-            <HiChevronRight className="w-4 h-4" />
+
+            <HiChevronRight
+              className="h-4 w-4"
+              aria-hidden="true"
+            />
           </a>
 
         </div>
 
       </div>
 
-      {/* IMAGE PREVIEW */}
+
+      {/* =========================================
+          IMAGE PREVIEW MODAL
+      ========================================= */}
+
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-6"
+          className="
+            fixed
+            inset-0
+            z-[100]
+            flex
+            items-center
+            justify-center
+            bg-black/95
+            p-4
+
+            sm:p-6
+          "
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project image preview"
           onClick={() => setSelectedImage(null)}
         >
 
-          <img
-            src={selectedImage}
-            alt="Project activity preview"
-            className="max-w-full max-h-[90vh] object-contain"
-          />
+          {/* IMAGE */}
+
+          <div
+            className="
+              relative
+              h-[80vh]
+              w-full
+              max-w-6xl
+            "
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <Image
+              src={selectedImage}
+              alt="Project activity preview"
+              fill
+              sizes="100vw"
+              className="object-contain"
+              quality={90}
+            />
+
+          </div>
+
+
+          {/* CLOSE BUTTON */}
 
           <button
             type="button"
             aria-label="Close image preview"
             className="
               absolute
-              top-6
-              right-6
-              w-10
-              h-10
-              border
-              border-white/20
-              text-white
+              right-3
+              top-3
               flex
+              h-11
+              w-11
               items-center
               justify-center
-              hover:bg-white/10
+              border
+              border-white/20
+              bg-black/30
+              text-white
               transition
+
+              sm:right-6
+              sm:top-6
+
+              hover:bg-white/10
+              active:scale-95
             "
-            onClick={() => setSelectedImage(null)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setSelectedImage(null)
+            }}
           >
-            ✕
+            <HiX
+              className="h-5 w-5"
+              aria-hidden="true"
+            />
           </button>
 
         </div>
