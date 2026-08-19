@@ -27,43 +27,48 @@ type Category = {
 
 const categories: Record<string, Category> = {
   'industrial-products': {
-    title: 'Industrial Products',
-    subtitle: 'Industrial Components & Equipment',
-    description:
-      'Industrial components, equipment, materials, and operational supplies for manufacturing and industrial facilities.',
-    products: [
-      {
-        name: 'Electrical Components',
-        description:
-          'Electrical components, control devices, protection equipment, and supporting materials for industrial applications.',
-        image:
-          '/images/products/industrial/electrical-components.jpg',
-        href: '/products/industrial-products/electrical-components',
-      },
-      {
-        name: 'Mechanical Components',
-        description:
-          'Mechanical components for machinery, equipment, and industrial operations.',
-        image:
-          '/images/products/industrial/mechanical-components.jpg',
-        href: '/products/industrial-products/mechanical-components',
-      },
-      {
-        name: 'Industrial Equipment',
-        description:
-          'Industrial equipment supporting manufacturing and operational requirements.',
-        image:
-          '/images/products/industrial/industrial-equipment.jpg',
-      },
-      {
-        name: 'Tools & Workshop Supplies',
-        description:
-          'Tools and workshop supplies for maintenance and industrial operations.',
-        image:
-          '/images/products/industrial/workshop-supplies.jpg',
-      },
-    ],
-  },
+  title: 'Industrial Products',
+  subtitle: 'Industrial Components & Equipment',
+  description:
+    'Industrial components, equipment, materials, and operational supplies for manufacturing and industrial facilities.',
+  products: [
+    {
+      name: 'Electrical Components',
+      description:
+        'Electrical components, control devices, protection equipment, and supporting materials for industrial applications.',
+      image:
+        '/images/products/industrial/electrical-components.jpg',
+      href: '/products/industrial-products/electrical-components',
+    },
+
+    {
+      name: 'Mechanical Components',
+      description:
+        'Mechanical components for machinery, equipment, power transmission, and industrial operations.',
+      image:
+        '/images/products/industrial/mechanical-components.jpg',
+      href: '/products/industrial-products/mechanical-components',
+    },
+
+    {
+      name: 'Industrial Equipment',
+      description:
+        'Industrial equipment supporting manufacturing, production, material handling, utility, and operational requirements.',
+      image:
+        '/images/products/industrial/industrial-equipment.jpg',
+      href: '/products/industrial-products/industrial-equipment',
+    },
+
+    {
+      name: 'Tools & Workshop Supplies',
+      description:
+        'Professional tools, workshop equipment, maintenance tools, and supporting supplies for industrial operations.',
+      image:
+        '/images/products/industrial/workshop-supplies.jpg',
+      href: '/products/industrial-products/tools-workshop-supplies',
+    },
+  ],
+},
 
   'mro-consumables': {
     title: 'MRO & Consumables',
