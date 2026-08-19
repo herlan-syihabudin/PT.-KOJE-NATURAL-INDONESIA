@@ -87,7 +87,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={`${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="bg-white font-sans antialiased" suppressHydrationWarning>
+      <body
+  className="bg-white antialiased"
+  suppressHydrationWarning
+>
         {/* Navbar - Akan muncul di semua halaman */}
         <Navbar />
         
