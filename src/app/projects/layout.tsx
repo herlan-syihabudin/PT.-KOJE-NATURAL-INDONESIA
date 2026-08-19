@@ -48,5 +48,27 @@ export default function ProjectsLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Projects & Operations | PT KOJE Natural Indonesia',
+            description:
+              'Projects and operational capabilities of PT KOJE Natural Indonesia covering procurement, engineering support, manufacturing, and distribution.',
+            url: 'https://kojenatural.com/projects',
+            isPartOf: {
+              '@type': 'WebSite',
+              name: 'PT KOJE Natural Indonesia',
+              url: 'https://kojenatural.com',
+            },
+          }),
+        }}
+      />
+      {children}
+    </>
+  )
 }
