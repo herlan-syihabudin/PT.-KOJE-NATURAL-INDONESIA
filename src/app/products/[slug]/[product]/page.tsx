@@ -462,6 +462,162 @@ const productCategories: Record<string, ProductCategory> = {
     ],
   },
 
+  'mro-spareparts': {
+  title: 'MRO Spareparts',
+  subtitle: 'Industrial Spare Parts & Replacement Components',
+  description:
+    'Industrial spare parts and replacement components supporting maintenance and operational continuity.',
+  products: [
+    { name: 'Bearings', description: 'Industrial replacement bearings.', image: '/images/products/mro/spareparts/bearings.jpg' },
+    { name: 'Belts', description: 'V-belts and transmission belts.', image: '/images/products/mro/spareparts/belts.jpg' },
+    { name: 'Sensors', description: 'Industrial sensors and switches.', image: '/images/products/mro/spareparts/sensors.jpg' },
+    { name: 'Motors', description: 'Replacement motors and accessories.', image: '/images/products/mro/spareparts/motors.jpg' },
+  ],
+},
+
+'maintenance-consumables': {
+  title: 'Maintenance Consumables',
+  subtitle: 'Routine Maintenance Materials',
+  description:
+    'Consumable materials used in preventive and corrective maintenance activities.',
+  products: [
+    { name: 'Lubricants', description: 'Industrial lubricants and oils.', image: '/images/products/mro/consumables/lubricants.jpg' },
+    { name: 'Grease', description: 'Industrial grease products.', image: '/images/products/mro/consumables/grease.jpg' },
+    { name: 'Cleaning Chemicals', description: 'Equipment cleaning chemicals.', image: '/images/products/mro/consumables/cleaning.jpg' },
+    { name: 'Adhesives', description: 'Industrial adhesives and sealants.', image: '/images/products/mro/consumables/adhesives.jpg' },
+  ],
+},
+
+'safety-supplies': {
+  title: 'Safety Supplies',
+  subtitle: 'Industrial PPE & Safety Equipment',
+  description:
+    'Safety equipment and personal protective products for industrial operations.',
+  products: [
+    { name: 'Safety Helmet', description: 'Industrial safety helmets.', image: '/images/products/mro/safety/helmet.jpg' },
+    { name: 'Safety Gloves', description: 'Hand protection equipment.', image: '/images/products/mro/safety/gloves.jpg' },
+    { name: 'Safety Shoes', description: 'Industrial safety footwear.', image: '/images/products/mro/safety/shoes.jpg' },
+    { name: 'Safety Vest', description: 'Reflective safety vests.', image: '/images/products/mro/safety/vest.jpg' },
+  ],
+},
+
+'workshop-consumables': {
+  title: 'Workshop Consumables',
+  subtitle: 'Workshop Operational Supplies',
+  description:
+    'Consumables supporting workshop and fabrication activities.',
+  products: [
+    { name: 'Grinding Disc', description: 'Cutting and grinding discs.', image: '/images/products/mro/workshop/grinding-disc.jpg' },
+    { name: 'Welding Electrodes', description: 'Welding consumables.', image: '/images/products/mro/workshop/electrodes.jpg' },
+    { name: 'Drill Bits', description: 'Industrial drill bits.', image: '/images/products/mro/workshop/drill-bits.jpg' },
+    { name: 'Abrasives', description: 'Industrial abrasive products.', image: '/images/products/mro/workshop/abrasives.jpg' },
+  ],
+},
+
+'bottles-containers': {
+  title: 'Bottles & Containers',
+  subtitle: 'Packaging Bottles & Containers',
+  description:
+    'Plastic, PET, HDPE, glass bottles and industrial containers.',
+  products: [
+    { name: 'PET Bottles', description: 'PET packaging bottles.', image: '/images/products/packaging/bottles/pet.jpg' },
+    { name: 'HDPE Bottles', description: 'HDPE packaging bottles.', image: '/images/products/packaging/bottles/hdpe.jpg' },
+    { name: 'Glass Bottles', description: 'Glass packaging solutions.', image: '/images/products/packaging/bottles/glass.jpg' },
+    { name: 'Jerry Cans', description: 'Industrial liquid containers.', image: '/images/products/packaging/bottles/jerrycan.jpg' },
+  ],
+},
+
+'primary-packaging': {
+  title: 'Primary Packaging',
+  subtitle: 'Direct Product Packaging',
+  description:
+    'Primary packaging materials in direct contact with products.',
+  products: [
+    { name: 'Pouches', description: 'Flexible packaging pouches.', image: '/images/products/packaging/primary/pouch.jpg' },
+    { name: 'Labels', description: 'Product labels and stickers.', image: '/images/products/packaging/primary/label.jpg' },
+    { name: 'Caps & Closures', description: 'Bottle caps and closures.', image: '/images/products/packaging/primary/caps.jpg' },
+    { name: 'Shrink Sleeves', description: 'Shrink sleeve packaging.', image: '/images/products/packaging/primary/shrink.jpg' },
+  ],
+},
+
+'secondary-packaging': {
+  title: 'Secondary Packaging',
+  subtitle: 'Distribution Packaging',
+  description:
+    'Packaging materials supporting logistics and transportation.',
+  products: [
+    { name: 'Corrugated Boxes', description: 'Shipping cartons.', image: '/images/products/packaging/secondary/carton.jpg' },
+    { name: 'Stretch Film', description: 'Pallet wrapping film.', image: '/images/products/packaging/secondary/stretch-film.jpg' },
+    { name: 'Strapping Band', description: 'Packaging straps.', image: '/images/products/packaging/secondary/strapping.jpg' },
+    { name: 'Bubble Wrap', description: 'Protective packaging.', image: '/images/products/packaging/secondary/bubble.jpg' },
+  ],
+},
+
+'packaging-accessories': {
+  title: 'Packaging Accessories',
+  subtitle: 'Packaging Supporting Materials',
+  description:
+    'Accessories supporting packaging operations.',
+  products: [
+    { name: 'Tape', description: 'Packaging adhesive tapes.', image: '/images/products/packaging/accessories/tape.jpg' },
+    { name: 'Labels', description: 'Shipping and barcode labels.', image: '/images/products/packaging/accessories/labels.jpg' },
+    { name: 'Ink Ribbon', description: 'Coding machine ribbon.', image: '/images/products/packaging/accessories/ribbon.jpg' },
+    { name: 'Corner Protector', description: 'Packaging protectors.', image: '/images/products/packaging/accessories/corner.jpg' },
+  ],
+},
+
+'processing-materials': {
+  title: 'Processing Materials',
+  subtitle: 'Manufacturing Materials',
+  description:
+    'Materials supporting industrial processing activities.',
+  products: [
+    { name: 'Filter Media', description: 'Industrial filtration materials.', image: '/images/products/chemical/filter.jpg' },
+    { name: 'Activated Carbon', description: 'Industrial carbon products.', image: '/images/products/chemical/carbon.jpg' },
+    { name: 'Resin', description: 'Water treatment resin.', image: '/images/products/chemical/resin.jpg' },
+    { name: 'Processing Additives', description: 'Industrial additives.', image: '/images/products/chemical/additives.jpg' },
+  ],
+},
+
+'production-supplies': {
+  title: 'Production Supplies',
+  subtitle: 'Production Support Materials',
+  description:
+    'Materials supporting production operations.',
+  products: [
+    { name: 'Mixing Supplies', description: 'Mixing process materials.', image: '/images/products/chemical/mixing.jpg' },
+    { name: 'Transfer Equipment', description: 'Fluid transfer products.', image: '/images/products/chemical/transfer.jpg' },
+    { name: 'Filters', description: 'Industrial filters.', image: '/images/products/chemical/filters.jpg' },
+    { name: 'Production Accessories', description: 'Production support items.', image: '/images/products/chemical/accessories.jpg' },
+  ],
+},
+
+'industrial-chemicals': {
+  title: 'Industrial Chemicals',
+  subtitle: 'Industrial Chemical Products',
+  description:
+    'Industrial chemicals supplied according to specifications.',
+  products: [
+    { name: 'Caustic Soda', description: 'Industrial-grade caustic soda.', image: '/images/products/chemical/caustic.jpg' },
+    { name: 'Citric Acid', description: 'Industrial citric acid.', image: '/images/products/chemical/citric.jpg' },
+    { name: 'Hydrogen Peroxide', description: 'Industrial peroxide.', image: '/images/products/chemical/h2o2.jpg' },
+    { name: 'Sodium Hypochlorite', description: 'Water treatment chemical.', image: '/images/products/chemical/hypo.jpg' },
+  ],
+},
+
+'supporting-materials': {
+  title: 'Supporting Materials',
+  subtitle: 'Industrial Support Materials',
+  description:
+    'Supporting materials for manufacturing operations.',
+  products: [
+    { name: 'Filter Bags', description: 'Industrial filter bags.', image: '/images/products/chemical/filter-bag.jpg' },
+    { name: 'Absorbent Pads', description: 'Spill control products.', image: '/images/products/chemical/absorbent.jpg' },
+    { name: 'Packaging Chemicals', description: 'Supporting chemical products.', image: '/images/products/chemical/support.jpg' },
+    { name: 'Process Aids', description: 'Industrial process aids.', image: '/images/products/chemical/process-aid.jpg' },
+  ],
+},
+
 }
 
 
