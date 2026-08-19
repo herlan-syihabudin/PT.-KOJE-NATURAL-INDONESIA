@@ -54,113 +54,387 @@ const capabilities = [
   },
 ]
 
-export default function UltraCorporateCapabilities() {
+export default function BusinessDivisions() {
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-28">
+      <div className="container-custom">
 
-        {/* HEADER */}
-        <div className="mb-14 max-w-3xl">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-10 h-px bg-gray-300" />
+        {/* =========================================
+            HEADER
+        ========================================= */}
 
-            <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+        <div className="mb-10 max-w-3xl sm:mb-12 md:mb-14">
+
+          <div className="mb-4 flex items-center gap-2.5 sm:gap-3">
+            <span
+              className="h-px w-7 bg-gray-300 sm:w-10"
+              aria-hidden="true"
+            />
+
+            <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-gray-400 sm:text-xs sm:tracking-[0.25em]">
               Capabilities Statement
             </span>
 
-            <span className="w-10 h-px bg-gray-300" />
+            <span
+              className="h-px w-7 bg-gray-300 sm:w-10"
+              aria-hidden="true"
+            />
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-            Procurement, Supply & Manufacturing Solutions
+          <h2
+            className="
+              text-[1.875rem]
+              font-light
+              leading-[1.15]
+              tracking-[-0.02em]
+              text-gray-900
+
+              min-[375px]:text-[2rem]
+              sm:text-4xl
+              md:text-5xl
+            "
+          >
+            Procurement, Supply &amp; Manufacturing Solutions
           </h2>
 
-          <p className="text-sm text-gray-500 mt-5 leading-relaxed">
+          <p
+            className="
+              mt-4
+              max-w-2xl
+              text-sm
+              leading-6
+              text-gray-500
+
+              sm:mt-5
+              sm:leading-relaxed
+            "
+          >
             PT KOJE Natural Indonesia operates as a procurement, supply, and
             manufacturing partner supporting industrial operations and FMCG
             supply chains across Indonesia.
           </p>
+
         </div>
 
-        {/* CAPABILITIES LIST */}
-        <div className="space-y-1">
 
-          {capabilities.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="group block border-b border-gray-100 py-7 hover:bg-gray-50/40 transition-colors -mx-6 px-6"
-            >
-              <div className="flex items-start gap-5">
+        {/* =========================================
+            CAPABILITIES LIST
+        ========================================= */}
 
-                {/* ID */}
-                <span className="text-xs font-medium text-gray-300 mt-1 group-hover:text-gray-400 transition">
-                  {item.id}
-                </span>
+        <div className="divide-y divide-gray-100">
 
-                {/* ICON */}
-                <div className="mt-1 text-gray-300 group-hover:text-gray-600 transition">
-                  <item.icon className="w-5 h-5" />
-                </div>
+          {capabilities.map((item) => {
+            const Icon = item.icon
 
-                {/* CONTENT */}
-                <div className="flex-1 min-w-0">
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="
+                  group
+                  block
+                  -mx-4
+                  px-4
+                  py-6
+                  transition-colors
+                  duration-200
+                  hover:bg-gray-50/60
 
-                  <h3 className="text-lg font-medium text-gray-900 group-hover:text-black transition">
-                    {item.title}
-                  </h3>
+                  min-[375px]:-mx-5
+                  min-[375px]:px-5
 
-                  <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-3xl">
-                    {item.description}
-                  </p>
+                  sm:-mx-6
+                  sm:px-6
+                  sm:py-7
 
-                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-                    {item.items.map((sub) => (
-                      <span
-                        key={sub}
-                        className="text-sm text-gray-400 group-hover:text-gray-500 transition"
-                      >
-                        {sub}
-                      </span>
-                    ))}
+                  md:py-8
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-3
+
+                    sm:gap-5
+                  "
+                >
+
+                  {/* =================================
+                      ID
+                  ================================= */}
+
+                  <span
+                    className="
+                      mt-1
+                      w-5
+                      shrink-0
+                      text-[10px]
+                      font-medium
+                      text-gray-300
+                      transition-colors
+
+                      sm:w-7
+                      sm:text-xs
+
+                      group-hover:text-gray-400
+                    "
+                  >
+                    {item.id}
+                  </span>
+
+
+                  {/* =================================
+                      ICON
+                  ================================= */}
+
+                  <div
+                    className="
+                      mt-0.5
+                      shrink-0
+                      text-gray-300
+                      transition-colors
+
+                      group-hover:text-gray-600
+                    "
+                  >
+                    <Icon
+                      className="
+                        h-5
+                        w-5
+
+                        sm:h-5
+                        sm:w-5
+                      "
+                      aria-hidden="true"
+                    />
+                  </div>
+
+
+                  {/* =================================
+                      CONTENT
+                  ================================= */}
+
+                  <div className="min-w-0 flex-1">
+
+                    <h3
+                      className="
+                        pr-2
+                        text-base
+                        font-medium
+                        leading-6
+                        text-gray-900
+                        transition-colors
+
+                        sm:text-lg
+
+                        group-hover:text-black
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-2
+                        max-w-3xl
+                        text-xs
+                        leading-5
+                        text-gray-500
+
+                        sm:text-sm
+                        sm:leading-relaxed
+                      "
+                    >
+                      {item.description}
+                    </p>
+
+
+                    {/* SUB ITEMS */}
+
+                    <div
+                      className="
+                        mt-3
+                        flex
+                        flex-wrap
+                        gap-x-3
+                        gap-y-1.5
+
+                        sm:gap-x-4
+                        sm:gap-y-1
+                      "
+                    >
+                      {item.items.map((sub) => (
+                        <span
+                          key={sub}
+                          className="
+                            text-[11px]
+                            leading-5
+                            text-gray-400
+                            transition-colors
+
+                            sm:text-sm
+
+                            group-hover:text-gray-500
+                          "
+                        >
+                          {sub}
+                        </span>
+                      ))}
+                    </div>
+
+                  </div>
+
+
+                  {/* =================================
+                      ARROW
+                  ================================= */}
+
+                  <div
+                    className="
+                      mt-1
+                      shrink-0
+                      text-gray-300
+                      transition-colors
+
+                      group-hover:text-gray-500
+                    "
+                  >
+                    <HiChevronRight
+                      className="
+                        h-5
+                        w-5
+                        transition-transform
+                        duration-200
+
+                        sm:h-5
+                        sm:w-5
+
+                        group-hover:translate-x-1
+                      "
+                      aria-hidden="true"
+                    />
                   </div>
 
                 </div>
 
-                {/* ARROW */}
-                <div className="ml-auto flex items-center text-gray-300 group-hover:text-gray-500 transition">
-                  <HiChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
 
         </div>
 
-        {/* RFQ STRIP */}
-        <div className="mt-20 border border-gray-100 bg-gray-50 p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
 
-          <div>
-            <p className="text-xs tracking-[0.2em] text-gray-400 uppercase">
+        {/* =========================================
+            RFQ STRIP
+        ========================================= */}
+
+        <div
+          className="
+            mt-12
+            flex
+            flex-col
+            gap-5
+            border
+            border-gray-100
+            bg-gray-50
+            p-5
+
+            sm:mt-16
+            sm:gap-6
+            sm:p-7
+
+            md:flex-row
+            md:items-center
+            md:justify-between
+            md:p-8
+
+            lg:mt-20
+          "
+        >
+
+          <div className="min-w-0">
+
+            <p
+              className="
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.18em]
+                text-gray-400
+
+                sm:text-xs
+                sm:tracking-[0.2em]
+              "
+            >
               Procurement Inquiry
             </p>
 
-            <h3 className="text-lg font-medium text-gray-900 mt-2">
+            <h3
+              className="
+                mt-2
+                text-base
+                font-medium
+                leading-6
+                text-gray-900
+
+                sm:text-lg
+              "
+            >
               Submit an RFQ for industrial procurement needs
             </h3>
 
-            <p className="text-sm text-gray-500 mt-1">
+            <p
+              className="
+                mt-1
+                max-w-xl
+                text-xs
+                leading-5
+                text-gray-500
+
+                sm:text-sm
+                sm:leading-relaxed
+              "
+            >
               Our procurement team will review your requirements and respond promptly.
             </p>
+
           </div>
+
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 text-sm hover:bg-gray-800 transition"
+            className="
+              inline-flex
+              min-h-[46px]
+              w-full
+              shrink-0
+              items-center
+              justify-center
+              gap-2
+              bg-gray-900
+              px-5
+              py-3
+              text-sm
+              font-medium
+              text-white
+              transition-all
+              duration-200
+              hover:bg-gray-800
+              hover:-translate-y-0.5
+              active:scale-[0.98]
+
+              sm:w-auto
+              sm:px-6
+            "
           >
             Submit an RFQ
-            <HiChevronRight className="w-4 h-4" />
+
+            <HiChevronRight
+              className="h-4 w-4"
+              aria-hidden="true"
+            />
           </Link>
 
         </div>
