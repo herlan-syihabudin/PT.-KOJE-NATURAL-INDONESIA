@@ -14,6 +14,7 @@ type Product = {
   name: string
   description: string
   image: string
+  slug: string
   href?: string
 }
 
