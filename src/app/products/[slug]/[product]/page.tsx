@@ -30,11 +30,14 @@ const productCategories: Record<string, ProductCategory> = {
   // =====================================================
 
   'electrical-components': {
+
     title: 'Electrical Components',
-    subtitle: 'Industrial Electrical & Control Components',
+
+    subtitle:
+      'Industrial Electrical & Control Components',
 
     description:
-      'Electrical components, protection devices, control equipment, and supporting materials for industrial and commercial applications.',
+      'Electrical components, protection devices, control equipment, and supporting materials for industrial and commercial electrical systems.',
 
     products: [
 
@@ -73,7 +76,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Push Button',
         description:
-          'Industrial push buttons and control switches for machinery and control panels.',
+          'Industrial push buttons and control switches for machinery and electrical control panels.',
         image:
           '/images/products/industrial/electrical/push-button.jpg',
       },
@@ -89,7 +92,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Cable Gland',
         description:
-          'Cable glands for cable entry, sealing, and protection in electrical installations.',
+          'Cable glands for cable entry, sealing, strain relief, and protection in electrical installations.',
         image:
           '/images/products/industrial/electrical/cable-gland.jpg',
       },
@@ -97,7 +100,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Cable Lug',
         description:
-          'Cable lugs and termination components for electrical connection applications.',
+          'Cable lugs and termination components for reliable electrical connection applications.',
         image:
           '/images/products/industrial/electrical/cable-lug.jpg',
       },
@@ -105,7 +108,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Industrial Socket',
         description:
-          'Industrial plugs and sockets for electrical power distribution and equipment connection.',
+          'Industrial plugs and sockets for power distribution and equipment connection.',
         image:
           '/images/products/industrial/electrical/industrial-socket.jpg',
       },
@@ -113,7 +116,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Switch',
         description:
-          'Electrical switches for industrial, commercial, and control applications.',
+          'Electrical switches for industrial, commercial, machinery, and control applications.',
         image:
           '/images/products/industrial/electrical/switch.jpg',
       },
@@ -121,7 +124,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Indicator Lamp',
         description:
-          'Panel indicator lamps for equipment status and electrical control panels.',
+          'Panel indicator lamps for equipment status indication and electrical control panels.',
         image:
           '/images/products/industrial/electrical/indicator-lamp.jpg',
       },
@@ -129,7 +132,7 @@ const productCategories: Record<string, ProductCategory> = {
       {
         name: 'Electrical Enclosure',
         description:
-          'Electrical enclosures and control boxes for protecting electrical components.',
+          'Electrical enclosures and control boxes for protecting electrical components and control systems.',
         image:
           '/images/products/industrial/electrical/electrical-enclosure.jpg',
       },
@@ -137,13 +140,19 @@ const productCategories: Record<string, ProductCategory> = {
     ],
   },
 
+
   // =====================================================
   // MECHANICAL COMPONENTS
+  // URL:
+  // /products/industrial-products/mechanical-components
   // =====================================================
 
   'mechanical-components': {
+
     title: 'Mechanical Components',
-    subtitle: 'Industrial Mechanical & Power Transmission Components',
+
+    subtitle:
+      'Industrial Mechanical & Power Transmission Components',
 
     description:
       'Mechanical components and power transmission products supporting industrial machinery, production equipment, conveyors, pumps, motors, and maintenance operations.',
@@ -217,7 +226,244 @@ const productCategories: Record<string, ProductCategory> = {
     ],
   },
 
+
+  // =====================================================
+  // INDUSTRIAL EQUIPMENT
+  // URL:
+  // /products/industrial-products/industrial-equipment
+  // =====================================================
+
+  'industrial-equipment': {
+
+    title: 'Industrial Equipment',
+
+    subtitle:
+      'Industrial Equipment & Operational Systems',
+
+    description:
+      'Industrial equipment supporting manufacturing, production, material handling, utilities, facility operations, and industrial processes.',
+
+    products: [
+
+      {
+        name: 'Industrial Pumps',
+        description:
+          'Centrifugal, diaphragm, dosing, and other industrial pumps for water, process fluids, and industrial applications.',
+        image:
+          '/images/products/industrial/equipment/pumps.jpg',
+      },
+
+      {
+        name: 'Electric Motors',
+        description:
+          'Industrial electric motors for pumps, conveyors, machinery, fans, compressors, and production equipment.',
+        image:
+          '/images/products/industrial/equipment/electric-motors.jpg',
+      },
+
+      {
+        name: 'Gearboxes & Reducers',
+        description:
+          'Industrial gearboxes and speed reducers for mechanical power transmission and machinery drive systems.',
+        image:
+          '/images/products/industrial/equipment/gearboxes.jpg',
+      },
+
+      {
+        name: 'Air Compressors',
+        description:
+          'Industrial air compressors and compressed-air equipment for manufacturing and operational requirements.',
+        image:
+          '/images/products/industrial/equipment/air-compressors.jpg',
+      },
+
+      {
+        name: 'Industrial Fans & Blowers',
+        description:
+          'Industrial fans and blowers for ventilation, air circulation, cooling, and process applications.',
+        image:
+          '/images/products/industrial/equipment/fans-blowers.jpg',
+      },
+
+      {
+        name: 'Conveyor Systems',
+        description:
+          'Conveyor equipment and components for material handling, production lines, warehousing, and logistics.',
+        image:
+          '/images/products/industrial/equipment/conveyor.jpg',
+      },
+
+      {
+        name: 'Material Handling Equipment',
+        description:
+          'Equipment for lifting, moving, transporting, and handling materials within industrial facilities.',
+        image:
+          '/images/products/industrial/equipment/material-handling.jpg',
+      },
+
+      {
+        name: 'Welding Equipment',
+        description:
+          'Industrial welding machines and supporting equipment for fabrication, maintenance, and production.',
+        image:
+          '/images/products/industrial/equipment/welding.jpg',
+      },
+
+      {
+        name: 'Generator Sets',
+        description:
+          'Diesel and other generator sets for standby, backup, and industrial power generation requirements.',
+        image:
+          '/images/products/industrial/equipment/genset.jpg',
+      },
+
+      {
+        name: 'Water Treatment Equipment',
+        description:
+          'Equipment supporting industrial water treatment, filtration, purification, and process water systems.',
+        image:
+          '/images/products/industrial/equipment/water-treatment.jpg',
+      },
+
+      {
+        name: 'Industrial HVAC Equipment',
+        description:
+          'HVAC equipment supporting temperature control, ventilation, air conditioning, and industrial facilities.',
+        image:
+          '/images/products/industrial/equipment/hvac.jpg',
+      },
+
+      {
+        name: 'Process Equipment',
+        description:
+          'Selected process equipment supporting manufacturing, production, mixing, processing, and plant operations.',
+        image:
+          '/images/products/industrial/equipment/process-equipment.jpg',
+      },
+
+    ],
+  },
+
+
+  // =====================================================
+  // TOOLS & WORKSHOP SUPPLIES
+  // URL:
+  // /products/industrial-products/tools-workshop-supplies
+  // =====================================================
+
+  'tools-workshop-supplies': {
+
+    title: 'Tools & Workshop Supplies',
+
+    subtitle:
+      'Professional Tools & Workshop Equipment',
+
+    description:
+      'Professional tools, workshop equipment, maintenance tools, and supporting supplies for industrial maintenance, fabrication, repair, and operational activities.',
+
+    products: [
+
+      {
+        name: 'Hand Tools',
+        description:
+          'Professional hand tools including wrenches, pliers, screwdrivers, hammers, and maintenance tools.',
+        image:
+          '/images/products/industrial/tools/hand-tools.jpg',
+      },
+
+      {
+        name: 'Power Tools',
+        description:
+          'Electric and cordless power tools for drilling, grinding, cutting, fastening, and maintenance applications.',
+        image:
+          '/images/products/industrial/tools/power-tools.jpg',
+      },
+
+      {
+        name: 'Cutting Tools',
+        description:
+          'Industrial cutting tools including blades, cutters, saws, and machining-related cutting equipment.',
+        image:
+          '/images/products/industrial/tools/cutting-tools.jpg',
+      },
+
+      {
+        name: 'Grinding Tools',
+        description:
+          'Grinding wheels, abrasive tools, grinders, and accessories for fabrication and maintenance applications.',
+        image:
+          '/images/products/industrial/tools/grinding-tools.jpg',
+      },
+
+      {
+        name: 'Measuring Tools',
+        description:
+          'Precision and general-purpose measuring tools for inspection, maintenance, fabrication, and quality control.',
+        image:
+          '/images/products/industrial/tools/measuring-tools.jpg',
+      },
+
+      {
+        name: 'Workshop Equipment',
+        description:
+          'Workshop equipment including workbenches, tool cabinets, storage systems, and supporting equipment.',
+        image:
+          '/images/products/industrial/tools/workshop-equipment.jpg',
+      },
+
+      {
+        name: 'Lifting & Rigging Tools',
+        description:
+          'Industrial lifting and rigging equipment including slings, shackles, hoists, and related accessories.',
+        image:
+          '/images/products/industrial/tools/lifting-rigging.jpg',
+      },
+
+      {
+        name: 'Welding Tools & Accessories',
+        description:
+          'Welding tools, accessories, electrodes, holders, clamps, and supporting fabrication equipment.',
+        image:
+          '/images/products/industrial/tools/welding-tools.jpg',
+      },
+
+      {
+        name: 'Pneumatic Tools',
+        description:
+          'Compressed-air powered tools for industrial maintenance, assembly, fastening, and workshop applications.',
+        image:
+          '/images/products/industrial/tools/pneumatic-tools.jpg',
+      },
+
+      {
+        name: 'Tool Storage',
+        description:
+          'Tool boxes, tool cabinets, organizers, carts, and storage systems for professional workshops.',
+        image:
+          '/images/products/industrial/tools/tool-storage.jpg',
+      },
+
+      {
+        name: 'Workshop Accessories',
+        description:
+          'Supporting workshop accessories and supplies for maintenance, fabrication, repair, and daily operations.',
+        image:
+          '/images/products/industrial/tools/workshop-accessories.jpg',
+      },
+
+      {
+        name: 'Maintenance Tools',
+        description:
+          'Specialized maintenance tools for machinery servicing, equipment repair, and industrial maintenance operations.',
+        image:
+          '/images/products/industrial/tools/maintenance-tools.jpg',
+      },
+
+    ],
+  },
+
 }
+
 
 export default function ProductSubCategoryPage() {
 
@@ -227,11 +473,13 @@ export default function ProductSubCategoryPage() {
 
   const category = productCategories[productSlug]
 
+
   // =====================================================
   // NOT FOUND
   // =====================================================
 
   if (!category) {
+
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-6">
 
@@ -259,14 +507,18 @@ export default function ProductSubCategoryPage() {
     )
   }
 
+
   return (
+
     <main className="bg-white">
+
 
       {/* =================================================
           HERO
       ================================================= */}
 
       <section className="relative bg-[#0F172A] text-white overflow-hidden">
+
 
         {/* GRID BACKGROUND */}
 
@@ -286,14 +538,18 @@ export default function ProductSubCategoryPage() {
 
         <div className="container-custom relative z-10 py-20 md:py-28">
 
+
           {/* BACK */}
 
           <Link
             href="/products/industrial-products"
             className="inline-flex items-center gap-2 text-white/50 hover:text-white text-xs mb-10 transition"
           >
+
             <HiArrowLeft />
+
             Back to Industrial Products
+
           </Link>
 
 
@@ -356,6 +612,7 @@ export default function ProductSubCategoryPage() {
 
         <div className="max-w-6xl mx-auto px-6">
 
+
           {/* SECTION HEADER */}
 
           <div className="mb-12">
@@ -410,6 +667,7 @@ export default function ProductSubCategoryPage() {
                 }}
                 className="group bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
+
 
                 {/* IMAGE */}
 
@@ -475,6 +733,7 @@ export default function ProductSubCategoryPage() {
 
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
 
+
               <div className="max-w-2xl">
 
                 <p className="text-xs tracking-[0.2em] text-white/40 uppercase">
@@ -515,6 +774,8 @@ export default function ProductSubCategoryPage() {
 
       </section>
 
+
     </main>
+
   )
 }
