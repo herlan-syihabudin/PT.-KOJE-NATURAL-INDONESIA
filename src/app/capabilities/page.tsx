@@ -6,7 +6,7 @@ import {
   HiOfficeBuilding,
   HiCog,
   HiShieldCheck,
-  HiTruck,
+  HiBeaker,
 } from 'react-icons/hi'
 
 const capabilities = [
@@ -17,7 +17,7 @@ const capabilities = [
       'Providing industrial supply, MRO materials, packaging solutions, and procurement support for manufacturing, construction, and commercial operations across Indonesia.',
     items: [
       'Industrial supply & distribution',
-      'MRO spareparts & consumables',
+      'MRO spare parts & consumables',
       'Packaging materials',
       'Vendor management',
       'Procurement support',
@@ -57,25 +57,25 @@ const capabilities = [
   },
   {
     id: '04',
-    title: 'Project & Logistics Support',
+    title: 'Manufacturing & FMCG Distribution',
     description:
-      'Supporting procurement and project execution through logistics coordination, material delivery management, vendor coordination, and site logistics services.',
+      'Supporting beverage manufacturing, private label production, FMCG distribution, and corporate supply requirements through controlled production and distribution capabilities.',
     items: [
-      'Logistics coordination',
-      'Material delivery management',
-      'Project scheduling support',
-      'Vendor coordination',
-      'Site logistics services',
+      'Beverage manufacturing',
+      'Private label production',
+      'FMCG distribution',
+      'Corporate & institutional supply',
+      'Custom packaging',
     ],
-    icon: HiTruck,
-    href: '/capabilities/project-logistics',
+    icon: HiBeaker,
+    href: '/capabilities/manufacturing',
   },
 ]
 
 export const metadata = {
   title: 'Industrial Procurement & Supply Capabilities | PT KOJE Natural Indonesia',
   description:
-    'PT KOJE Natural Indonesia provides industrial procurement, MRO supply, engineering support, safety solutions, and project logistics for manufacturing, construction, engineering, FMCG, and commercial businesses across Indonesia.',
+    'PT KOJE Natural Indonesia provides industrial procurement, MRO supply, engineering support, safety solutions, manufacturing, and FMCG distribution for businesses across Indonesia.',
 }
 
 export default function CapabilitiesPage() {
@@ -101,9 +101,10 @@ export default function CapabilitiesPage() {
 
             <p className="text-gray-500 mt-4 text-sm leading-relaxed max-w-3xl">
               PT KOJE Natural Indonesia provides integrated procurement,
-              industrial supply, engineering support, safety solutions, and
-              project logistics for manufacturing, construction, engineering,
-              FMCG, and commercial businesses across Indonesia.
+              industrial supply, engineering support, safety solutions,
+              manufacturing, and FMCG distribution for manufacturing,
+              construction, engineering, and commercial businesses across
+              Indonesia.
             </p>
           </div>
 
@@ -188,7 +189,7 @@ export default function CapabilitiesPage() {
 
             <p className="text-sm text-gray-500 mt-1">
               Send your requirements and our team will assist with sourcing,
-              procurement, and quotation.
+              procurement, manufacturing, and quotation.
             </p>
 
             <Link
