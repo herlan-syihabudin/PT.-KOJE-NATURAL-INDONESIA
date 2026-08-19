@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,18 +14,48 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-white text-gray-900 font-sans;
+    @apply bg-white text-gray-900;
     overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
+    font-family: var(--font-inter), Arial, sans-serif;
   }
 
   h1,
   h2,
   h3,
-  h4 {
-    @apply font-poppins;
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins), Arial, sans-serif;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
   }
 
   a {
@@ -34,7 +66,7 @@
 @layer components {
 
   /* =========================================
-     CONTAINER
+     RESPONSIVE CONTAINER
   ========================================= */
 
   .container-custom {
@@ -42,10 +74,28 @@
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
+
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
+  /* Small mobile */
+  @media (min-width: 375px) {
+    .container-custom {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  /* Tablet / small laptop */
   @media (min-width: 768px) {
     .container-custom {
       padding-left: 2rem;
@@ -53,7 +103,16 @@
     }
   }
 
+  /* Desktop */
   @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  /* Large desktop */
+  @media (min-width: 1280px) {
     .container-custom {
       padding-left: 3rem;
       padding-right: 3rem;
@@ -66,8 +125,15 @@
   ========================================= */
 
   .section-padding {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
   }
 
   @media (min-width: 768px) {
@@ -96,14 +162,17 @@
     justify-content: center;
     gap: 0.5rem;
 
-    padding: 0.8rem 1.5rem;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
 
     background: #0F172A;
     color: white;
 
     font-weight: 500;
+    font-size: 0.875rem;
 
     border-radius: 0.125rem;
+    border: 1px solid #0F172A;
 
     transition:
       background-color 0.25s ease,
@@ -111,14 +180,20 @@
 
     text-decoration: none;
     cursor: pointer;
-    border: 1px solid #0F172A;
 
-    font-size: 0.875rem;
+    touch-action: manipulation;
   }
 
   .btn-primary:hover {
     background: #1E293B;
     transform: translateY(-1px);
+  }
+
+  @media (min-width: 640px) {
+    .btn-primary {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 
 
@@ -132,14 +207,17 @@
     justify-content: center;
     gap: 0.5rem;
 
-    padding: 0.8rem 1.5rem;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
 
     background: transparent;
     color: white;
 
     font-weight: 500;
+    font-size: 0.875rem;
 
     border-radius: 0.125rem;
+    border: 1px solid rgba(255, 255, 255, 0.45);
 
     transition:
       background-color 0.25s ease,
@@ -149,9 +227,7 @@
     text-decoration: none;
     cursor: pointer;
 
-    border: 1px solid rgba(255, 255, 255, 0.45);
-
-    font-size: 0.875rem;
+    touch-action: manipulation;
   }
 
   .btn-outline:hover {
@@ -160,32 +236,28 @@
     transform: translateY(-1px);
   }
 
+  @media (min-width: 640px) {
+    .btn-outline {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
 
   /* =========================================
      SECTION TITLE
   ========================================= */
 
   .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.875rem, 4vw, 3.25rem);
     font-weight: 300;
+
     color: #0F172A;
 
     margin-bottom: 1rem;
 
     line-height: 1.15;
     letter-spacing: -0.02em;
-  }
-
-  @media (min-width: 768px) {
-    .section-title {
-      font-size: 2.75rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-title {
-      font-size: 3.25rem;
-    }
   }
 
 
@@ -196,7 +268,7 @@
   .section-subtitle {
     color: #64748B;
 
-    font-size: 0.95rem;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
 
     max-width: 42rem;
 
@@ -204,12 +276,6 @@
     margin-right: auto;
 
     line-height: 1.7;
-  }
-
-  @media (min-width: 768px) {
-    .section-subtitle {
-      font-size: 1rem;
-    }
   }
 
 
@@ -222,13 +288,22 @@
     align-items: center;
     gap: 0.75rem;
 
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 500;
 
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 
     color: #94A3B8;
+
+    line-height: 1.4;
+  }
+
+  @media (min-width: 640px) {
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+    }
   }
 
 
@@ -237,6 +312,8 @@
   ========================================= */
 
   .corporate-card {
+    width: 100%;
+
     background: white;
 
     border: 1px solid #E5E7EB;
@@ -253,5 +330,42 @@
     border-color: #CBD5E1;
     background: #FAFAFA;
     transform: translateY(-2px);
+  }
+}
+
+
+/* =========================================
+   MOBILE SAFETY
+========================================= */
+
+@media (max-width: 374px) {
+  .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
