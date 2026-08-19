@@ -366,13 +366,15 @@ export default function Navbar() {
     <HiMenu className="text-xl" />
   </button>
 
-</div>
+          </div>
         </div>
       </nav>
 
       {/* =========================================
           MOBILE MENU
       ========================================= */}
+
+      <AnimatePresence>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
