@@ -6,10 +6,12 @@ import {
   HiArrowLeft,
   HiArrowRight,
   HiCheckCircle,
-  HiCog,
   HiOfficeBuilding,
+  HiCog,
   HiCube,
-  HiChevronRight,
+  HiTruck,
+  HiShieldCheck,
+  HiDocumentText,
 } from 'react-icons/hi'
 
 const capabilities = [
