@@ -1,14 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   HiArrowLeft,
   HiArrowRight,
   HiChevronRight,
-  HiPhone,
-  HiMail,
   HiX,
 } from 'react-icons/hi'
 
@@ -36,25 +34,29 @@ const categories: Record<string, Category> = {
         name: 'Electrical Components',
         description:
           'Electrical components and supporting materials for industrial applications.',
-        image: '/images/products/industrial/electrical-components.jpg',
+        image:
+          '/images/products/industrial/electrical-components.jpg',
       },
       {
         name: 'Mechanical Components',
         description:
           'Mechanical components for machinery, equipment, and industrial operations.',
-        image: '/images/products/industrial/mechanical-components.jpg',
+        image:
+          '/images/products/industrial/mechanical-components.jpg',
       },
       {
         name: 'Industrial Equipment',
         description:
           'Industrial equipment supporting manufacturing and operational requirements.',
-        image: '/images/products/industrial/industrial-equipment.jpg',
+        image:
+          '/images/products/industrial/industrial-equipment.jpg',
       },
       {
         name: 'Tools & Workshop Supplies',
         description:
           'Tools and workshop supplies for maintenance and industrial operations.',
-        image: '/images/products/industrial/workshop-supplies.jpg',
+        image:
+          '/images/products/industrial/workshop-supplies.jpg',
       },
     ],
   },
@@ -69,25 +71,29 @@ const categories: Record<string, Category> = {
         name: 'MRO Spareparts',
         description:
           'Spare parts and replacement components for industrial maintenance.',
-        image: '/images/products/mro/mro-spareparts.jpg',
+        image:
+          '/images/products/mro/mro-spareparts.jpg',
       },
       {
         name: 'Maintenance Consumables',
         description:
           'Consumable products supporting routine maintenance activities.',
-        image: '/images/products/mro/maintenance-consumables.jpg',
+        image:
+          '/images/products/mro/maintenance-consumables.jpg',
       },
       {
         name: 'Safety Supplies',
         description:
           'Safety and operational supplies for industrial environments.',
-        image: '/images/products/mro/safety-supplies.jpg',
+        image:
+          '/images/products/mro/safety-supplies.jpg',
       },
       {
         name: 'Workshop Consumables',
         description:
           'Workshop consumables for daily maintenance and operational needs.',
-        image: '/images/products/mro/workshop-consumables.jpg',
+        image:
+          '/images/products/mro/workshop-consumables.jpg',
       },
     ],
   },
@@ -102,25 +108,29 @@ const categories: Record<string, Category> = {
         name: 'Bottles & Containers',
         description:
           'Bottles and containers for food, beverage, FMCG, and industrial applications.',
-        image: '/images/products/packaging/bottles-containers.jpg',
+        image:
+          '/images/products/packaging/bottles-containers.jpg',
       },
       {
         name: 'Primary Packaging',
         description:
           'Primary packaging solutions for various product applications.',
-        image: '/images/products/packaging/primary-packaging.jpg',
+        image:
+          '/images/products/packaging/primary-packaging.jpg',
       },
       {
         name: 'Secondary Packaging',
         description:
           'Secondary packaging materials for distribution and logistics.',
-        image: '/images/products/packaging/secondary-packaging.jpg',
+        image:
+          '/images/products/packaging/secondary-packaging.jpg',
       },
       {
         name: 'Packaging Accessories',
         description:
           'Supporting accessories for packaging and product presentation.',
-        image: '/images/products/packaging/accessories.jpg',
+        image:
+          '/images/products/packaging/accessories.jpg',
       },
     ],
   },
@@ -135,25 +145,29 @@ const categories: Record<string, Category> = {
         name: 'Processing Materials',
         description:
           'Materials supporting manufacturing and industrial processing.',
-        image: '/images/products/chemical/processing-materials.jpg',
+        image:
+          '/images/products/chemical/processing-materials.jpg',
       },
       {
         name: 'Production Supplies',
         description:
           'Supporting materials for production and manufacturing operations.',
-        image: '/images/products/chemical/production-supplies.jpg',
+        image:
+          '/images/products/chemical/production-supplies.jpg',
       },
       {
         name: 'Industrial Chemicals',
         description:
           'Selected industrial chemical products based on required specifications.',
-        image: '/images/products/chemical/industrial-chemicals.jpg',
+        image:
+          '/images/products/chemical/industrial-chemicals.jpg',
       },
       {
         name: 'Supporting Materials',
         description:
           'Additional materials supporting industrial production requirements.',
-        image: '/images/products/chemical/supporting-materials.jpg',
+        image:
+          '/images/products/chemical/supporting-materials.jpg',
       },
     ],
   },
@@ -168,25 +182,29 @@ const categories: Record<string, Category> = {
         name: 'Beverage Products',
         description:
           'Beverage products for corporate, commercial, and retail requirements.',
-        image: '/images/products/fmcg/beverage-products.jpg',
+        image:
+          '/images/products/fmcg/beverage-products.jpg',
       },
       {
         name: 'Private Label Products',
         description:
           'Private label product solutions for businesses and commercial partners.',
-        image: '/images/products/fmcg/private-label.jpg',
+        image:
+          '/images/products/fmcg/private-label.jpg',
       },
       {
         name: 'FMCG Products',
         description:
           'Selected fast-moving consumer goods for commercial distribution.',
-        image: '/images/products/fmcg/fmcg-products.jpg',
+        image:
+          '/images/products/fmcg/fmcg-products.jpg',
       },
       {
         name: 'Corporate Supply',
         description:
           'FMCG and beverage supply solutions for corporate requirements.',
-        image: '/images/products/fmcg/corporate-supply.jpg',
+        image:
+          '/images/products/fmcg/corporate-supply.jpg',
       },
     ],
   },
@@ -201,25 +219,29 @@ const categories: Record<string, Category> = {
         name: 'Product Sourcing',
         description:
           'Sourcing products based on required specifications and quantity.',
-        image: '/images/products/sourcing/product-sourcing.jpg',
+        image:
+          '/images/products/sourcing/product-sourcing.jpg',
       },
       {
         name: 'Brand-Specific Procurement',
         description:
           'Procurement support for specific brands and product requirements.',
-        image: '/images/products/sourcing/brand-procurement.jpg',
+        image:
+          '/images/products/sourcing/brand-procurement.jpg',
       },
       {
         name: 'Custom Specifications',
         description:
           'Product sourcing based on custom technical and commercial specifications.',
-        image: '/images/products/sourcing/custom-specifications.jpg',
+        image:
+          '/images/products/sourcing/custom-specifications.jpg',
       },
       {
         name: 'Vendor Coordination',
         description:
           'Supplier and vendor coordination from sourcing through delivery.',
-        image: '/images/products/sourcing/vendor-coordination.jpg',
+        image:
+          '/images/products/sourcing/vendor-coordination.jpg',
       },
     ],
   },
@@ -228,30 +250,65 @@ const categories: Record<string, Category> = {
 export default function ProductCategoryPage({
   params,
 }: {
-  params: { slug: string }
+  params: {
+    slug: string
+  }
 }) {
-  const category = categories[params.slug]
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [selectedProduct, setSelectedProduct] =
+    useState<Product | null>(null)
 
+  const category = categories[params.slug]
+
+  // ESC untuk menutup modal
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedProduct(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  // Lock body scroll ketika modal terbuka
+  useEffect(() => {
+    if (selectedProduct) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [selectedProduct])
+
+  // CATEGORY TIDAK DITEMUKAN
   if (!category) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-6">
         <div className="text-center">
+
           <p className="text-xs tracking-[0.25em] text-gray-400 uppercase mb-4">
             Product Not Found
           </p>
 
           <h1 className="text-3xl font-light text-gray-900 mb-6">
-            Product category tidak ditemukan.
+            Product category not found.
           </h1>
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm"
+            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm hover:bg-[#1E293B] transition"
           >
             <HiArrowLeft />
-            Kembali ke Products
+            Back to Products
           </Link>
+
         </div>
       </main>
     )
@@ -260,7 +317,9 @@ export default function ProductCategoryPage({
   return (
     <main className="bg-white">
 
-      {/* HERO */}
+      {/* =========================================
+          HERO
+      ========================================= */}
 
       <section className="relative bg-[#0F172A] text-white overflow-hidden">
 
@@ -293,6 +352,7 @@ export default function ProductCategoryPage({
           >
 
             <div className="flex items-center gap-3 mb-6">
+
               <span className="w-10 h-px bg-white/40" />
 
               <span className="text-xs tracking-[0.3em] text-white/50 uppercase">
@@ -300,6 +360,7 @@ export default function ProductCategoryPage({
               </span>
 
               <span className="w-10 h-px bg-white/40" />
+
             </div>
 
             <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-tight">
@@ -321,7 +382,9 @@ export default function ProductCategoryPage({
       </section>
 
 
-      {/* PRODUCT GALLERY */}
+      {/* =========================================
+          PRODUCT GALLERY
+      ========================================= */}
 
       <section className="bg-[#F8FAFC] py-20 md:py-24">
 
@@ -330,11 +393,13 @@ export default function ProductCategoryPage({
           <div className="mb-12">
 
             <div className="flex items-center gap-3 mb-4">
+
               <span className="w-10 h-px bg-gray-300" />
 
               <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
                 Product Portfolio
               </span>
+
             </div>
 
             <h2 className="text-3xl md:text-5xl font-light text-gray-900">
@@ -350,7 +415,9 @@ export default function ProductCategoryPage({
           </div>
 
 
-          {/* GRID */}
+          {/* =========================================
+              PRODUCT GRID
+          ========================================= */}
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -397,8 +464,11 @@ export default function ProductCategoryPage({
                   </p>
 
                   <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] mt-4 transition">
+
                     View Product
+
                     <HiArrowRight className="w-3 h-3" />
+
                   </div>
 
                 </div>
@@ -414,7 +484,9 @@ export default function ProductCategoryPage({
       </section>
 
 
-      {/* INQUIRY */}
+      {/* =========================================
+          INQUIRY CTA
+      ========================================= */}
 
       <section className="bg-white py-20">
 
@@ -459,7 +531,9 @@ export default function ProductCategoryPage({
       </section>
 
 
-      {/* PRODUCT MODAL */}
+      {/* =========================================
+          PRODUCT MODAL
+      ========================================= */}
 
       {selectedProduct && (
 
@@ -469,11 +543,22 @@ export default function ProductCategoryPage({
         >
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{
+              opacity: 0,
+              scale: 0.95,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
             className="relative bg-white max-w-4xl w-full max-h-[90vh] overflow-auto"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           >
+
+            {/* CLOSE BUTTON */}
 
             <button
               type="button"
@@ -484,7 +569,10 @@ export default function ProductCategoryPage({
               <HiX />
             </button>
 
+
             <div className="grid md:grid-cols-2">
+
+              {/* IMAGE */}
 
               <div className="bg-gray-100 aspect-square md:aspect-auto">
 
@@ -495,6 +583,9 @@ export default function ProductCategoryPage({
                 />
 
               </div>
+
+
+              {/* INFO */}
 
               <div className="p-7 md:p-10 flex flex-col justify-center">
 
