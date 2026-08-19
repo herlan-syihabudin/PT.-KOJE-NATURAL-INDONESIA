@@ -263,7 +263,6 @@ export default function IndustrialSupplyPage() {
         </div>
       </section>
 
-      // Tambahkan section:
 <section className="bg-[#F8FAFC] py-20 border-y border-gray-100">
   <div className="max-w-6xl mx-auto px-6">
     <motion.div
