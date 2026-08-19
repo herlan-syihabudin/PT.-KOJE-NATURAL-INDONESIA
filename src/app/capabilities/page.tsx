@@ -6,6 +6,7 @@ import {
   HiOfficeBuilding,
   HiCog,
   HiShieldCheck,
+  HiTruck,
   HiBeaker,
 } from 'react-icons/hi'
 
@@ -57,6 +58,21 @@ const capabilities = [
   },
   {
     id: '04',
+    title: 'Project & Logistics Support',
+    description:
+      'Supporting procurement and project execution through logistics coordination, material delivery management, vendor coordination, scheduling, and site logistics services.',
+    items: [
+      'Logistics coordination',
+      'Material delivery management',
+      'Project scheduling support',
+      'Vendor coordination',
+      'Site logistics services',
+    ],
+    icon: HiTruck,
+    href: '/capabilities/project-logistics',
+  },
+  {
+    id: '05',
     title: 'Manufacturing & FMCG Distribution',
     description:
       'Supporting beverage manufacturing, private label production, FMCG distribution, and corporate supply requirements through controlled production and distribution capabilities.',
@@ -75,7 +91,7 @@ const capabilities = [
 export const metadata = {
   title: 'Industrial Procurement & Supply Capabilities | PT KOJE Natural Indonesia',
   description:
-    'PT KOJE Natural Indonesia provides industrial procurement, MRO supply, engineering support, safety solutions, manufacturing, and FMCG distribution for businesses across Indonesia.',
+    'PT KOJE Natural Indonesia provides industrial procurement, MRO supply, engineering support, safety solutions, project logistics, manufacturing, and FMCG distribution for businesses across Indonesia.',
 }
 
 export default function CapabilitiesPage() {
@@ -96,15 +112,15 @@ export default function CapabilitiesPage() {
             </div>
 
             <h1 className="text-3xl md:text-4xl font-light text-gray-900 mt-6 leading-tight">
-              Industrial Procurement & Supply Solutions
+              Integrated Industrial & Procurement Solutions
             </h1>
 
             <p className="text-gray-500 mt-4 text-sm leading-relaxed max-w-3xl">
               PT KOJE Natural Indonesia provides integrated procurement,
               industrial supply, engineering support, safety solutions,
-              manufacturing, and FMCG distribution for manufacturing,
-              construction, engineering, and commercial businesses across
-              Indonesia.
+              project logistics, manufacturing, and FMCG distribution for
+              manufacturing, construction, engineering, and commercial
+              businesses across Indonesia.
             </p>
           </div>
 
@@ -189,7 +205,7 @@ export default function CapabilitiesPage() {
 
             <p className="text-sm text-gray-500 mt-1">
               Send your requirements and our team will assist with sourcing,
-              procurement, manufacturing, and quotation.
+              procurement, manufacturing, logistics, and quotation.
             </p>
 
             <Link
