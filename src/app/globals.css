@@ -19,12 +19,24 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-poppins;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
 @layer components {
+
+  /* =========================================
+     CONTAINER
+  ========================================= */
+
   .container-custom {
     width: 100%;
     max-width: 1280px;
@@ -48,9 +60,14 @@
     }
   }
 
+
+  /* =========================================
+     SECTION
+  ========================================= */
+
   .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   @media (min-width: 768px) {
@@ -60,84 +77,181 @@
     }
   }
 
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+
+  /* =========================================
+     PRIMARY BUTTON
+     Industrial / Corporate Style
+  ========================================= */
+
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #0FA3A8 0%, #0C8A8E 100%);
+
+    padding: 0.8rem 1.5rem;
+
+    background: #0F172A;
     color: white;
-    font-weight: 600;
-    border-radius: 9999px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(15, 163, 168, 0.3);
+
+    font-weight: 500;
+
+    border-radius: 0.125rem;
+
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+
     text-decoration: none;
     cursor: pointer;
-    border: none;
+    border: 1px solid #0F172A;
+
     font-size: 0.875rem;
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(15, 163, 168, 0.4);
+    background: #1E293B;
+    transform: translateY(-1px);
   }
+
+
+  /* =========================================
+     OUTLINE BUTTON
+  ========================================= */
 
   .btn-outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+
+    padding: 0.8rem 1.5rem;
+
     background: transparent;
     color: white;
-    font-weight: 600;
-    border-radius: 9999px;
-    transition: all 0.3s ease;
+
+    font-weight: 500;
+
+    border-radius: 0.125rem;
+
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid white;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
     font-size: 0.875rem;
   }
 
   .btn-outline:hover {
     background: white;
-    color: #0FA3A8;
-    transform: translateY(-2px);
+    color: #0F172A;
+    transform: translateY(-1px);
   }
 
+
+  /* =========================================
+     SECTION TITLE
+  ========================================= */
+
   .section-title {
-    font-size: 1.875rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 300;
     color: #0F172A;
+
     margin-bottom: 1rem;
-    line-height: 1.2;
+
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   @media (min-width: 768px) {
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2.75rem;
     }
   }
 
   @media (min-width: 1024px) {
     .section-title {
-      font-size: 3rem;
+      font-size: 3.25rem;
     }
   }
 
+
+  /* =========================================
+     SECTION SUBTITLE
+  ========================================= */
+
   .section-subtitle {
-    color: #6B7280;
-    font-size: 1rem;
+    color: #64748B;
+
+    font-size: 0.95rem;
+
     max-width: 42rem;
+
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
+
+    line-height: 1.7;
   }
 
   @media (min-width: 768px) {
     .section-subtitle {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
+  }
+
+
+  /* =========================================
+     CORPORATE EYEBROW
+  ========================================= */
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    color: #94A3B8;
+  }
+
+
+  /* =========================================
+     CORPORATE CARD
+  ========================================= */
+
+  .corporate-card {
+    background: white;
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 0.125rem;
+
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .corporate-card:hover {
+    border-color: #CBD5E1;
+    background: #FAFAFA;
+    transform: translateY(-2px);
   }
 }
