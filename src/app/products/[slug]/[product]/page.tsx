@@ -618,6 +618,302 @@ const productCategories: Record<string, ProductCategory> = {
   ],
 },
 
+  'beverage-products': {
+  title: 'Beverage Products',
+  subtitle: 'Ready-to-Drink & Beverage Solutions',
+  description:
+    'Beverage products supplied for retail, corporate, hospitality, distribution, and commercial requirements.',
+  products: [
+    {
+      name: 'Healthy Juice',
+      description:
+        'Cold-pressed juice and healthy beverage products.',
+      image:
+        '/images/products/fmcg/beverage/healthy-juice.jpg',
+    },
+    {
+      name: 'Functional Drinks',
+      description:
+        'Functional beverages supporting wellness and lifestyle needs.',
+      image:
+        '/images/products/fmcg/beverage/functional-drinks.jpg',
+    },
+    {
+      name: 'Bottled Beverages',
+      description:
+        'Ready-to-drink bottled beverage products.',
+      image:
+        '/images/products/fmcg/beverage/bottled-beverages.jpg',
+    },
+    {
+      name: 'Corporate Beverage Supply',
+      description:
+        'Bulk beverage supply for offices, hotels, and institutions.',
+      image:
+        '/images/products/fmcg/beverage/corporate-supply.jpg',
+    },
+  ],
+},
+
+'private-label-products': {
+  title: 'Private Label Products',
+  subtitle: 'OEM & Private Label Manufacturing',
+  description:
+    'Private label product development and manufacturing services for brands, distributors, and commercial partners.',
+  products: [
+    {
+      name: 'Private Label Beverages',
+      description:
+        'Custom beverage products under client branding.',
+      image:
+        '/images/products/fmcg/private-label/beverages.jpg',
+    },
+    {
+      name: 'Custom Packaging',
+      description:
+        'Packaging customization and branding solutions.',
+      image:
+        '/images/products/fmcg/private-label/packaging.jpg',
+    },
+    {
+      name: 'Product Development',
+      description:
+        'Product formulation and development support.',
+      image:
+        '/images/products/fmcg/private-label/development.jpg',
+    },
+    {
+      name: 'OEM Manufacturing',
+      description:
+        'Contract manufacturing services for commercial products.',
+      image:
+        '/images/products/fmcg/private-label/oem.jpg',
+    },
+  ],
+},
+
+'fmcg-products': {
+  title: 'FMCG Products',
+  subtitle: 'Fast Moving Consumer Goods',
+  description:
+    'Selected FMCG products supplied for distribution, retail, and commercial channels.',
+  products: [
+    {
+      name: 'Food Products',
+      description:
+        'Packaged food and consumer products.',
+      image:
+        '/images/products/fmcg/general/food-products.jpg',
+    },
+    {
+      name: 'Beverage Products',
+      description:
+        'Consumer beverage products.',
+      image:
+        '/images/products/fmcg/general/beverage-products.jpg',
+    },
+    {
+      name: 'Retail Products',
+      description:
+        'Products supporting retail distribution channels.',
+      image:
+        '/images/products/fmcg/general/retail-products.jpg',
+    },
+    {
+      name: 'Consumer Goods',
+      description:
+        'Daily-use consumer products and supplies.',
+      image:
+        '/images/products/fmcg/general/consumer-goods.jpg',
+    },
+  ],
+},
+
+'corporate-supply': {
+  title: 'Corporate Supply',
+  subtitle: 'Corporate Procurement Solutions',
+  description:
+    'Corporate FMCG and beverage supply solutions for offices, institutions, and commercial operations.',
+  products: [
+    {
+      name: 'Office Beverage Supply',
+      description:
+        'Routine beverage supply for offices and workplaces.',
+      image:
+        '/images/products/fmcg/corporate/office-beverage.jpg',
+    },
+    {
+      name: 'Hospitality Supply',
+      description:
+        'Product supply for hotels, restaurants, and hospitality businesses.',
+      image:
+        '/images/products/fmcg/corporate/hospitality.jpg',
+    },
+    {
+      name: 'Institution Supply',
+      description:
+        'Supply solutions for schools, hospitals, and institutions.',
+      image:
+        '/images/products/fmcg/corporate/institution.jpg',
+    },
+    {
+      name: 'Bulk Procurement',
+      description:
+        'Large-volume FMCG procurement and delivery solutions.',
+      image:
+        '/images/products/fmcg/corporate/bulk.jpg',
+    },
+  ],
+},
+
+'product-sourcing': {
+  title: 'Product Sourcing',
+  subtitle: 'Procurement & Product Sourcing Services',
+  description:
+    'Product sourcing solutions based on technical specifications, brand requirements, and project needs.',
+  products: [
+    {
+      name: 'Industrial Products',
+      description:
+        'Industrial product sourcing and procurement services.',
+      image:
+        '/images/products/sourcing/product/industrial.jpg',
+    },
+    {
+      name: 'Commercial Products',
+      description:
+        'Commercial product procurement solutions.',
+      image:
+        '/images/products/sourcing/product/commercial.jpg',
+    },
+    {
+      name: 'Imported Products',
+      description:
+        'Import sourcing and international procurement support.',
+      image:
+        '/images/products/sourcing/product/import.jpg',
+    },
+    {
+      name: 'Project-Based Procurement',
+      description:
+        'Procurement services tailored to project requirements.',
+      image:
+        '/images/products/sourcing/product/project.jpg',
+    },
+  ],
+},
+
+'brand-specific-procurement': {
+  title: 'Brand-Specific Procurement',
+  subtitle: 'Authorized Brand Procurement Support',
+  description:
+    'Procurement services for specific brands and approved vendor requirements.',
+  products: [
+    {
+      name: 'Electrical Brands',
+      description:
+        'Procurement support for leading electrical brands.',
+      image:
+        '/images/products/sourcing/brand/electrical.jpg',
+    },
+    {
+      name: 'Mechanical Brands',
+      description:
+        'Mechanical equipment and component sourcing.',
+      image:
+        '/images/products/sourcing/brand/mechanical.jpg',
+    },
+    {
+      name: 'Industrial Brands',
+      description:
+        'Industrial equipment procurement services.',
+      image:
+        '/images/products/sourcing/brand/industrial.jpg',
+    },
+    {
+      name: 'Preferred Vendor Supply',
+      description:
+        'Supply management according to approved vendor lists.',
+      image:
+        '/images/products/sourcing/brand/vendor.jpg',
+    },
+  ],
+},
+
+'custom-specifications': {
+  title: 'Custom Specifications',
+  subtitle: 'Specification-Based Procurement',
+  description:
+    'Sourcing products according to technical drawings, datasheets, and custom specifications.',
+  products: [
+    {
+      name: 'Technical Drawings',
+      description:
+        'Procurement based on engineering drawings.',
+      image:
+        '/images/products/sourcing/custom/drawing.jpg',
+    },
+    {
+      name: 'Datasheet Matching',
+      description:
+        'Specification matching based on technical datasheets.',
+      image:
+        '/images/products/sourcing/custom/datasheet.jpg',
+    },
+    {
+      name: 'Equivalent Products',
+      description:
+        'Alternative products meeting required specifications.',
+      image:
+        '/images/products/sourcing/custom/equivalent.jpg',
+    },
+    {
+      name: 'Custom Requirement Sourcing',
+      description:
+        'Procurement tailored to unique customer requirements.',
+      image:
+        '/images/products/sourcing/custom/requirement.jpg',
+    },
+  ],
+},
+
+'vendor-coordination': {
+  title: 'Vendor Coordination',
+  subtitle: 'Supplier & Vendor Management',
+  description:
+    'Vendor coordination services from sourcing, quotation, procurement, logistics, and delivery.',
+  products: [
+    {
+      name: 'Supplier Selection',
+      description:
+        'Supplier evaluation and sourcing support.',
+      image:
+        '/images/products/sourcing/vendor/supplier-selection.jpg',
+    },
+    {
+      name: 'Quotation Management',
+      description:
+        'RFQ and quotation coordination services.',
+      image:
+        '/images/products/sourcing/vendor/quotation.jpg',
+    },
+    {
+      name: 'Logistics Coordination',
+      description:
+        'Delivery scheduling and logistics coordination.',
+      image:
+        '/images/products/sourcing/vendor/logistics.jpg',
+    },
+    {
+      name: 'Project Procurement Support',
+      description:
+        'End-to-end procurement support for projects.',
+      image:
+        '/images/products/sourcing/vendor/project-support.jpg',
+    },
+  ],
+},
+
 }
 
 
