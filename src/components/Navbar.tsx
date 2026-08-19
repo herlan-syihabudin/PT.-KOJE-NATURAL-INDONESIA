@@ -78,9 +78,10 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <div className="container-custom">
-          <div className="flex min-h-[64px] items-center justify-between md:min-h-[72px]">
+          {/* Tambahkan md:gap-8 untuk memberi ruang antara logo dan menu */}
+          <div className="flex min-h-[64px] items-center justify-between md:min-h-[72px] md:gap-8">
 
-            {/* LOGO - Lebih kecil di desktop */}
+            {/* LOGO */}
             <Link
               href="/"
               className="relative z-10 flex shrink-0 items-center"
@@ -118,8 +119,8 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* DESKTOP MENU - Gap lebih besar */}
-            <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 xl:gap-10">
+            {/* DESKTOP MENU - Tambahkan ml-4 untuk jarak dari logo */}
+            <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 xl:gap-10 md:ml-4 lg:ml-6">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href
 
@@ -281,7 +282,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* MOBILE ACTIONS */}
+            {/* MOBILE ACTIONS - Tetap Sama */}
             <div className="flex items-center gap-2 md:hidden">
               <Link
                 href="/search"
@@ -341,7 +342,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU - Sama */}
+      {/* MOBILE MENU - Tetap Sama */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
