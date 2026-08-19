@@ -71,189 +71,209 @@ const categories: Record<string, Category> = {
 },
 
   'mro-consumables': {
-    title: 'MRO & Consumables',
-    subtitle: 'Maintenance, Repair & Operational Supplies',
-    description:
-      'Maintenance, repair, and operational supplies supporting continuous industrial operations.',
-    products: [
-      {
-        name: 'MRO Spareparts',
-        description:
-          'Spare parts and replacement components for industrial maintenance.',
-        image:
-          '/images/products/mro/mro-spareparts.jpg',
-      },
-      {
-        name: 'Maintenance Consumables',
-        description:
-          'Consumable products supporting routine maintenance activities.',
-        image:
-          '/images/products/mro/maintenance-consumables.jpg',
-      },
-      {
-        name: 'Safety Supplies',
-        description:
-          'Safety and operational supplies for industrial environments.',
-        image:
-          '/images/products/mro/safety-supplies.jpg',
-      },
-      {
-        name: 'Workshop Consumables',
-        description:
-          'Workshop consumables for daily maintenance and operational needs.',
-        image:
-          '/images/products/mro/workshop-consumables.jpg',
-      },
-    ],
-  },
+  title: 'MRO & Consumables',
+  subtitle: 'Maintenance, Repair & Operational Supplies',
+  description:
+    'Maintenance, repair, and operational supplies supporting continuous industrial operations.',
+  products: [
+    {
+      name: 'MRO Spareparts',
+      description:
+        'Spare parts and replacement components for industrial maintenance.',
+      image:
+        '/images/products/mro/mro-spareparts.jpg',
+      href: '/products/mro-consumables/mro-spareparts',
+    },
+    {
+      name: 'Maintenance Consumables',
+      description:
+        'Consumable products supporting routine maintenance activities.',
+      image:
+        '/images/products/mro/maintenance-consumables.jpg',
+      href: '/products/mro-consumables/maintenance-consumables',
+    },
+    {
+      name: 'Safety Supplies',
+      description:
+        'Safety and operational supplies for industrial environments.',
+      image:
+        '/images/products/mro/safety-supplies.jpg',
+      href: '/products/mro-consumables/safety-supplies',
+    },
+    {
+      name: 'Workshop Consumables',
+      description:
+        'Workshop consumables for daily maintenance and operational needs.',
+      image:
+        '/images/products/mro/workshop-consumables.jpg',
+      href: '/products/mro-consumables/workshop-consumables',
+    },
+  ],
+},
 
   'packaging-materials': {
-    title: 'Packaging Materials',
-    subtitle: 'Packaging Solutions for Industrial & FMCG',
-    description:
-      'Packaging materials and supporting products for industrial, FMCG, food, and beverage operations.',
-    products: [
-      {
-        name: 'Bottles & Containers',
-        description:
-          'Bottles and containers for food, beverage, FMCG, and industrial applications.',
-        image:
-          '/images/products/packaging/bottles-containers.jpg',
-      },
-      {
-        name: 'Primary Packaging',
-        description:
-          'Primary packaging solutions for various product applications.',
-        image:
-          '/images/products/packaging/primary-packaging.jpg',
-      },
-      {
-        name: 'Secondary Packaging',
-        description:
-          'Secondary packaging materials for distribution and logistics.',
-        image:
-          '/images/products/packaging/secondary-packaging.jpg',
-      },
-      {
-        name: 'Packaging Accessories',
-        description:
-          'Supporting accessories for packaging and product presentation.',
-        image:
-          '/images/products/packaging/accessories.jpg',
-      },
-    ],
-  },
+  title: 'Packaging Materials',
+  subtitle: 'Packaging Solutions for Industrial & FMCG',
+  description:
+    'Packaging materials and supporting products for industrial, FMCG, food, and beverage operations.',
+  products: [
+    {
+      name: 'Bottles & Containers',
+      description:
+        'Bottles and containers for food, beverage, FMCG, and industrial applications.',
+      image:
+        '/images/products/packaging/bottles-containers.jpg',
+      href: '/products/packaging-materials/bottles-containers',
+    },
+    {
+      name: 'Primary Packaging',
+      description:
+        'Primary packaging solutions for various product applications.',
+      image:
+        '/images/products/packaging/primary-packaging.jpg',
+      href: '/products/packaging-materials/primary-packaging',
+    },
+    {
+      name: 'Secondary Packaging',
+      description:
+        'Secondary packaging materials for distribution and logistics.',
+      image:
+        '/images/products/packaging/secondary-packaging.jpg',
+      href: '/products/packaging-materials/secondary-packaging',
+    },
+    {
+      name: 'Packaging Accessories',
+      description:
+        'Supporting accessories for packaging and product presentation.',
+      image:
+        '/images/products/packaging/accessories.jpg',
+      href: '/products/packaging-materials/packaging-accessories',
+    },
+  ],
+},
 
   'chemical-processing': {
-    title: 'Chemical & Processing Supplies',
-    subtitle: 'Materials for Manufacturing & Processing',
-    description:
-      'Selected materials and processing supplies for manufacturing and production requirements.',
-    products: [
-      {
-        name: 'Processing Materials',
-        description:
-          'Materials supporting manufacturing and industrial processing.',
-        image:
-          '/images/products/chemical/processing-materials.jpg',
-      },
-      {
-        name: 'Production Supplies',
-        description:
-          'Supporting materials for production and manufacturing operations.',
-        image:
-          '/images/products/chemical/production-supplies.jpg',
-      },
-      {
-        name: 'Industrial Chemicals',
-        description:
-          'Selected industrial chemical products based on required specifications.',
-        image:
-          '/images/products/chemical/industrial-chemicals.jpg',
-      },
-      {
-        name: 'Supporting Materials',
-        description:
-          'Additional materials supporting industrial production requirements.',
-        image:
-          '/images/products/chemical/supporting-materials.jpg',
-      },
-    ],
-  },
+  title: 'Chemical & Processing Supplies',
+  subtitle: 'Materials for Manufacturing & Processing',
+  description:
+    'Selected materials and processing supplies for manufacturing and production requirements.',
+  products: [
+    {
+      name: 'Processing Materials',
+      description:
+        'Materials supporting manufacturing and industrial processing.',
+      image:
+        '/images/products/chemical/processing-materials.jpg',
+      href: '/products/chemical-processing/processing-materials',
+    },
+    {
+      name: 'Production Supplies',
+      description:
+        'Supporting materials for production and manufacturing operations.',
+      image:
+        '/images/products/chemical/production-supplies.jpg',
+      href: '/products/chemical-processing/production-supplies',
+    },
+    {
+      name: 'Industrial Chemicals',
+      description:
+        'Selected industrial chemical products based on required specifications.',
+      image:
+        '/images/products/chemical/industrial-chemicals.jpg',
+      href: '/products/chemical-processing/industrial-chemicals',
+    },
+    {
+      name: 'Supporting Materials',
+      description:
+        'Additional materials supporting industrial production requirements.',
+      image:
+        '/images/products/chemical/supporting-materials.jpg',
+      href: '/products/chemical-processing/supporting-materials',
+    },
+  ],
+},
 
   fmcg: {
-    title: 'FMCG Products',
-    subtitle: 'Beverage & Consumer Products',
-    description:
-      'Beverage and FMCG products supplied for corporate, retail, commercial, and distribution channels.',
-    products: [
-      {
-        name: 'Beverage Products',
-        description:
-          'Beverage products for corporate, commercial, and retail requirements.',
-        image:
-          '/images/products/fmcg/beverage-products.jpg',
-      },
-      {
-        name: 'Private Label Products',
-        description:
-          'Private label product solutions for businesses and commercial partners.',
-        image:
-          '/images/products/fmcg/private-label.jpg',
-      },
-      {
-        name: 'FMCG Products',
-        description:
-          'Selected fast-moving consumer goods for commercial distribution.',
-        image:
-          '/images/products/fmcg/fmcg-products.jpg',
-      },
-      {
-        name: 'Corporate Supply',
-        description:
-          'FMCG and beverage supply solutions for corporate requirements.',
-        image:
-          '/images/products/fmcg/corporate-supply.jpg',
-      },
-    ],
-  },
+  title: 'FMCG Products',
+  subtitle: 'Beverage & Consumer Products',
+  description:
+    'Beverage and FMCG products supplied for corporate, retail, commercial, and distribution channels.',
+  products: [
+    {
+      name: 'Beverage Products',
+      description:
+        'Beverage products for corporate, commercial, and retail requirements.',
+      image:
+        '/images/products/fmcg/beverage-products.jpg',
+      href: '/products/fmcg/beverage-products',
+    },
+    {
+      name: 'Private Label Products',
+      description:
+        'Private label product solutions for businesses and commercial partners.',
+      image:
+        '/images/products/fmcg/private-label.jpg',
+      href: '/products/fmcg/private-label-products',
+    },
+    {
+      name: 'FMCG Products',
+      description:
+        'Selected fast-moving consumer goods for commercial distribution.',
+      image:
+        '/images/products/fmcg/fmcg-products.jpg',
+      href: '/products/fmcg/fmcg-products',
+    },
+    {
+      name: 'Corporate Supply',
+      description:
+        'FMCG and beverage supply solutions for corporate requirements.',
+      image:
+        '/images/products/fmcg/corporate-supply.jpg',
+      href: '/products/fmcg/corporate-supply',
+    },
+  ],
+},
 
   'custom-sourcing': {
-    title: 'Custom & Sourcing',
-    subtitle: 'Product Sourcing & Procurement Solutions',
-    description:
-      'Sourcing solutions for products and materials requiring specific specifications, brands, or procurement requirements.',
-    products: [
-      {
-        name: 'Product Sourcing',
-        description:
-          'Sourcing products based on required specifications and quantity.',
-        image:
-          '/images/products/sourcing/product-sourcing.jpg',
-      },
-      {
-        name: 'Brand-Specific Procurement',
-        description:
-          'Procurement support for specific brands and product requirements.',
-        image:
-          '/images/products/sourcing/brand-procurement.jpg',
-      },
-      {
-        name: 'Custom Specifications',
-        description:
-          'Product sourcing based on custom technical and commercial specifications.',
-        image:
-          '/images/products/sourcing/custom-specifications.jpg',
-      },
-      {
-        name: 'Vendor Coordination',
-        description:
-          'Supplier and vendor coordination from sourcing through delivery.',
-        image:
-          '/images/products/sourcing/vendor-coordination.jpg',
-      },
-    ],
-  },
+  title: 'Custom & Sourcing',
+  subtitle: 'Product Sourcing & Procurement Solutions',
+  description:
+    'Sourcing solutions for products and materials requiring specific specifications, brands, or procurement requirements.',
+  products: [
+    {
+      name: 'Product Sourcing',
+      description:
+        'Sourcing products based on required specifications and quantity.',
+      image:
+        '/images/products/sourcing/product-sourcing.jpg',
+      href: '/products/custom-sourcing/product-sourcing',
+    },
+    {
+      name: 'Brand-Specific Procurement',
+      description:
+        'Procurement support for specific brands and product requirements.',
+      image:
+        '/images/products/sourcing/brand-procurement.jpg',
+      href: '/products/custom-sourcing/brand-specific-procurement',
+    },
+    {
+      name: 'Custom Specifications',
+      description:
+        'Product sourcing based on custom technical and commercial specifications.',
+      image:
+        '/images/products/sourcing/custom-specifications.jpg',
+      href: '/products/custom-sourcing/custom-specifications',
+    },
+    {
+      name: 'Vendor Coordination',
+      description:
+        'Supplier and vendor coordination from sourcing through delivery.',
+      image:
+        '/images/products/sourcing/vendor-coordination.jpg',
+      href: '/products/custom-sourcing/vendor-coordination',
+    },
+  ],
+},
 }
 
 export default function ProductCategoryPage({
