@@ -34,9 +34,7 @@ export default function Navbar() {
 
   useEffect(() => {
     handleScroll()
-
     window.addEventListener('scroll', handleScroll, { passive: true })
-
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -51,9 +49,7 @@ export default function Navbar() {
       document.body.style.overflow = ''
       return
     }
-
     document.body.style.overflow = 'hidden'
-
     return () => {
       document.body.style.overflow = ''
     }
@@ -65,9 +61,7 @@ export default function Navbar() {
         setIsMobileMenuOpen(false)
       }
     }
-
     window.addEventListener('keydown', handleEscape)
-
     return () => {
       window.removeEventListener('keydown', handleEscape)
     }
@@ -86,6 +80,7 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex min-h-[64px] items-center justify-between md:min-h-[72px]">
 
+            {/* LOGO - Lebih kecil di desktop */}
             <Link
               href="/"
               className="relative z-10 flex shrink-0 items-center"
@@ -94,14 +89,14 @@ export default function Navbar() {
               <div
                 className="
                   relative
-                  h-20 w-20
-                  sm:h-24 sm:w-24
-                  md:h-28 md:w-28
-                  lg:h-32 lg:w-32
-                  -my-4
-                  sm:-my-5
-                  md:-my-7
-                  lg:-my-8
+                  h-16 w-16
+                  sm:h-20 sm:w-20
+                  md:h-24 md:w-24
+                  lg:h-28 lg:w-28
+                  -my-3
+                  sm:-my-4
+                  md:-my-5
+                  lg:-my-6
                   transition-transform
                   duration-300
                   hover:scale-105
@@ -112,10 +107,10 @@ export default function Navbar() {
                   alt="KOJE Natural Indonesia"
                   fill
                   sizes="
-                    (max-width: 639px) 80px,
-                    (max-width: 767px) 96px,
-                    (max-width: 1023px) 112px,
-                    128px
+                    (max-width: 639px) 64px,
+                    (max-width: 767px) 80px,
+                    (max-width: 1023px) 96px,
+                    112px
                   "
                   className="object-contain"
                   priority
@@ -123,7 +118,8 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <div className="ml-auto hidden items-center gap-4 md:flex lg:gap-5 xl:gap-6">
+            {/* DESKTOP MENU - Gap lebih besar */}
+            <div className="hidden md:flex md:items-center md:gap-6 lg:gap-8 xl:gap-10">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href
 
@@ -184,6 +180,7 @@ export default function Navbar() {
                 )
               })}
 
+              {/* SEARCH DESKTOP */}
               <Link
                 href="/search"
                 aria-label="Search products"
@@ -191,8 +188,8 @@ export default function Navbar() {
                   hidden
                   lg:flex
                   h-10
-                  w-44
-                  xl:w-52
+                  w-40
+                  xl:w-48
                   items-center
                   rounded-lg
                   border
@@ -213,9 +210,9 @@ export default function Navbar() {
                 </span>
               </Link>
 
+              {/* PHONE */}
               <div
                 className={`
-                  ml-1
                   flex
                   items-center
                   gap-3
@@ -255,6 +252,7 @@ export default function Navbar() {
                 </a>
               </div>
 
+              {/* Request RFQ */}
               <Link
                 href="/contact"
                 className={`
@@ -264,8 +262,8 @@ export default function Navbar() {
                   justify-center
                   whitespace-nowrap
                   rounded-full
-                  px-4
-                  lg:px-5
+                  px-5
+                  lg:px-6
                   text-sm
                   font-semibold
                   transition-all
@@ -283,6 +281,7 @@ export default function Navbar() {
               </Link>
             </div>
 
+            {/* MOBILE ACTIONS */}
             <div className="flex items-center gap-2 md:hidden">
               <Link
                 href="/search"
@@ -342,6 +341,7 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* MOBILE MENU - Sama */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
