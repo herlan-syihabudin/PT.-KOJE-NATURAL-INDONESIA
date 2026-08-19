@@ -123,7 +123,7 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <div className="hidden md:flex md:items-center md:gap-5 lg:gap-7 xl:gap-8">
+            <div className="ml-auto hidden items-center gap-4 md:flex lg:gap-5 xl:gap-6">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href
 
