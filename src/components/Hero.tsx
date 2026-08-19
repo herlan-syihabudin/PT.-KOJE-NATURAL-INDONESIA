@@ -54,14 +54,15 @@ export default function Hero() {
               Request RFQ <HiArrowRight />
             </Link>
 
-            <Link
+            <a
   href="/company-profile/PT-KOJE-NATURAL-INDONESIA-Company-Profile.pdf"
   target="_blank"
+  rel="noopener noreferrer"
   className="px-8 py-4 border border-white/20 text-white hover:bg-white/10 rounded-sm transition flex items-center gap-2"
 >
   <HiDocumentText />
   Company Profile
-</Link>
+</a>
           </div>
 
         </motion.div>
