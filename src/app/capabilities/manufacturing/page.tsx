@@ -3,15 +3,14 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
-  HiChevronRight,
-  HiOfficeBuilding,
-  HiCog,
-  HiShieldCheck,
-  HiBeaker,
-  HiTruck,
-  HiDocumentText,
+  HiArrowLeft,
+  HiArrowRight,
   HiCheckCircle,
-  HiArrowUp,
+  HiCog,
+  HiOfficeBuilding,
+  HiCube,
+  HiTruck,
+  HiShieldCheck,
 } from 'react-icons/hi'
 
 const capabilities = [
