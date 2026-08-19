@@ -14,6 +14,7 @@ type Product = {
   name: string
   description: string
   image: string
+  href?: string
 }
 
 type Category = {
@@ -33,9 +34,10 @@ const categories: Record<string, Category> = {
       {
         name: 'Electrical Components',
         description:
-          'Electrical components and supporting materials for industrial applications.',
+          'Electrical components, control devices, protection equipment, and supporting materials for industrial applications.',
         image:
           '/images/products/industrial/electrical-components.jpg',
+        href: '/products/industrial-products/electrical-components',
       },
       {
         name: 'Mechanical Components',
@@ -259,7 +261,6 @@ export default function ProductCategoryPage({
 
   const category = categories[params.slug]
 
-  // ESC untuk menutup modal
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -274,7 +275,6 @@ export default function ProductCategoryPage({
     }
   }, [])
 
-  // Lock body scroll ketika modal terbuka
   useEffect(() => {
     if (selectedProduct) {
       document.body.style.overflow = 'hidden'
@@ -287,12 +287,10 @@ export default function ProductCategoryPage({
     }
   }, [selectedProduct])
 
-  // CATEGORY TIDAK DITEMUKAN
   if (!category) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-6">
         <div className="text-center">
-
           <p className="text-xs tracking-[0.25em] text-gray-400 uppercase mb-4">
             Product Not Found
           </p>
@@ -303,12 +301,11 @@ export default function ProductCategoryPage({
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm hover:bg-[#1E293B] transition"
+            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm"
           >
             <HiArrowLeft />
             Back to Products
           </Link>
-
         </div>
       </main>
     )
@@ -317,9 +314,7 @@ export default function ProductCategoryPage({
   return (
     <main className="bg-white">
 
-      {/* =========================================
-          HERO
-      ========================================= */}
+      {/* HERO */}
 
       <section className="relative bg-[#0F172A] text-white overflow-hidden">
 
@@ -352,7 +347,6 @@ export default function ProductCategoryPage({
           >
 
             <div className="flex items-center gap-3 mb-6">
-
               <span className="w-10 h-px bg-white/40" />
 
               <span className="text-xs tracking-[0.3em] text-white/50 uppercase">
@@ -360,7 +354,6 @@ export default function ProductCategoryPage({
               </span>
 
               <span className="w-10 h-px bg-white/40" />
-
             </div>
 
             <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-tight">
@@ -378,13 +371,10 @@ export default function ProductCategoryPage({
           </motion.div>
 
         </div>
-
       </section>
 
 
-      {/* =========================================
-          PRODUCT GALLERY
-      ========================================= */}
+      {/* PRODUCT GRID */}
 
       <section className="bg-[#F8FAFC] py-20 md:py-24">
 
@@ -393,13 +383,11 @@ export default function ProductCategoryPage({
           <div className="mb-12">
 
             <div className="flex items-center gap-3 mb-4">
-
               <span className="w-10 h-px bg-gray-300" />
 
               <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
                 Product Portfolio
               </span>
-
             </div>
 
             <h2 className="text-3xl md:text-5xl font-light text-gray-900">
@@ -415,67 +403,89 @@ export default function ProductCategoryPage({
           </div>
 
 
-          {/* =========================================
-              PRODUCT GRID
-          ========================================= */}
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            {category.products.map((product, index) => (
+            {category.products.map((product, index) => {
 
-              <motion.button
-                key={product.name}
-                type="button"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.08,
-                }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedProduct(product)}
-                className="group text-left bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
+              const isLinked = Boolean(product.href)
 
-                <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
+              const content = (
+                <>
+                  <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
 
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-
-                </div>
-
-                <div className="p-5">
-
-                  <div className="flex items-center justify-between gap-3">
-
-                    <h3 className="text-base font-semibold text-gray-900">
-                      {product.name}
-                    </h3>
-
-                    <HiChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#0FA3A8] group-hover:translate-x-1 transition-all shrink-0" />
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
 
                   </div>
 
-                  <p className="text-xs text-gray-500 leading-relaxed mt-2">
-                    {product.description}
-                  </p>
+                  <div className="p-5">
 
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] mt-4 transition">
+                    <div className="flex items-center justify-between gap-3">
 
-                    View Product
+                      <h3 className="text-base font-semibold text-gray-900">
+                        {product.name}
+                      </h3>
 
-                    <HiArrowRight className="w-3 h-3" />
+                      <HiChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#0FA3A8] group-hover:translate-x-1 transition-all shrink-0" />
+
+                    </div>
+
+                    <p className="text-xs text-gray-500 leading-relaxed mt-2">
+                      {product.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] mt-4 transition">
+                      {isLinked ? 'View Products' : 'View Product'}
+                      <HiArrowRight className="w-3 h-3" />
+                    </div>
 
                   </div>
+                </>
+              )
 
-                </div>
+              if (isLinked) {
+                return (
+                  <motion.div
+                    key={product.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.08,
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <Link
+                      href={product.href!}
+                      className="group block text-left bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    >
+                      {content}
+                    </Link>
+                  </motion.div>
+                )
+              }
 
-              </motion.button>
-
-            ))}
+              return (
+                <motion.button
+                  key={product.name}
+                  type="button"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.08,
+                  }}
+                  viewport={{ once: true }}
+                  onClick={() => setSelectedProduct(product)}
+                  className="group text-left bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  {content}
+                </motion.button>
+              )
+            })}
 
           </div>
 
@@ -484,9 +494,7 @@ export default function ProductCategoryPage({
       </section>
 
 
-      {/* =========================================
-          INQUIRY CTA
-      ========================================= */}
+      {/* CTA */}
 
       <section className="bg-white py-20">
 
@@ -531,9 +539,7 @@ export default function ProductCategoryPage({
       </section>
 
 
-      {/* =========================================
-          PRODUCT MODAL
-      ========================================= */}
+      {/* MODAL UNTUK SUBKATEGORI YANG BELUM PUNYA HALAMAN */}
 
       {selectedProduct && (
 
@@ -543,22 +549,11 @@ export default function ProductCategoryPage({
         >
 
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.2,
-            }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             className="relative bg-white max-w-4xl w-full max-h-[90vh] overflow-auto"
             onClick={(event) => event.stopPropagation()}
           >
-
-            {/* CLOSE BUTTON */}
 
             <button
               type="button"
@@ -569,10 +564,7 @@ export default function ProductCategoryPage({
               <HiX />
             </button>
 
-
             <div className="grid md:grid-cols-2">
-
-              {/* IMAGE */}
 
               <div className="bg-gray-100 aspect-square md:aspect-auto">
 
@@ -583,9 +575,6 @@ export default function ProductCategoryPage({
                 />
 
               </div>
-
-
-              {/* INFO */}
 
               <div className="p-7 md:p-10 flex flex-col justify-center">
 
@@ -601,19 +590,10 @@ export default function ProductCategoryPage({
                   {selectedProduct.description}
                 </p>
 
-                <div className="border-t border-gray-100 mt-7 pt-6">
-
-                  <p className="text-xs text-gray-400 leading-relaxed">
-                    Product availability and specification may vary according
-                    to project requirements.
-                  </p>
-
-                </div>
-
                 <Link
                   href="/contact"
                   onClick={() => setSelectedProduct(null)}
-                  className="inline-flex items-center justify-center gap-2 bg-[#0F172A] text-white px-6 py-3 mt-7 text-sm font-medium rounded-sm hover:bg-[#1E293B] transition"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0F172A] text-white px-6 py-3 mt-7 text-sm font-medium rounded-sm"
                 >
                   Request This Product
                   <HiArrowRight className="w-4 h-4" />
