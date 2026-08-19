@@ -13,14 +13,14 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero/industrial-supplies-and-hardware.jpg"
-          alt="Industrial procurement and supply solutions"
+          alt="Industrial procurement and supply solutions by PT KOJE Natural Indonesia"
           fill
           priority
           sizes="100vw"
           className="object-cover"
           quality={90}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -38,12 +38,12 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-light text-white leading-[1.1] mb-6">
             Industrial Procurement
             <span className="block font-semibold">
-              & Supply Solutions
+              & Supply Solutions in Indonesia
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light">
-            Supporting manufacturing, construction, industrial operations, and FMCG businesses with reliable procurement, sourcing, engineering support, and nationwide distribution services.
+            Supporting manufacturing, construction, industrial, and FMCG businesses across Indonesia with reliable procurement, sourcing, engineering support, and nationwide supply solutions.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -51,7 +51,7 @@ export default function Hero() {
               href="/contact"
               className="px-8 py-4 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition flex items-center gap-2"
             >
-              Request RFQ <HiArrowRight />
+              Request an RFQ <HiArrowRight />
             </Link>
 
             <a
