@@ -46,6 +46,7 @@ const categories: Record<string, Category> = {
           'Mechanical components for machinery, equipment, and industrial operations.',
         image:
           '/images/products/industrial/mechanical-components.jpg',
+        href: '/products/industrial-products/mechanical-components',
       },
       {
         name: 'Industrial Equipment',
