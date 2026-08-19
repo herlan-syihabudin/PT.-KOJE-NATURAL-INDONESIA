@@ -918,64 +918,40 @@ const productCategories: Record<string, ProductCategory> = {
 
 
 export default function ProductSubCategoryPage() {
-
   const params = useParams()
-
-  const productSlug = params.product as string
-
+  const productSlug = typeof params.product === 'string' ? params.product : ''
   const category = productCategories[productSlug]
+  const [imageLoaded, setImageLoaded] = useState<Record<string, boolean>>({})
 
-
-  // =====================================================
   // NOT FOUND
-  // =====================================================
-
   if (!category) {
-
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-6">
-
         <div className="text-center">
-
           <p className="text-xs tracking-[0.25em] text-gray-400 uppercase mb-4">
             Product Category Not Found
           </p>
-
           <h1 className="text-3xl font-light text-gray-900 mb-6">
             Product category not found.
           </h1>
-
           <Link
-            href="/products/industrial-products"
+            href="/products"
             className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm hover:bg-[#1E293B] transition"
           >
             <HiArrowLeft />
-            Back to Industrial Products
+            Back to Products
           </Link>
-
         </div>
-
       </main>
     )
   }
 
-
   return (
-
     <main className="bg-white">
-
-
-      {/* =================================================
-          HERO
-      ================================================= */}
-
+      {/* HERO SECTION - SAMA */}
+      
       <section className="relative bg-[#0F172A] text-white overflow-hidden">
-
-
-        {/* GRID BACKGROUND */}
-
         <div className="absolute inset-0 opacity-[0.04]">
-
           <div
             className="absolute inset-0"
             style={{
@@ -984,250 +960,165 @@ export default function ProductSubCategoryPage() {
               backgroundSize: '48px 48px',
             }}
           />
-
         </div>
 
-
-        <div className="container-custom relative z-10 py-20 md:py-28">
-
-
-          {/* BACK */}
-
+        <div className="max-w-7xl mx-auto px-6 relative z-10 py-20 md:py-28">
+          {/* BACK - FIXED */}
           <Link
-            href="/products/industrial-products"
+            href="/products"
             className="inline-flex items-center gap-2 text-white/50 hover:text-white text-xs mb-10 transition"
           >
-
             <HiArrowLeft />
-
-            Back to Industrial Products
-
+            Back to Products
           </Link>
 
-
-          {/* HERO CONTENT */}
-
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
-
             <div className="flex items-center gap-3 mb-6">
-
               <span className="w-10 h-px bg-white/40" />
-
               <span className="text-xs tracking-[0.3em] text-white/50 uppercase">
                 Product Subcategory
               </span>
-
               <span className="w-10 h-px bg-white/40" />
-
             </div>
-
 
             <h1 className="text-4xl md:text-6xl font-light leading-tight tracking-tight">
               {category.title}
             </h1>
-
-
             <p className="text-xl md:text-2xl text-white/70 font-light mt-4">
               {category.subtitle}
             </p>
-
-
             <p className="max-w-2xl text-sm md:text-base text-white/50 leading-relaxed mt-6">
               {category.description}
             </p>
-
           </motion.div>
-
         </div>
-
       </section>
 
-
-      {/* =================================================
-          PRODUCT GRID
-      ================================================= */}
-
+      {/* PRODUCT GRID - FIXED */}
       <section className="bg-[#F8FAFC] py-20 md:py-24">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-
-          {/* SECTION HEADER */}
-
+        <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-
             <div className="flex items-center gap-3 mb-4">
-
               <span className="w-10 h-px bg-gray-300" />
-
               <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
                 Product Portfolio
               </span>
-
             </div>
-
 
             <h2 className="text-3xl md:text-5xl font-light text-gray-900">
               {category.title}
             </h2>
 
-
             <p className="text-sm text-gray-500 mt-4 max-w-2xl leading-relaxed">
-              Explore products available within this product category.
+              {category.products.length} products available in this category.
               Product availability may vary according to specification,
               brand, quantity, and project requirements.
             </p>
-
           </div>
 
+          {/* GRID - FIXED overflow-visible */}
+          {category.products.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No products available in this category.</p>
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 overflow-visible">
+              {category.products.map((product, index) => (
+                <motion.div
+                  key={product.id || product.name} // ✅ Gunakan id jika ada
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="group bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* IMAGE - FIXED with loading state */}
+                  <div className="aspect-[4/3] bg-gray-100 overflow-hidden relative">
+                    {!imageLoaded[product.id || product.name] && (
+                      <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                    )}
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                      className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
+                        imageLoaded[product.id || product.name] ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => setImageLoaded(prev => ({ 
+                        ...prev, 
+                        [product.id || product.name]: true 
+                      }))}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = '/images/placeholder.jpg'
+                        setImageLoaded(prev => ({ 
+                          ...prev, 
+                          [product.id || product.name]: true 
+                        }))
+                      }}
+                    />
+                  </div>
 
-          {/* PRODUCT GRID */}
+                  {/* CONTENT - FIXED with flex */}
+                  <div className="p-5 flex flex-col">
+                    <h3 className="text-base font-semibold text-gray-900 line-clamp-1">
+                      {product.name}
+                    </h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <p className="text-xs text-gray-500 mt-2 line-clamp-2 flex-1">
+                      {product.description}
+                    </p>
 
-            {category.products.map((product, index) => (
-
-              <motion.div
-                key={product.name}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                className="group bg-white border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-
-
-                {/* IMAGE */}
-
-                <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
-
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-
-                </div>
-
-
-                {/* CONTENT */}
-
-                <div className="p-5">
-
-                  <h3 className="text-base font-semibold text-gray-900">
-                    {product.name}
-                  </h3>
-
-
-                  <p className="text-xs text-gray-500 leading-relaxed mt-2">
-                    {product.description}
-                  </p>
-
-
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] mt-5 transition"
-                  >
-
-                    Request Product
-
-                    <HiArrowRight className="w-3 h-3" />
-
-                  </Link>
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] mt-5 transition"
+                    >
+                      Request Product
+                      <HiArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
-
       </section>
 
-
-      {/* =================================================
-          CTA
-      ================================================= */}
-
+      {/* CTA SECTION - SAMA */}
       <section className="bg-white py-20">
-
-        <div className="max-w-6xl mx-auto px-6">
-
+        <div className="max-w-7xl mx-auto px-6">
           <div className="bg-[#0F172A] text-white p-8 md:p-12">
-
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-
-
               <div className="max-w-2xl">
-
                 <p className="text-xs tracking-[0.2em] text-white/40 uppercase">
                   Product Inquiry
                 </p>
-
-
                 <h2 className="text-2xl md:text-3xl font-light mt-3">
                   Looking for a specific product?
                 </h2>
-
-
                 <p className="text-sm text-white/50 mt-3 leading-relaxed">
                   Send us the required specification, brand, quantity, or
                   technical reference. Our procurement team will assist with
                   sourcing and quotation.
                 </p>
-
               </div>
-
 
               <Link
                 href="/contact"
                 className="shrink-0 inline-flex items-center justify-center gap-2 bg-[#0FA3A8] text-white px-7 py-3.5 text-sm font-medium rounded-sm hover:bg-[#0C8A8E] transition"
               >
-
                 Request Quotation
-
                 <HiArrowRight className="w-4 h-4" />
-
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
     </main>
-
   )
 }
