@@ -23,6 +23,12 @@ type ProductCategory = {
 
 const productCategories: Record<string, ProductCategory> = {
 
+  // =====================================================
+  // ELECTRICAL COMPONENTS
+  // URL:
+  // /products/industrial-products/electrical-components
+  // =====================================================
+
   'electrical-components': {
     title: 'Electrical Components',
     subtitle: 'Industrial Electrical & Control Components',
@@ -131,6 +137,86 @@ const productCategories: Record<string, ProductCategory> = {
     ],
   },
 
+  // =====================================================
+  // MECHANICAL COMPONENTS
+  // =====================================================
+
+  'mechanical-components': {
+    title: 'Mechanical Components',
+    subtitle: 'Industrial Mechanical & Power Transmission Components',
+
+    description:
+      'Mechanical components and power transmission products supporting industrial machinery, production equipment, conveyors, pumps, motors, and maintenance operations.',
+
+    products: [
+
+      {
+        name: 'Bearings',
+        description:
+          'Industrial bearings for motors, pumps, conveyors, rotating machinery, and mechanical equipment.',
+        image:
+          '/images/products/industrial/mechanical/bearings.jpg',
+      },
+
+      {
+        name: 'Couplings',
+        description:
+          'Flexible and rigid couplings for power transmission between shafts and rotating equipment.',
+        image:
+          '/images/products/industrial/mechanical/couplings.jpg',
+      },
+
+      {
+        name: 'Gears & Sprockets',
+        description:
+          'Gears, sprockets, and transmission components for industrial machinery and drive systems.',
+        image:
+          '/images/products/industrial/mechanical/gears-sprockets.jpg',
+      },
+
+      {
+        name: 'Pulleys & Bushings',
+        description:
+          'Pulleys, taper bushings, and related components for industrial power transmission systems.',
+        image:
+          '/images/products/industrial/mechanical/pulleys-bushings.jpg',
+      },
+
+      {
+        name: 'Industrial Chains',
+        description:
+          'Roller chains and industrial transmission chains for conveyors and mechanical drive applications.',
+        image:
+          '/images/products/industrial/mechanical/chains.jpg',
+      },
+
+      {
+        name: 'Shafts & Components',
+        description:
+          'Shafts and supporting mechanical components for machinery and industrial equipment.',
+        image:
+          '/images/products/industrial/mechanical/shafts.jpg',
+      },
+
+      {
+        name: 'Seals & O-Rings',
+        description:
+          'Mechanical seals, oil seals, and O-rings for pumps, rotating equipment, and industrial machinery.',
+        image:
+          '/images/products/industrial/mechanical/seals-o-rings.jpg',
+      },
+
+      {
+        name: 'Mechanical Fasteners',
+        description:
+          'Bolts, nuts, washers, threaded rods, and other mechanical fastening components.',
+        image:
+          '/images/products/industrial/mechanical/fasteners.jpg',
+      },
+
+    ],
+  },
+
 }
 
 export default function ProductSubCategoryPage() {
@@ -139,11 +225,13 @@ export default function ProductSubCategoryPage() {
 
   const productSlug = params.product as string
 
-  const category =
-    productCategories[productSlug]
+  const category = productCategories[productSlug]
+
+  // =====================================================
+  // NOT FOUND
+  // =====================================================
 
   if (!category) {
-
     return (
       <main className="min-h-screen bg-white flex items-center justify-center px-6">
 
@@ -159,13 +247,10 @@ export default function ProductSubCategoryPage() {
 
           <Link
             href="/products/industrial-products"
-            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm"
+            className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 rounded-sm text-sm hover:bg-[#1E293B] transition"
           >
-
             <HiArrowLeft />
-
             Back to Industrial Products
-
           </Link>
 
         </div>
@@ -175,14 +260,15 @@ export default function ProductSubCategoryPage() {
   }
 
   return (
-
     <main className="bg-white">
 
-      {/* =========================================
+      {/* =================================================
           HERO
-      ========================================= */}
+      ================================================= */}
 
       <section className="relative bg-[#0F172A] text-white overflow-hidden">
+
+        {/* GRID BACKGROUND */}
 
         <div className="absolute inset-0 opacity-[0.04]">
 
@@ -197,19 +283,21 @@ export default function ProductSubCategoryPage() {
 
         </div>
 
+
         <div className="container-custom relative z-10 py-20 md:py-28">
+
+          {/* BACK */}
 
           <Link
             href="/products/industrial-products"
             className="inline-flex items-center gap-2 text-white/50 hover:text-white text-xs mb-10 transition"
           >
-
             <HiArrowLeft />
-
             Back to Industrial Products
-
           </Link>
 
+
+          {/* HERO CONTENT */}
 
           <motion.div
             initial={{
@@ -260,13 +348,15 @@ export default function ProductSubCategoryPage() {
       </section>
 
 
-      {/* =========================================
-          PRODUCTS
-      ========================================= */}
+      {/* =================================================
+          PRODUCT GRID
+      ================================================= */}
 
       <section className="bg-[#F8FAFC] py-20 md:py-24">
 
         <div className="max-w-6xl mx-auto px-6">
+
+          {/* SECTION HEADER */}
 
           <div className="mb-12">
 
@@ -282,22 +372,20 @@ export default function ProductSubCategoryPage() {
 
 
             <h2 className="text-3xl md:text-5xl font-light text-gray-900">
-              Electrical Products
+              {category.title}
             </h2>
 
 
             <p className="text-sm text-gray-500 mt-4 max-w-2xl leading-relaxed">
-              Explore electrical components and supporting products available
-              for industrial, commercial, manufacturing, and project
-              requirements.
+              Explore products available within this product category.
+              Product availability may vary according to specification,
+              brand, quantity, and project requirements.
             </p>
 
           </div>
 
 
-          {/* =========================================
-              PRODUCT GRID
-          ========================================= */}
+          {/* PRODUCT GRID */}
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
@@ -330,6 +418,7 @@ export default function ProductSubCategoryPage() {
                   <img
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
 
@@ -374,9 +463,9 @@ export default function ProductSubCategoryPage() {
       </section>
 
 
-      {/* =========================================
+      {/* =================================================
           CTA
-      ========================================= */}
+      ================================================= */}
 
       <section className="bg-white py-20">
 
@@ -394,7 +483,7 @@ export default function ProductSubCategoryPage() {
 
 
                 <h2 className="text-2xl md:text-3xl font-light mt-3">
-                  Looking for a specific electrical component?
+                  Looking for a specific product?
                 </h2>
 
 
