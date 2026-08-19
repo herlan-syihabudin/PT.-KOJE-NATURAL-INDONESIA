@@ -51,6 +51,12 @@ const procurementProcess = [
     description:
       'We coordinate order fulfillment, material delivery, and logistics according to the agreed procurement requirements.',
   },
+  {
+    number: '05',
+    title: 'Post-Delivery Support',
+    description:
+      'We ensure proper delivery, verify documentation, and provide ongoing procurement support as needed.',
+  },
 ]
 
 const productAreas = [
@@ -117,6 +123,38 @@ const capabilityHighlights = [
   {
     title: 'End-to-End',
     description: 'Procurement Support',
+  },
+]
+
+const industries = [
+  'Manufacturing',
+  'Construction',
+  'Engineering',
+  'FMCG',
+  'Food & Beverage',
+  'Commercial Facilities',
+]
+
+const relatedCapabilities = [
+  {
+    title: 'Engineering & Technical Support',
+    description: 'Technical sourcing, equipment procurement, and project support.',
+    href: '/capabilities/engineering-support',
+  },
+  {
+    title: 'Safety & Compliance Solutions',
+    description: 'Safety equipment, PPE, and workplace safety support.',
+    href: '/capabilities/safety-compliance',
+  },
+  {
+    title: 'Project & Logistics Support',
+    description: 'Material delivery, logistics coordination, and site support.',
+    href: '/capabilities/project-logistics',
+  },
+  {
+    title: 'Manufacturing & FMCG',
+    description: 'Manufacturing, private label, packaging, and FMCG solutions.',
+    href: '/capabilities/manufacturing',
   },
 ]
 
@@ -225,6 +263,51 @@ export default function IndustrialSupplyPage() {
         </div>
       </section>
 
+      // Tambahkan section:
+<section className="bg-[#F8FAFC] py-20 border-y border-gray-100">
+  <div className="max-w-6xl mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="max-w-3xl mb-10"
+    >
+      <div className="flex items-center gap-3 mb-4">
+        <span className="w-8 h-px bg-gray-300" />
+        <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+          Industries We Serve
+        </span>
+        <span className="w-8 h-px bg-gray-300" />
+      </div>
+
+      <h2 className="text-2xl md:text-4xl font-light text-gray-900">
+        Supporting diverse
+        <span className="font-medium"> business operations.</span>
+      </h2>
+
+      <p className="text-sm text-gray-500 mt-4 leading-relaxed">
+        Our procurement and sourcing support can be adapted to different
+        operational environments and purchasing requirements.
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {industries.map((industry, index) => (
+        <motion.div
+          key={industry}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.05 }}
+          viewport={{ once: true }}
+          className="border border-gray-200 bg-white px-4 py-5 text-center hover:border-gray-400 hover:-translate-y-1 transition-all duration-300"
+        >
+          <span className="text-sm text-gray-600">{industry}</span>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* =====================================================
           OVERVIEW
@@ -635,6 +718,60 @@ export default function IndustrialSupplyPage() {
 
         </div>
       </section>
+
+      <section className="bg-[#F8FAFC] py-20 border-y border-gray-100">
+  <div className="max-w-6xl mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="max-w-3xl mb-10"
+    >
+      <div className="flex items-center gap-3 mb-4">
+        <span className="w-8 h-px bg-gray-300" />
+        <span className="text-xs tracking-[0.25em] text-gray-400 uppercase">
+          Related Capabilities
+        </span>
+        <span className="w-8 h-px bg-gray-300" />
+      </div>
+
+      <h2 className="text-2xl md:text-4xl font-light text-gray-900">
+        More ways KOJE can
+        <span className="font-medium"> support your business.</span>
+      </h2>
+    </motion.div>
+
+    <div className="grid md:grid-cols-2 gap-4">
+      {relatedCapabilities.map((item, index) => (
+        <motion.div
+          key={item.href}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.05 }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href={item.href}
+            className="group block border border-gray-200 bg-white p-6 hover:border-gray-400 transition"
+          >
+            <div className="flex items-start justify-between gap-6">
+              <div>
+                <h3 className="text-base font-medium text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+              <HiArrowRight className="w-5 h-5 text-gray-300 group-hover:text-gray-700 group-hover:translate-x-1 transition shrink-0" />
+            </div>
+          </Link>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
 
       {/* =====================================================
