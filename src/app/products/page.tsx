@@ -272,83 +272,101 @@ export default function ProductsPage() {
 
           <div className="grid md:grid-cols-2 gap-px bg-gray-200 border border-gray-200">
 
-            {categories.map((category, index) => {
+  {categories.map((category, index) => {
 
-              const Icon = category.icon
+    const Icon = category.icon
 
-              return (
-  <motion.div
-    key={category.id}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{
-      duration: 0.4,
-      delay: index * 0.05,
-    }}
-    viewport={{ once: true }}
-  >
-    <Link
-      href={category.href}
-      className="group block bg-white p-7 md:p-9 hover:bg-gray-50 transition-colors h-full"
-    >
+    return (
+      <motion.div
+        key={category.id}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.4,
+          delay: index * 0.05,
+        }}
+        viewport={{ once: true }}
+      >
 
-      <div className="flex items-start gap-5">
+        <Link
+          href={category.href}
+          className="group block bg-white p-7 md:p-9 hover:bg-gray-50 transition-colors h-full"
+        >
 
-        <div className="shrink-0">
-          <div className="w-11 h-11 border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#0FA3A8] group-hover:border-[#0FA3A8]/30 transition">
-            <Icon className="w-5 h-5" />
-          </div>
-        </div>
+          <div className="flex items-start gap-5">
 
-        <div className="flex-1">
+            <div className="shrink-0">
 
-          <div className="flex items-start justify-between gap-4">
+              <div className="w-11 h-11 border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#0FA3A8] group-hover:border-[#0FA3A8]/30 transition">
 
-            <div>
-              <span className="text-[10px] tracking-[0.2em] text-gray-300">
-                {category.id}
-              </span>
+                <Icon className="w-5 h-5" />
 
-              <h3 className="text-lg font-medium text-gray-900 mt-1">
-                {category.title}
-              </h3>
+              </div>
+
             </div>
 
-            <HiChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#0FA3A8] group-hover:translate-x-1 transition-all shrink-0" />
+            <div className="flex-1">
 
-          </div>
+              <div className="flex items-start justify-between gap-4">
 
-          <p className="text-sm text-gray-500 leading-relaxed mt-3">
-            {category.description}
-          </p>
+                <div>
 
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-5">
+                  <span className="text-[10px] tracking-[0.2em] text-gray-300">
+                    {category.id}
+                  </span>
 
-            {category.items.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-2 text-xs text-gray-400"
-              >
-                <span className="w-1 h-1 bg-gray-300 rounded-full shrink-0" />
-                {item}
+                  <h3 className="text-lg font-medium text-gray-900 mt-1">
+                    {category.title}
+                  </h3>
+
+                </div>
+
+                <HiChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#0FA3A8] group-hover:translate-x-1 transition-all shrink-0" />
+
               </div>
-            ))}
+
+              <p className="text-sm text-gray-500 leading-relaxed mt-3">
+                {category.description}
+              </p>
+
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-5">
+
+                {category.items.map((item) => (
+
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 text-xs text-gray-400"
+                  >
+
+                    <span className="w-1 h-1 bg-gray-300 rounded-full shrink-0" />
+
+                    {item}
+
+                  </div>
+
+                ))}
+
+              </div>
+
+              <div className="mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] transition">
+
+                View Products
+
+                <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+
+              </div>
+
+            </div>
 
           </div>
 
-          {/* VIEW CATEGORY */}
-          <div className="mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.15em] text-gray-400 group-hover:text-[#0FA3A8] transition">
-            View Products
-            <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </div>
+        </Link>
 
-        </div>
+      </motion.div>
+    )
+  })}
 
-      </div>
-
-    </Link>
-  </motion.div>
-)
+</div>
 
                   <div className="flex items-start gap-5">
 
