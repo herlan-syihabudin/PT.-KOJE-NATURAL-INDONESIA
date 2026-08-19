@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import {
   HiArrowLeft,
   HiArrowRight,
@@ -9,13 +12,8 @@ import {
   HiTruck,
   HiShieldCheck,
   HiDocumentText,
+  HiArrowUp,
 } from 'react-icons/hi'
-
-export const metadata = {
-  title: 'Industrial Supply & Procurement | PT KOJE Natural Indonesia',
-  description:
-    'Industrial supply and procurement services for manufacturing, construction, engineering, and commercial operations across Indonesia, including MRO, industrial materials, packaging, sourcing, vendor coordination, and logistics support.',
-}
 
 const coreCapabilities = [
   'Industrial products & components',
@@ -33,7 +31,7 @@ const procurementProcess = [
     number: '01',
     title: 'Requirement Review',
     description:
-      'We review product specifications, quantity, brand requirements, delivery location, and project requirements.',
+      'We review product specifications, quantity, brand requirements, delivery location, application, and project requirements.',
   },
   {
     number: '02',
@@ -82,26 +80,100 @@ const productAreas = [
   },
 ]
 
+const procurementAdvantages = [
+  {
+    icon: HiShieldCheck,
+    title: 'Specification Focused',
+    description:
+      'Product sourcing is based on required specifications, brands, quantities, application, and procurement requirements.',
+  },
+  {
+    icon: HiOfficeBuilding,
+    title: 'Multi-Category Supply',
+    description:
+      'Industrial products, MRO, packaging, equipment, and operational supplies can be coordinated through one procurement partner.',
+  },
+  {
+    icon: HiTruck,
+    title: 'Coordinated Delivery',
+    description:
+      'Delivery and logistics coordination can be arranged according to order quantity, project location, schedule, and operational needs.',
+  },
+]
+
+const capabilityHighlights = [
+  {
+    title: 'Multi-Category',
+    description: 'Industrial Supply',
+  },
+  {
+    title: 'Specification',
+    description: 'Based Sourcing',
+  },
+  {
+    title: 'Supplier',
+    description: 'Coordination',
+  },
+  {
+    title: 'End-to-End',
+    description: 'Procurement Support',
+  },
+]
+
 export default function IndustrialSupplyPage() {
   return (
-    <main className="bg-white">
+    <main id="top" className="bg-white">
 
       {/* =====================================================
-          HEADER
+          HEADER / HERO
       ===================================================== */}
 
-      <section className="pt-24 pb-14 border-b border-gray-100">
+      <section className="pt-28 md:pt-32 pb-14 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
 
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-6"
+          >
+            <Link
+              href="/"
+              className="hover:text-gray-600 transition"
+            >
+              Home
+            </Link>
+
+            <span>/</span>
+
+            <Link
+              href="/capabilities"
+              className="hover:text-gray-600 transition"
+            >
+              Capabilities
+            </Link>
+
+            <span>/</span>
+
+            <span className="text-gray-900">
+              Industrial Supply
+            </span>
+          </nav>
+
+          {/* Back */}
           <Link
             href="/capabilities"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition mb-10 group"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition mb-8 group"
           >
             <HiArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition" />
             Back to Capabilities
           </Link>
 
-          <div className="max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl"
+          >
 
             <div className="flex items-center gap-3 mb-5">
               <span className="w-10 h-px bg-gray-300" />
@@ -121,19 +193,19 @@ export default function IndustrialSupplyPage() {
             </h1>
 
             <p className="text-gray-500 mt-6 text-sm md:text-base leading-relaxed max-w-3xl">
-              PT KOJE Natural Indonesia provides industrial supply and
-              procurement solutions for manufacturing, construction,
-              engineering, and commercial operations across Indonesia.
-              Our services cover product sourcing, MRO supplies,
-              industrial materials, packaging, vendor coordination,
-              and delivery support.
+              PT KOJE Natural Indonesia provides industrial procurement and
+              sourcing support for manufacturing, construction, engineering,
+              FMCG, and commercial operations across Indonesia. Our scope
+              includes industrial materials, MRO supplies, electrical and
+              mechanical products, packaging, equipment, consumables, supplier
+              coordination, and delivery support.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 text-sm font-medium hover:bg-gray-800 transition"
+                className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 text-sm font-medium hover:bg-gray-800 transition rounded-lg"
               >
                 Submit Procurement Inquiry
                 <HiArrowRight className="w-4 h-4" />
@@ -141,14 +213,15 @@ export default function IndustrialSupplyPage() {
 
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 text-sm font-medium hover:border-gray-400 transition"
+                className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 text-sm font-medium hover:border-gray-400 transition rounded-lg"
               >
                 View Product Portfolio
               </Link>
 
             </div>
 
-          </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -160,9 +233,16 @@ export default function IndustrialSupplyPage() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20"
+          >
 
             <div>
+
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-8 h-px bg-gray-300" />
 
@@ -177,6 +257,7 @@ export default function IndustrialSupplyPage() {
                   multiple supply requirements.
                 </span>
               </h2>
+
             </div>
 
             <div className="space-y-5 text-sm md:text-base text-gray-500 leading-relaxed">
@@ -203,7 +284,45 @@ export default function IndustrialSupplyPage() {
 
             </div>
 
-          </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          CAPABILITY HIGHLIGHTS
+      ===================================================== */}
+
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-100 pt-12"
+          >
+
+            {capabilityHighlights.map((item) => (
+              <div
+                key={item.title}
+                className="text-center"
+              >
+
+                <div className="text-lg md:text-xl font-medium text-gray-900">
+                  {item.title}
+                </div>
+
+                <div className="text-xs text-gray-400 uppercase tracking-wider mt-1">
+                  {item.description}
+                </div>
+
+              </div>
+            ))}
+
+          </motion.div>
 
         </div>
       </section>
@@ -216,7 +335,13 @@ export default function IndustrialSupplyPage() {
       <section className="bg-[#F8FAFC] py-20 border-y border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="max-w-3xl mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mb-12"
+          >
 
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px bg-gray-300" />
@@ -230,7 +355,9 @@ export default function IndustrialSupplyPage() {
 
             <h2 className="text-2xl md:text-4xl font-light text-gray-900">
               Industrial procurement
-              <span className="font-medium"> capabilities.</span>
+              <span className="font-medium">
+                {' '}capabilities.
+              </span>
             </h2>
 
             <p className="text-sm text-gray-500 mt-4 leading-relaxed">
@@ -238,24 +365,40 @@ export default function IndustrialSupplyPage() {
               project requirements, quantities, brands, and delivery locations.
             </p>
 
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-5">
 
-            {coreCapabilities.map((item) => (
-              <div
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-x-12 gap-y-5"
+          >
+
+            {coreCapabilities.map((item, index) => (
+              <motion.div
                 key={item}
+                initial={{ opacity: 0, x: -15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.04,
+                }}
+                viewport={{ once: true }}
                 className="flex items-center gap-3 border-b border-gray-200 pb-4"
               >
+
                 <HiCheckCircle className="w-5 h-5 text-gray-400 shrink-0" />
 
                 <span className="text-sm text-gray-600">
                   {item}
                 </span>
-              </div>
+
+              </motion.div>
             ))}
 
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -268,7 +411,13 @@ export default function IndustrialSupplyPage() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center max-w-2xl mx-auto mb-12"
+          >
 
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-8 h-px bg-gray-300" />
@@ -281,7 +430,10 @@ export default function IndustrialSupplyPage() {
             </div>
 
             <h2 className="text-2xl md:text-4xl font-light text-gray-900">
-              What We Can <span className="font-medium">Supply</span>
+              What We Can{' '}
+              <span className="font-medium">
+                Supply
+              </span>
             </h2>
 
             <p className="text-sm text-gray-500 mt-4 leading-relaxed">
@@ -289,16 +441,24 @@ export default function IndustrialSupplyPage() {
               manufacturing, commercial, and project procurement requirements.
             </p>
 
-          </div>
+          </motion.div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            {productAreas.map((item) => {
+            {productAreas.map((item, index) => {
               const Icon = item.icon
 
               return (
-                <div
+                <motion.div
                   key={item.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.08,
+                  }}
+                  viewport={{ once: true }}
                   className="border border-gray-100 p-6 bg-white hover:border-gray-300 hover:-translate-y-1 transition-all duration-300"
                 >
 
@@ -312,7 +472,7 @@ export default function IndustrialSupplyPage() {
                     {item.description}
                   </p>
 
-                </div>
+                </motion.div>
               )
             })}
 
@@ -329,7 +489,13 @@ export default function IndustrialSupplyPage() {
       <section className="bg-[#F8FAFC] py-20 border-y border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="grid lg:grid-cols-[0.8fr_1.8fr] gap-12 lg:gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-[0.8fr_1.8fr] gap-12 lg:gap-20"
+          >
 
             <div>
 
@@ -355,11 +521,19 @@ export default function IndustrialSupplyPage() {
 
             </div>
 
+
             <div className="space-y-0">
 
-              {procurementProcess.map((item) => (
-                <div
+              {procurementProcess.map((item, index) => (
+                <motion.div
                   key={item.number}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.08,
+                  }}
+                  viewport={{ once: true }}
                   className="grid grid-cols-[48px_1fr] gap-5 py-6 border-b border-gray-200 first:pt-0"
                 >
 
@@ -379,12 +553,12 @@ export default function IndustrialSupplyPage() {
 
                   </div>
 
-                </div>
+                </motion.div>
               ))}
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -397,7 +571,13 @@ export default function IndustrialSupplyPage() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="max-w-3xl mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mb-12"
+          >
 
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px bg-gray-300" />
@@ -411,51 +591,45 @@ export default function IndustrialSupplyPage() {
 
             <h2 className="text-2xl md:text-4xl font-light text-gray-900">
               Built around your
-              <span className="font-medium"> procurement needs.</span>
+              <span className="font-medium">
+                {' '}procurement needs.
+              </span>
             </h2>
 
-          </div>
+          </motion.div>
+
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            <div className="border border-gray-100 p-7">
-              <HiShieldCheck className="w-7 h-7 text-gray-400 mb-5" />
+            {procurementAdvantages.map((item, index) => {
+              const Icon = item.icon
 
-              <h3 className="text-base font-medium text-gray-900">
-                Specification Focused
-              </h3>
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.08,
+                  }}
+                  viewport={{ once: true }}
+                  className="border border-gray-100 p-7 hover:border-gray-300 hover:-translate-y-1 transition-all duration-300"
+                >
 
-              <p className="text-sm text-gray-500 mt-3 leading-relaxed">
-                Product sourcing is based on required specifications,
-                brands, quantities, application, and procurement requirements.
-              </p>
-            </div>
+                  <Icon className="w-7 h-7 text-gray-400 mb-5" />
 
-            <div className="border border-gray-100 p-7">
-              <HiOfficeBuilding className="w-7 h-7 text-gray-400 mb-5" />
+                  <h3 className="text-base font-medium text-gray-900">
+                    {item.title}
+                  </h3>
 
-              <h3 className="text-base font-medium text-gray-900">
-                Multi-Category Supply
-              </h3>
+                  <p className="text-sm text-gray-500 mt-3 leading-relaxed">
+                    {item.description}
+                  </p>
 
-              <p className="text-sm text-gray-500 mt-3 leading-relaxed">
-                Industrial products, MRO, packaging, equipment, and
-                operational supplies can be coordinated through one procurement partner.
-              </p>
-            </div>
-
-            <div className="border border-gray-100 p-7">
-              <HiTruck className="w-7 h-7 text-gray-400 mb-5" />
-
-              <h3 className="text-base font-medium text-gray-900">
-                Coordinated Delivery
-              </h3>
-
-              <p className="text-sm text-gray-500 mt-3 leading-relaxed">
-                Delivery and logistics coordination can be arranged according
-                to order quantity, project location, schedule, and operational needs.
-              </p>
-            </div>
+                </motion.div>
+              )
+            })}
 
           </div>
 
@@ -471,13 +645,22 @@ export default function IndustrialSupplyPage() {
 
         <div className="max-w-6xl mx-auto px-6">
 
-          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-[1fr_auto] gap-8 items-center"
+          >
 
             <div>
 
               <div className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/40">
+
                 <HiDocumentText className="w-4 h-4" />
+
                 Procurement Inquiry
+
               </div>
 
               <h2 className="text-2xl md:text-3xl font-light mt-4">
@@ -492,19 +675,43 @@ export default function IndustrialSupplyPage() {
 
             </div>
 
+
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#0F172A] px-7 py-3.5 text-sm font-medium hover:bg-gray-100 transition"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#0F172A] px-7 py-3.5 text-sm font-medium hover:bg-gray-100 transition rounded-lg"
             >
               Submit RFQ
+
               <HiArrowRight className="w-4 h-4" />
             </Link>
 
-          </div>
+          </motion.div>
 
         </div>
 
       </section>
+
+
+      {/* =====================================================
+          BACK TO TOP
+      ===================================================== */}
+
+      <div className="border-t border-gray-100 py-6">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <Link
+            href="#top"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition"
+          >
+            <HiArrowUp className="w-4 h-4" />
+
+            Back to Top
+          </Link>
+
+        </div>
+
+      </div>
 
     </main>
   )
