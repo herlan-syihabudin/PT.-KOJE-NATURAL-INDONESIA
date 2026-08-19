@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { HiMenu, HiX, HiPhone } from 'react-icons/hi'
+import { HiMenu, HiX, HiSearch, HiPhone } from 'react-icons/hi'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_ITEMS = [
@@ -14,7 +14,6 @@ const NAV_ITEMS = [
   { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'Tentang' },
   { href: '/contact', label: 'Kontak' },
-  { href: '/search', label: 'Search' },
 ]
 
 const LOGO_SRC = '/images/logo/koje_16_jun_-removebg-preview.png'
@@ -197,6 +196,36 @@ export default function Navbar() {
                   </Link>
                 )
               })}
+              {/* SEARCH DESKTOP */}
+
+<Link
+  href="/search"
+  aria-label="Search products"
+  className={`
+    hidden
+    lg:flex
+    h-10
+    w-44
+    xl:w-52
+    items-center
+    rounded-lg
+    border
+    px-3
+    text-sm
+    transition-all
+    duration-200
+
+    ${
+      isWhite
+        ? 'border-gray-200 bg-white text-gray-400 hover:border-primary hover:text-gray-600'
+        : 'border-white/20 bg-white/10 text-white/60 backdrop-blur-sm hover:border-white/40 hover:text-white'
+    }
+  `}
+>
+  <span className="truncate">
+    Search products...
+  </span>
+</Link>
 
               {/* PHONE */}
 
@@ -274,39 +303,70 @@ export default function Navbar() {
             </div>
 
             {/* =====================================
-                MOBILE BUTTON
-            ===================================== */}
+    MOBILE ACTIONS
+===================================== */}
 
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen(true)}
-              className={`
-                md:hidden
-                flex
-                h-11
-                w-11
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                border
-                transition-all
-                duration-200
-                active:scale-95
+<div className="flex items-center gap-2 md:hidden">
 
-                ${
-                  isWhite
-                    ? 'border-gray-200 bg-white text-gray-800 shadow-sm'
-                    : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
-                }
-              `}
-              aria-label="Buka menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-navigation"
-            >
-              <HiMenu className="text-xl" />
-            </button>
-          </div>
+  {/* SEARCH */}
+
+  <Link
+    href="/search"
+    aria-label="Search products"
+    className={`
+      flex
+      h-11
+      w-11
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      border
+      transition-all
+      duration-200
+
+      ${
+        isWhite
+          ? 'border-gray-200 bg-white text-gray-700 shadow-sm'
+          : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
+      }
+    `}
+  >
+    <HiSearch className="text-xl" />
+  </Link>
+
+  {/* MENU */}
+
+  <button
+    type="button"
+    onClick={() => setIsMobileMenuOpen(true)}
+    className={`
+      flex
+      h-11
+      w-11
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      border
+      transition-all
+      duration-200
+      active:scale-95
+
+      ${
+        isWhite
+          ? 'border-gray-200 bg-white text-gray-800 shadow-sm'
+          : 'border-white/20 bg-white/10 text-white backdrop-blur-sm'
+      }
+    `}
+    aria-label="Buka menu"
+    aria-expanded={isMobileMenuOpen}
+    aria-controls="mobile-navigation"
+  >
+    <HiMenu className="text-xl" />
+  </button>
+
+</div>
         </div>
       </nav>
 
