@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: '/', label: 'Beranda' },
   { href: '/about', label: 'Tentang' },
   { href: '/capabilities', label: 'Capabilities' },
+  { href: '/products', label: 'Products' },
   { href: '/projects', label: 'Proyek' },
   { href: '/contact', label: 'Kontak' },
 ]
